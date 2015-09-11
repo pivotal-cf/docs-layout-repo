@@ -4,6 +4,9 @@
 @import "bourbon/settings/px-to-em";
 @import "partials/_vars.scss";
 
+// Book-specific overrides
+@import "partials/_book-vars.scss";
+
 pre code, p code, .terminal {
   font-family: "DejaVu Sans Mono";
   page-break-inside: avoid;

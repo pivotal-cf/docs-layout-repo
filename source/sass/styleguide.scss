@@ -8,6 +8,9 @@
 @import "partials/_vars.scss";
 @import "partials/_mixins.scss";
 
+// Book-specific overrides
+@import "partials/_book-vars.scss";
+
 .sg .content-layout > h1 {
   font-weight: 600;
   font-size: 1rem;
