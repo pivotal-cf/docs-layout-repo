@@ -72,6 +72,7 @@
         <h1 class="logo">
           <a href="/"><%= vars.book_title || 'Default Book Title' %></a>
         </h1>
+        <%= yield_for_archive_drop_down_menu %>
         <%# @TODO: Replace with dynamic versioning %>
         <% if page_classes.match(/^pivotalcf /) %>
           <div class="header-dropdown">
