@@ -1,8 +1,8 @@
 @import "compass";
 
 // HELPERS
-@import "bourbon/_bourbon.scss";
-@import "neat/_neat.scss";
+@import "vendor/bourbon/_bourbon.scss";
+@import "vendor/neat/_neat.scss";
 
 // CUSTOM HELPER PARTIALS
 @import "partials/_vars.scss";

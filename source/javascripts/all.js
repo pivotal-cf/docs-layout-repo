@@ -1,4 +1,5 @@
-//= require 'jquery'
+//= require 'vendor/jquery'
+//= require 'vendor/mermaid'
 //= require 'src/documentation'
 //= require 'page_initializers/documentation'
 //= require 'deepnav_riot'
