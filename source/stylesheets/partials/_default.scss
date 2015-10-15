@@ -178,10 +178,16 @@ th {
 tr {
   color: #686868;
 }
-tr:hover {
+
+.content td, .content th, .content tr {
+  border: solid 1px grey;
+}
+
+.content tr:hover {
   background-color: #fdfdfd;
   color: #333;
 }
+
 caption {
   @extend %h-m;
   padding: 0.5em;
