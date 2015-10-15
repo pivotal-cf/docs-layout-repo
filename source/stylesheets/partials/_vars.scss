@@ -2,7 +2,7 @@
  * FILE: _vars.scss
 ======================================================================== */
 
-// ~FONTS
+// ~BEGIN BASE VALUES
 // ===================================================
 $font-primary: 'Source Sans Pro', sans-serif;
 $font-size-xxl: 2.441em;
@@ -28,9 +28,11 @@ $teal2: #00a79d;
 // Book-specific overrides
 @import "book-base-values.scss";
 
-// ~COLORS
+// ~BEGIN VARS
 // ===================================================
 
+// ~COLORS
+// ===================================================
 /*doc
 ---
 title: Colors

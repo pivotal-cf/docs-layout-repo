@@ -23,9 +23,26 @@ Overrides are held in two files:
 
 	Redefining or adding entire styles (classes, elements, etc.)
 
+* `stylesheets/partials/_book-base-values.scss`
+
+	Redefining or adding base values, such as specific colors, fonts, or sizes.
+	
+	E.g.,
+	
+	```
+	$navy: #333333;
+	```
+	
+
 * `stylesheets/partials/_book-vars.scss`
 	
-	Redefining or adding variables, such as colors, or other items that would be included normally in _vars.scss. 
+	Redefining or adding variables that point to the variable-ized base values in `_vars.scss` (under ["BEGIN BASE VALUES"](https://github.com/pivotal-cf/docs-layout-repo/blob/master/source/stylesheets/partials/_vars.scss#L5)) or `_book-base-values.scss` (as in the above example).
+	
+	E.g.,
+	
+	```
+	$color-bg: $navy;
+	```
 
 ### Javascript
 
