@@ -26,7 +26,7 @@ $teal1: #03786D;
 $teal2: #00a79d;
 
 // Book-specific overrides
-@import "book-vars.scss";
+@import "book-base-values.scss";
 
 // ~COLORS
 // ===================================================
@@ -119,3 +119,5 @@ $bp-wide: 700px/$em-base + 0em;
 $contrasted-dark-default: $color-text;
 $contrasted-light-default: #fff;
 $contrasted-lightness-threshold: 90%;
+
+@import "book-vars.scss";
