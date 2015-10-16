@@ -49,20 +49,21 @@
 	__webpack_require__(1);
 	var ApiClient = __webpack_require__(5);
 	var Renderer = __webpack_require__(6);
-	var DeepnavGenerator = __webpack_require__(7);
+	var NavGenerator = __webpack_require__(7);
 
 	$(function () {
 	  var apiClient = new ApiClient();
 	  var renderer = new Renderer();
-	  var navGenerator = new DeepnavGenerator(apiClient, renderer);
+	  var navGenerator = new NavGenerator(apiClient, renderer);
 
-	  var rootElement = ".nav-content";
+	  var rootElements = [".deepnav-content", ".shallownav-content"];
+
 	  var jsonLocation = $(rootElement).data("props-location");
 
 	  var rootUrl = window.location.host;
 	  var url = "http://" + rootUrl + "/subnavs/" + jsonLocation;
 
-	  navGenerator.generate_from(url, rootElement);
+	  navGenerator.generate_from(url, rootElements);
 	});
 
 /***/ },
@@ -2556,8 +2557,11 @@
 	"use strict";
 
 	function Renderer() {
-	  this.render = function (opts, rootElement) {
-	    riot.mount(rootElement, "deepnav", opts);
+	  this.render = function (rootElement, tagName, opts) {
+	    console.log("rootELement", rootElement);
+	    console.log("tagName", tagName);
+	    console.log("opts", opts);
+	    riot.mount(rootElement, tagName, opts);
 	  };
 	}
 
@@ -2573,17 +2577,24 @@
 	global.riot = riot;
 	var urlHelper = __webpack_require__(9);
 	var Scroller = __webpack_require__(10);
+
+	// Nav-related Tags
 	var deepnavTags = __webpack_require__(11);
+	var shallownavTags = __webpack_require__(12);
 
-	function DeepnavGenerator(apiClient, renderer) {
+	function NavGenerator(apiClient, renderer) {
 
-	  this.generate_from = function (url, rootElement) {
+	  this.generate_from = function (url, rootElements) {
 	    apiClient.getResource(url, function (jsonForNav) {
 	      cleanUrls(jsonForNav.links);
 	      var navParameters = jsonForNav;
 	      navParameters.scroller = Scroller;
 	      navParameters.urlHelper = urlHelper;
-	      renderer.render(navParameters, rootElement);
+
+	      for (var i = 0; i < rootElements.length; i++) {
+	        var tagName = rootElements[i].replace(".", "").replace("-content", "");
+	        renderer.render(rootElements[i], tagName, navParameters);
+	      }
 	    });
 	  };
 
@@ -2599,7 +2610,7 @@
 	  }
 	}
 
-	module.exports = DeepnavGenerator;
+	module.exports = NavGenerator;
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
@@ -2696,7 +2707,7 @@
 
 	var urlHelper;
 
-	riot.tag("deepnav", "<div riot-tag=\"links\" class=\"riot-links-tag\" links=\"{ opts.links }\" toplevelmenu=\"{ true }\"></div>", function (opts) {
+	riot.tag("deepnav", "<div riot-tag=\"deeplinks\" class=\"riot-links-tag\" links=\"{ opts.links }\" toplevelmenu=\"{ true }\"></div>", function (opts) {
 
 	    this.openParent = (function () {
 	        return true;
@@ -2711,7 +2722,7 @@
 	    this.on("mount", this.onMount);
 	});
 
-	riot.tag("links", "<ul class=\"{ submenu: hasSubmenu(), hidden: isHidden() }\"> <li each=\"{linkdata, i in opts.links}\" > <span class=\"topic\"> <div riot-tag=\"menu-title\" class=\"menu-title\" linkdata=\"{linkdata}\"></div> <div riot-tag=\"link\" class=\"riot-link-tag\" if=\"{!!linkdata.url}\" linkdata=\"{linkdata}\"></div> </span> </li> </ul>", function (opts) {
+	riot.tag("deeplinks", "<ul class=\"{ submenu: hasSubmenu(), hidden: isHidden() }\"> <li each=\"{linkdata, i in opts.links}\" > <span class=\"topic\"> <div riot-tag=\"deeplink\" class=\"riot-link-tag\" linkdata=\"{linkdata}\"></div> </span> </li> </ul>", function (opts) {
 
 	    this.hasNestedLinks = (function () {
 	        var links = opts.links;
@@ -2750,7 +2761,7 @@
 	    }).bind(this);
 	});
 
-	riot.tag("link", "<span class=\"{ hasSubMenuClosed: linkdata.nestedLinks, hasSubMenuOpened: submenuIsOpen() }\" onclick=\"{ toggleSubmenu }\"> <a href=\"{ linkdata.url }\" class=\"{ active: linkdata.active }\">{ linkdata.text }</a> </span> <div riot-tag=\"links\" class=\"riot-links-tag\" if=\"{ !!linkdata.nestedLinks }\" links=\"{ linkdata.nestedLinks }\" isopen=\"{ linkdata.open }\"></div>", function (opts) {
+	riot.tag("deeplink", "<span class=\"{ hasSubMenuClosed: linkdata.nestedLinks, hasSubMenuOpened: submenuIsOpen() }\" onclick=\"{ toggleSubmenu }\"> <a href=\"{ linkdata.url }\" class=\"{ active: linkdata.active }\">{ linkdata.text }</a> </span> <div riot-tag=\"deeplinks\" class=\"riot-links-tag\" if=\"{ !!linkdata.nestedLinks }\" links=\"{ linkdata.nestedLinks }\" isopen=\"{ linkdata.open }\"></div>", function (opts) {
 
 	    this.toggleSubmenu = (function (e) {
 	        opts.linkdata.open = !opts.linkdata.open;
@@ -2789,7 +2800,48 @@
 	    this.on("mount", this.onMount);
 	});
 
+/***/ },
+/* 12 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	var urlHelper;
+
+	riot.tag("shallownav", "<div riot-tag=\"shallowlinks\" class=\"riot-links-tag\" links=\"{ opts.links }\"></div>", function (opts) {
+	    this.onMount = (function () {
+	        this.scroller.scrollToActive();
+	    }).bind(this);
+
+	    urlHelper = opts.urlHelper;
+	    this.scroller = opts.scroller;
+	    this.on("mount", this.onMount);
+	});
+
+	riot.tag("shallowlinks", "<ul> <li each=\"{linkdata, i in opts.links}\" > <span class=\"topic\"> <div riot-tag=\"menu-title\" class=\"menu-title\" if=\"{!!linkdata.title}\" linkdata=\"{linkdata}\"></div> <div riot-tag=\"menu-subtitle\" class=\"menu-subtitle\" if=\"{!linkdata.title && !linkdata.url}\" linkdata=\"{linkdata}\"></div> <div riot-tag=\"shallowlink\" class=\"riot-link-tag\" linkdata=\"{linkdata}\"></div> </span> </li> </ul>", function (opts) {});
+
+	riot.tag("shallowlink", "<a href=\"{ linkdata.url }\" class=\"{ active: linkdata.active }\">{ linkdata.text }</a>", function (opts) {
+
+	    this.onMount = (function () {
+	        if (this.isActiveLink()) {
+	            this.setActiveLink();
+	        }
+	    }).bind(this);
+
+	    this.isActiveLink = (function () {
+	        return opts.linkdata.url === urlHelper.getBasePath();
+	    }).bind(this);
+
+	    this.setActiveLink = (function () {
+	        opts.linkdata.active = true;
+	    }).bind(this);
+
+	    this.on("mount", this.onMount);
+	});
+
 	riot.tag("menu-title", "<span>{ linkdata.text }</span>", function (opts) {});
+
+	riot.tag("menu-subtitle", "<span>{ linkdata.text }</span>", function (opts) {});
 
 /***/ }
 /******/ ]);

@@ -437,14 +437,14 @@ Add <code>.nav-container</code> to get fixed positioning.
 </div>
 ```
 */
-.deep-nav .hasSubMenuClosed {
+.deepnav-content .hasSubMenuClosed {
   display: block;
   overflow: hidden;
 }
-.deep-nav li li {
+.deepnav-content li li {
   padding-left: 1em;
 }
-.deep-nav .hasSubMenuClosed {
+.deepnav-content .hasSubMenuClosed {
   @extend .fa-angle-right;
   &:before {
     @extend .fa;
@@ -453,12 +453,12 @@ Add <code>.nav-container</code> to get fixed positioning.
     margin-top: 1em;
   }
 }
-.deep-nav .hasSubMenuOpened:hover,
-.deep-nav .hasSubMenuClosed:hover {
+.deepnav-content .hasSubMenuOpened:hover,
+.deepnav-content .hasSubMenuClosed:hover {
   cursor: pointer;
 }
-.deep-nav .hasSubMenuClosed a,
-.deep-nav .hasSubMenuClosed > .active {
+.deepnav-content .hasSubMenuClosed a,
+.deepnav-content .hasSubMenuClosed > .active {
   margin-left: 1em;
   float: none;
   width: inherit;
@@ -469,10 +469,10 @@ Add <code>.nav-container</code> to get fixed positioning.
     text-decoration: underline;
   }
 }
-.deep-nav .hasSubMenuOpened {
+.deepnav-content .hasSubMenuOpened {
   @extend .fa-angle-down;
 }
-.deep-nav a {
+.deepnav-content a {
   overflow-wrap: break-word;
   word-break: break-word;
 }

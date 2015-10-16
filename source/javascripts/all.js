@@ -2,4 +2,4 @@
 //= require 'vendor/mermaid'
 //= require 'src/documentation'
 //= require 'page_initializers/documentation'
-//= require 'deepnav_riot'
+//= require 'riot_nav'
