@@ -58,7 +58,7 @@
 
 	  var rootElement = selectRootElement();
 
-	  var jsonLocation = rootElement.data("props-location");
+	  var jsonLocation = $(rootElement).data("props-location");
 
 	  var rootUrl = window.location.host;
 	  var url = "http://" + rootUrl + "/subnavs/" + jsonLocation;
