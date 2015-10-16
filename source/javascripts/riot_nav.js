@@ -56,15 +56,23 @@
 	  var renderer = new Renderer();
 	  var navGenerator = new NavGenerator(apiClient, renderer);
 
-	  var rootElements = [".deepnav-content", ".shallownav-content"];
+	  var rootElement = selectRootElement();
 
-	  var jsonLocation = $(".nav-content").data("props-location");
+	  var jsonLocation = rootElement.data("props-location");
 
 	  var rootUrl = window.location.host;
 	  var url = "http://" + rootUrl + "/subnavs/" + jsonLocation;
 
-	  navGenerator.generate_from(url, rootElements);
+	  navGenerator.generate_from(url, rootElement);
 	});
+
+	function selectRootElement() {
+	  if ($(".deepnav-content").length > 0) {
+	    return ".deepnav-content";
+	  } else if ($(".shallownav-content".length > 0)) {
+	    return ".shallownav-content";
+	  }
+	};
 
 /***/ },
 /* 1 */
@@ -2557,10 +2565,8 @@
 	"use strict";
 
 	function Renderer() {
-	  this.render = function (rootElement, tagName, opts) {
-	    console.log("rootELement", rootElement);
-	    console.log("tagName", tagName);
-	    console.log("opts", opts);
+	  this.render = function (rootElement, opts) {
+	    var tagName = rootElement.replace(".", "").replace("-content", "");
 	    riot.mount(rootElement, tagName, opts);
 	  };
 	}
@@ -2584,17 +2590,14 @@
 
 	function NavGenerator(apiClient, renderer) {
 
-	  this.generate_from = function (url, rootElements) {
+	  this.generate_from = function (url, rootElement) {
 	    apiClient.getResource(url, function (jsonForNav) {
 	      cleanUrls(jsonForNav.links);
 	      var navParameters = jsonForNav;
 	      navParameters.scroller = Scroller;
 	      navParameters.urlHelper = urlHelper;
 
-	      for (var i = 0; i < rootElements.length; i++) {
-	        var tagName = rootElements[i].replace(".", "").replace("-content", "");
-	        renderer.render(rootElements[i], tagName, navParameters);
-	      }
+	      renderer.render(rootElement, navParameters);
 	    });
 	  };
 
