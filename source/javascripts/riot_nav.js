@@ -58,7 +58,7 @@
 
 	  var rootElements = [".deepnav-content", ".shallownav-content"];
 
-	  var jsonLocation = $(rootElement).data("props-location");
+	  var jsonLocation = $(".nav-content").data("props-location");
 
 	  var rootUrl = window.location.host;
 	  var url = "http://" + rootUrl + "/subnavs/" + jsonLocation;
