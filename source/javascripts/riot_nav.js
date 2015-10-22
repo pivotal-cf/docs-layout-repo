@@ -2633,8 +2633,10 @@
 
 	  currentUrl: document.URL,
 
-	  getBasePath: function getBasePath() {
-	    var parser = $("<a>", { href: this.currentUrl });
+	  getBasePath: function getBasePath(url) {
+	    url = url || this.currentUrl;
+
+	    var parser = $("<a>", { href: url });
 	    var path = parser[0].pathname;
 	    if (path[0] != "/") {
 	      path = "/" + path;
@@ -2792,7 +2794,7 @@
 	    }).bind(this);
 
 	    this.isActiveLink = (function () {
-	        return opts.linkdata.url === urlHelper.getBasePath();
+	        return urlHelper.getBasePath(opts.linkdata.url) === urlHelper.getBasePath();
 	    }).bind(this);
 
 	    this.setActiveLink = (function () {
