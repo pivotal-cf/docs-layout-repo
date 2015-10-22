@@ -1,6 +1,6 @@
 # docs-layout-repo
 
-The centralized layout reposiroty for Pivotal and Cloud Foundry documentation, for use with [Bookbinder](https://github.com/pivotal-cf/bookbinder).
+The centralized layout repository for Pivotal and Cloud Foundry documentation, for use with [Bookbinder](https://github.com/pivotal-cf/bookbinder).
 
 To use this layout repo, include the following in your book's `config.yml`:
 ```
