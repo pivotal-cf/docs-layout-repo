@@ -462,6 +462,7 @@ Add <code>.nav-container</code> to get fixed positioning.
   margin-left: 1em;
   float: none;
   width: inherit;
+  padding-left: 1em;
 }
 .deepnav-content .hasSubMenuOpened {
   @extend .fa-angle-down;
