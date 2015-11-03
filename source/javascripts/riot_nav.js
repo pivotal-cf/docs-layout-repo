@@ -2633,6 +2633,16 @@
 
 	  currentUrl: document.URL,
 
+	  getFullPath: function getFullPath() {
+	    var url = this.currentUrl;
+	    var parser = $("<a>", { href: url });
+	    var path = parser[0].pathname + parser[0].hash;
+	    if (path[0] != "/") {
+	      path = "/" + path;
+	    }
+	    return path;
+	  },
+
 	  getBasePath: function getBasePath(url) {
 	    url = url || this.currentUrl;
 
@@ -2794,7 +2804,7 @@
 	    }).bind(this);
 
 	    this.isActiveLink = (function () {
-	        return urlHelper.getBasePath(opts.linkdata.url) === urlHelper.getBasePath();
+	        return opts.linkdata.url === urlHelper.getFullPath();
 	    }).bind(this);
 
 	    this.setActiveLink = (function () {
