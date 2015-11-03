@@ -21,3 +21,20 @@
     float: right;
   }
 }
+
+#feedback {
+  form fieldset {
+    width: 49.5%;
+    float: left;
+  }
+  textarea {
+    width: 100%;
+  }
+  .feedback-option {
+    float: left;
+    width: 50%
+  }
+  input[type='submit'] {
+    margin-top: 1em;
+  }
+}

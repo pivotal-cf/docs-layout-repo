@@ -71,3 +71,24 @@ CFDocs.SubMenuMobile = function(element) {
         $('.js-sidenav').toggleClass('active');
     });
 };
+
+// Submit feedback form
+CFDocs.SubmitFeedback = function(element) {
+    var $el = $(element);
+
+    $el.submit(function(event){
+        // Override form submission
+        event.preventDefault();
+
+        // Set hidden values
+        $("input[name='date']").val(new Date());
+        $("input[name='page_url']").val(document.URL);
+
+        // Send post to our API
+        $.post('/api/feedback', $el.serialize()).done(function(){
+            $('#feedback').empty().append("Thanks for the feedback!");
+        }).fail(function(){
+            $('#feedback #errors').empty().append("Feedback submission failed. Please try again.");
+        });
+    });
+}

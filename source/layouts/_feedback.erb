@@ -1,0 +1,24 @@
+<div id="feedback">
+  <form data-behavior="SubmitFeedback">
+    <fieldset>
+      <legend>Was this page helpful?</legend>
+      <div class="feedback-option">
+        <input type="radio" name="helpful" value="true" id="is-helpful" required />
+        <label for="is-helpful">Yes</label>
+      </div>
+      <div class="feedback-option">
+        <input type="radio" name="helpful" value="false" id="is-not-helpful" />
+        <label for="is-not-helpful">No</label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Comments</legend>
+      <textarea name="comments" placeholder="I would like this topic to..."></textarea>
+    </fieldset>
+    <input type="hidden" name="date" />
+    <input type="hidden" name="page_url" />
+    <div id="errors">
+    </div>
+    <input type="submit" value="Submit" />
+  </form>
+</div>
