@@ -25,7 +25,7 @@
 #feedback {
   #feedback-comments {
     margin-top: 1em;
-    width: 50%;
+    width: 49%;
   }
   #feedback-helpful {
     border: none;
@@ -38,7 +38,7 @@
     width: 22%;
   }
   form fieldset {
-    width: 11.5em;
+    width: 11em;
     float: left;
   }
   textarea {
@@ -46,11 +46,10 @@
   }
   input[type='submit'] {
     background-color: transparentize($color-accent-bright, 0.8);
-    bottom: -16.5em;
-    margin-top: 1em;
+    float: left;
+    margin-left: 1em;
+    margin-top: 2.5em;
     padding: 1em;
-    position: absolute;
-    right: 13em;
-    width: 10%;
+    width: 8em;
   }
 }
