@@ -88,7 +88,7 @@ CFDocs.SubmitFeedback = function(element) {
         $.post('/api/feedback', $el.serialize()).done(function(){
             $('#feedback').empty().append("Thanks for the feedback!");
         }).fail(function(){
-            $('#feedback #errors').empty().append("Feedback submission failed. Please try again.");
+            $('#feedback').empty().append("<hr>Feedback submission failed. Please try again.<hr>");
         });
     });
 }
