@@ -196,6 +196,7 @@
           <a href="#top" title="back to top"></a>
         </div>
         <%= yield %>
+        <%= render_repo_link(include_environments: ['staging', 'acceptance', 'cloudfoundry', 'localhost']) %>
       </main><!--end of content-->
 
   </div><!-- end of container -->
