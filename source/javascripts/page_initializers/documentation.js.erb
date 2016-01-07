@@ -2,19 +2,25 @@ $(document).ready(function() {
   Elemental.load(document);
 });
 
+
+// Repo link conditional display
 $(function(){
 
   var repoLink = $('#repo-link');
-  var whiteList = repoLink[0].dataset.whitelist.split(" ");
-  var display = 'none';
 
-  whiteList.forEach(function(whiteListedEnv){
-    if (document.URL.indexOf(whiteListedEnv) > -1 && whiteListedEnv != "") {
-      display = 'block';
-    }
-  });
+  // Only execute conditional logic if repo link enabled
+  if (repoLink.length != 0) {
+    var whiteList = repoLink[0].dataset.whitelist.split(" ");
+    var display = 'none';
 
-  repoLink.css("display", display);
+    whiteList.forEach(function(whiteListedEnv){
+      if (document.URL.indexOf(whiteListedEnv) > -1 && whiteListedEnv != "") {
+        display = 'block';
+      }
+    });
+
+    repoLink.css("display", display);
+  };
 });
 
 $(function () {
