@@ -2833,7 +2833,7 @@
 	    this.on("mount", this.onMount);
 	});
 
-	riot.tag("shallowlinks", "<ul> <li each=\"{linkdata, i in opts.links}\" > <span class=\"topic\"> <div riot-tag=\"menu-title\" class=\"menu-title\" if=\"{!!linkdata.title}\" linkdata=\"{linkdata}\"></div> <div riot-tag=\"menu-subtitle\" class=\"menu-subtitle\" if=\"{!linkdata.title && !linkdata.url}\" linkdata=\"{linkdata}\"></div> <div riot-tag=\"shallowlink\" class=\"riot-link-tag\" linkdata=\"{linkdata}\"></div> </span> </li> </ul>", function (opts) {});
+	riot.tag("shallowlinks", "<ul> <li each=\"{linkdata, i in opts.links}\" > <span class=\"topic\"> <div riot-tag=\"menu-title\" class=\"menu-title\" if=\"{!!linkdata.title}\" linkdata=\"{linkdata}\"></div> <div riot-tag=\"menu-subtitle\" class=\"menu-subtitle\" if=\"{!linkdata.title && !linkdata.url}\" linkdata=\"{linkdata}\"></div> <div riot-tag=\"shallowlink\" class=\"riot-link-tag\" if=\"{!!linkdata.url}\" linkdata=\"{linkdata}\"></div> </span> </li> </ul>", function (opts) {});
 
 	riot.tag("shallowlink", "<a href=\"{ linkdata.url }\" class=\"{ active: linkdata.active }\">{ linkdata.text }</a>", function (opts) {
 
