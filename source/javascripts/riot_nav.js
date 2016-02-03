@@ -2686,7 +2686,46 @@
 	    }
 
 	    return res.join("/");
-	  }
+	  },
+
+	  linkMatcher: (function () {
+
+	    var matchCount;
+
+	    function findMatchesForTree(pathToMatch, tree) {
+
+	      if (tree.url == pathToMatch) {
+	        matchCount += 1;
+	      }
+
+	      var childNodes = [];
+
+	      if (tree.links) childNodes = tree.links;
+	      if (tree.nestedLinks) childNodes = tree.nestedLinks;
+
+	      childNodes.forEach(function (link) {
+	        findMatchesForTree(pathToMatch, link);
+	      });
+	    };
+
+	    return {
+	      setTree: function setTree(tree) {
+	        this.tree = tree;
+	        return this;
+	      },
+	      getTree: function getTree() {
+	        return this.tree;
+	      },
+	      match: function match(pathToMatch) {
+	        matchCount = 0;
+	        findMatchesForTree(pathToMatch, this.tree);
+	        return this.foundMatchInLastSearch();
+	      },
+	      foundMatchInLastSearch: function foundMatchInLastSearch() {
+	        return matchCount > 0;
+	      }
+	    };
+	  })()
 	};
 
 	module.exports = appHelper;
@@ -2733,6 +2772,9 @@
 	    }).bind(this);
 
 	    urlHelper = opts.urlHelper;
+
+	    urlHelper.linkMatcher.setTree({ links: opts.links }).match(urlHelper.getFullPath());
+
 	    this.scroller = opts.scroller;
 	    this.on("mount", this.onMount);
 	});
@@ -2804,7 +2846,13 @@
 	    }).bind(this);
 
 	    this.isActiveLink = (function () {
-	        return opts.linkdata.url === urlHelper.getFullPath();
+	        if (opts.linkdata.url === urlHelper.getFullPath()) {
+	            return true;
+	        } else if (opts.linkdata.url === urlHelper.getBasePath() && !urlHelper.linkMatcher.foundMatchInLastSearch()) {
+	            return true;
+	        } else {
+	            return false;
+	        }
 	    }).bind(this);
 
 	    this.setActiveLink = (function () {

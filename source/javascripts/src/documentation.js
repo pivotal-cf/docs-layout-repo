@@ -31,7 +31,7 @@ CFDocs.HasSubMenu = function(topDisclosure) {
         topNav.add(topNav.find('>li>ul'))
             .slideToggle(CFDocs.toggleDuration);
     });
-}
+};
 
 // Collapse and expand menu content
 // @requires class="collapsible" data-behavior="Collapsible"
