@@ -91,4 +91,16 @@ CFDocs.SubmitFeedback = function(element) {
             $('#feedback').empty().append("<hr>Feedback submission failed. Please try again.<hr>");
         });
     });
-}
+};
+
+CFDocs.DisplayModifiedDate = function(element) {
+  var $el = $(element);
+
+  var lastModifiedDate = new Date($el.data().modifiedDate);
+
+  var month = lastModifiedDate.toLocaleString('en-us', {month: 'long'});
+  var day = lastModifiedDate.getDate();
+  var year = lastModifiedDate.getFullYear();
+
+  $el.text(month + " " + day + ", " + year);
+};
