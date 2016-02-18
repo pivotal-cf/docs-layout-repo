@@ -776,3 +776,9 @@ category: basics
 .index .to-top {
   display: none;
 }
+
+// CF CLI Help
+.pivotalcf_devguide_cf-cli_cf-help table tr td:first-child,
+.devguide_cf-cli_cf-help table tr td:first-child {
+  width: 44%;
+}
