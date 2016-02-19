@@ -96,7 +96,13 @@ $(function() {
     });
 
     var currentUrl = window.location.pathname;
-    var $activeNavLink = $(".js-sidenav a[href='" + currentUrl + "']");
+
+    var strippedUrl = currentUrl.replace(/index\.html$/, '');
+    var $activeNavLink = $(".js-sidenav a[href='" + strippedUrl + "']");
+    if ($activeNavLink.length === 0) {
+      $activeNavLink = $(".js-sidenav a[href='" + strippedUrl + "index.html']");
+    }
+
     var headerHeight = 45;
 
     if ($activeNavLink.length) {

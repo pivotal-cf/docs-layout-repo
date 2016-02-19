@@ -2633,25 +2633,26 @@
 
 	  currentUrl: document.URL,
 
-	  getFullPath: function getFullPath() {
-	    var url = this.currentUrl;
-	    var parser = $("<a>", { href: url });
+	  getDeindexedCurrentPathWithAnchor: function getDeindexedCurrentPathWithAnchor() {
+	    var parser = $("<a>", { href: this.currentUrl });
 	    var path = parser[0].pathname + parser[0].hash;
 	    if (path[0] != "/") {
 	      path = "/" + path;
 	    }
-	    return path;
+	    return this.deindexPath(path);
 	  },
 
-	  getBasePath: function getBasePath(url) {
-	    url = url || this.currentUrl;
-
-	    var parser = $("<a>", { href: url });
+	  getDeindexedCurrentPathWithoutAnchor: function getDeindexedCurrentPathWithoutAnchor() {
+	    var parser = $("<a>", { href: this.currentUrl });
 	    var path = parser[0].pathname;
 	    if (path[0] != "/") {
 	      path = "/" + path;
 	    }
-	    return path;
+	    return this.deindexPath(path);
+	  },
+
+	  deindexPath: function deindexPath(path) {
+	    return path.replace(/index\.html$/, "");
 	  },
 
 	  resolveRelativePath: function resolveRelativePath(path) {
@@ -2773,7 +2774,7 @@
 
 	    urlHelper = opts.urlHelper;
 
-	    urlHelper.linkMatcher.setTree({ links: opts.links }).match(urlHelper.getFullPath());
+	    urlHelper.linkMatcher.setTree({ links: opts.links }).match(urlHelper.getDeindexedCurrentPathWithAnchor());
 
 	    this.scroller = opts.scroller;
 	    this.on("mount", this.onMount);
@@ -2846,9 +2847,11 @@
 	    }).bind(this);
 
 	    this.isActiveLink = (function () {
-	        if (opts.linkdata.url === urlHelper.getFullPath()) {
+	        var strippedUrl = urlHelper.deindexPath(opts.linkdata.url);
+
+	        if (strippedUrl === urlHelper.getDeindexedCurrentPathWithAnchor()) {
 	            return true;
-	        } else if (opts.linkdata.url === urlHelper.getBasePath() && !urlHelper.linkMatcher.foundMatchInLastSearch()) {
+	        } else if (strippedUrl === urlHelper.getDeindexedCurrentPathWithoutAnchor() && !urlHelper.linkMatcher.foundMatchInLastSearch()) {
 	            return true;
 	        } else {
 	            return false;
@@ -2892,7 +2895,7 @@
 	    }).bind(this);
 
 	    this.isActiveLink = (function () {
-	        return opts.linkdata.url === urlHelper.getBasePath();
+	        return opts.linkdata.url === urlHelper.getDeindexedCurrentPathWithoutAnchor();
 	    }).bind(this);
 
 	    this.setActiveLink = (function () {
