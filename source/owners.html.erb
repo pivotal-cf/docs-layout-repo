@@ -1,0 +1,11 @@
+---
+title: Owners
+---
+
+<div class="owners-content"></div>
+
+<script>
+  $.get('owners.json', function(owners) {
+    riot.mount('.owners-content', 'owners', { items: owners });
+  })
+</script>
