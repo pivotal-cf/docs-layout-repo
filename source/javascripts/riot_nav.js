@@ -2923,7 +2923,7 @@
 
 	  this.filterItems = (function (e) {
 	    var path, owners;
-	    var searchTerm = e.target.value;
+	    var searchTerm = e.target.value.toLowerCase();
 
 	    if (searchTerm == "") {
 	      this.filteredItems = this.items;
@@ -2935,6 +2935,7 @@
 	    for (path in this.items) {
 	      owners = this.items[path];
 	      if (this.items.hasOwnProperty(path) && this.items[path].some(function (owner) {
+	        owner = owner.toLowerCase();
 	        return owner.includes(searchTerm);
 	      })) {
 	        this.filteredItems[path] = owners;
