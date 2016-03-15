@@ -28,9 +28,12 @@
       _gaq.push(['_trackPageview']);
 
       (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
       })();
     }
   </script>
@@ -38,7 +41,7 @@
   <script type="text/javascript">
     var blackList = ['acceptance'];
 
-    blackList.forEach(function(blackListedEnv){
+    blackList.forEach(function(blackListedEnv) {
       if (document.URL.indexOf(blackListedEnv) > -1 && blackListedEnv != "") {
         $('head').append('<meta name="hashtag" content="PivotalMoment">');
       }
@@ -47,17 +50,21 @@
 
   <!-- CrazyEgg Tracking Script -->
   <script type="text/javascript">
-    setTimeout(function(){var a=document.createElement("script");
-    var b=document.getElementsByTagName("script")[0];
-    a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0020/8294.js?"+Math.floor(new Date().getTime()/3600000);
-    a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+    setTimeout(function() {
+      var a = document.createElement("script");
+      var b = document.getElementsByTagName("script")[0];
+      a.src = document.location.protocol + "//script.crazyegg.com/pages/scripts/0020/8294.js?" + Math.floor(new Date().getTime() / 3600000);
+      a.async = true;
+      a.type = "text/javascript";
+      b.parentNode.insertBefore(a, b)
+    }, 1);
   </script>
 </head>
 
 <body class="<%= page_classes %> <%= yield_for_subnav.empty? ? '' : 'has-subnav' %>">
 
 <div class="viewport">
-  <div class='wrap'>
+  <span class='wrap'>
     <script src="//use.typekit.net/clb0qji.js" type="text/javascript"></script>
     <script type="text/javascript">
       try {
@@ -76,7 +83,7 @@
       (function() {
         var wf = document.createElement('script');
         wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-          '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
         wf.type = 'text/javascript';
         wf.async = 'true';
         var s = document.getElementsByTagName('script')[0];
@@ -85,6 +92,26 @@
     </script>
 
     <%# @TODO: Replace with better if(homepage) check %>
+    <% if vars.product_url && (vars.product_url.match(/.*pivotal-cf.*/) || vars.product_url.match(/.*console\.run\.pivotal.*/)) %>
+       <header class="header header-layout">
+         <a class="pivotal-logo" href="http://docs.pivotal.io">
+         </a>
+         <a href="http://docs.pivotal.io" class="header-item">
+           <%= vars.title %>
+         </a>
+         <%= yield_for_archive_drop_down_menu %>
+         <%# @TODO: Replace with dynamic versioning %>
+         <div class="header-links js-bar-links">
+           <div class="btn-menu" data-behavior="MenuMobile"></div>
+           <%= vars.product_link %>
+           <div class="header-item">
+             <%= vars.support_link %>
+           </div>
+           <%= partial 'layouts/book-search' %>
+         </div>
+       </header>
+      <div class="header-spacer"></div>
+    <% else %>
     <% if current_page.data.title %>
       <header class="header header-layout">
         <h1 class="logo">
@@ -100,7 +127,7 @@
 
             <div class="header-dropdown-content">
               <ul>
-				<li><a href="/archives/pcf-docs-1.6.pdf">v1.6.0.0</a></li>
+                <li><a href="/archives/pcf-docs-1.6.pdf">v1.6.0.0</a></li>
                 <li><a href="/archives/pcf-docs-1.5.pdf">v1.5.0.0</a></li>
                 <li><a href="/archives/pcf-docs-1.4.pdf">v1.4.0.0</a></li>
                 <li><a href="/archives/pcf-docs-1.3.pdf">v1.3.0.0</a></li>
@@ -139,12 +166,14 @@
         <% end %>
         <% if page_classes.match(/^spring-cloud-services /) %>
           <div class="header-dropdown">
-            <a class="header-dropdown-link" >
+            <a class="header-dropdown-link">
               v1.0.0
             </a>
             <div class="header-dropdown-content">
               <ul>
-              <li><a href="/archives/p-spring-cloud-services/spring-cloud-services-docs-0.1.1.BETA.pdf">v0.1.1.BETA</a></li>
+                <li>
+                  <a href="/archives/p-spring-cloud-services/spring-cloud-services-docs-0.1.1.BETA.pdf">v0.1.1.BETA</a>
+                </li>
               </ul>
             </div>
           </div>
@@ -176,13 +205,17 @@
           <%= vars.hero_text %>
         </h2>
       </header>
+      <% end %>
     <% end %>
+
+
 
     <div class="container">
 
       <%= yield_for_subnav %>
 
       <main class="content content-layout" id="js-content" role="main">
+
         <a id="top"></a>
         <% if current_page.data.title && !current_page.data.dita %>
           <h1 class="title-container">
@@ -201,30 +234,32 @@
         <%= render_repo_link(include_environments: ['staging', 'acceptance', 'cloudfoundry', 'localhost']) %>
       </main><!--end of content-->
 
-  </div><!-- end of container -->
+    </div><!-- end of container -->
 
-  <script type="text/javascript">
-    (function() {
-      var didInit = false;
-      function initMunchkin() {
-        if(didInit === false) {
-          didInit = true;
-          Munchkin.init('625-IUJ-009');
+    <script type="text/javascript">
+      (function() {
+        var didInit = false;
+
+        function initMunchkin() {
+          if (didInit === false) {
+            didInit = true;
+            Munchkin.init('625-IUJ-009');
+          }
         }
-      }
-      var s = document.createElement('script');
-      s.type = 'text/javascript';
-      s.async = true;
-      s.src = document.location.protocol + '//munchkin.marketo.net/munchkin.js';
-      s.onreadystatechange = function() {
-        if (this.readyState == 'complete' || this.readyState == 'loaded') {
-          initMunchkin();
-        }
-      };
-      s.onload = initMunchkin;
-      document.getElementsByTagName('head')[0].appendChild(s);
-    })();
-  </script>
+
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = document.location.protocol + '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+          if (this.readyState == 'complete' || this.readyState == 'loaded') {
+            initMunchkin();
+          }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+      })();
+    </script>
 </div><!--end of wrap-->
 </div><!--end of viewport-->
 
