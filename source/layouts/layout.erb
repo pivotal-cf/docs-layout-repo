@@ -110,7 +110,9 @@
            <%= partial 'layouts/book-search' %>
          </div>
        </header>
-      <div class="header-spacer"></div>
+      <% if !current_page.data.title %>
+        <div class="header-spacer"></div>
+      <% end %>
     <% else %>
     <% if current_page.data.title %>
       <header class="header header-layout">
