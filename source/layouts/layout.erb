@@ -216,9 +216,28 @@
       <main class="content content-layout" id="js-content" role="main">
         <a id="top"></a>
         <% if current_page.data.title && !current_page.data.dita %>
-          <h1 class="title-container">
-            <%= current_page.data.title %>
-          </h1>
+          <% if vars.use_local_header %>
+            <div class="local-header title-container">
+              <div class="local-header version-info">
+                LATEST STABLE VERSION: <%= vars.latest_stable_version %> - <a href="<%= vars.changelog_href %>">CHANGELOG</a>
+              </div>
+              <div class="local-header local-title clearfix">
+                <img src="<%= vars.local_header_img %>">
+                <span class="local-header-title"><%= vars.local_header_title %></span>
+                <span class="local-header local-version"><%= vars.latest_stable_version %></span>
+                <span class="local-header local-search">Search</span>
+              </div>
+              <div class="local-header local-header-links">
+                <% vars.local_header_links.each do |link| %>
+                  <%= link %>
+                <% end %>
+              </div>
+            </div>
+          <% else %>
+            <h1 class="title-container">
+              <%= current_page.data.title %>
+            </h1>
+          <% end %>
           <% if quick_links %>
             <div id="js-quick-links">
               <%= quick_links %>

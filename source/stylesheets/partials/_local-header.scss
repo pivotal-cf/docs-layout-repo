@@ -1,0 +1,49 @@
+/*
+ * FILE: _local-header.scss
+======================================================================== */
+
+.local-header.local-title {
+  font-weight: 200;
+  padding: 10px 0;
+  font-size: 31px;
+  img {
+    height: 26px;
+  }
+}
+
+.local-header.title-container {
+  border-bottom: 1px solid $color-border;
+  padding: 20px 0;
+  margin-bottom: 30px;
+  font-weight: normal;
+  a {
+    border-bottom: none;
+    padding: 0 5px;
+  }
+
+  .local-header.local-header-links {
+    font-size: 14px;
+    a:after {
+      content: "";
+    }
+  }
+}
+
+.local-header.title-container {
+  .local-header.version-info {
+    color: grey;
+    font-size: 14px;
+    a:after {
+      content: "";
+    }
+  }
+}
+
+.local-header.local-version {
+  font-size: 16px;
+  margin-left: 15px;
+}
+
+.local-header.local-search {
+  float: right;
+}
