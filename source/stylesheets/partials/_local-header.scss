@@ -20,6 +20,18 @@
     border-bottom: none;
     padding: 0 5px;
   }
+  .local-search {
+    a {
+      font-size: 16px;
+      color: grey;
+      vertical-align: middle;
+      margin: 0 18px;
+    }
+    a:hover {
+      background-color: inherit;
+      border: none;
+    }
+  }
 
   .local-header.local-header-links {
     font-size: 14px;
@@ -42,8 +54,49 @@
 .local-header.local-version {
   font-size: 16px;
   margin-left: 15px;
+  a {
+    color: $color-text;
+    font-weight: normal;
+    display: inline-block;
+  }
+  a:hover {
+    background-color: $color-bg-panel;
+    border-bottom: none;
+  }
 }
 
 .local-header.local-search {
   float: right;
+}
+
+.local-header.header-dropdown {
+  float: none;
+}
+
+.local-header.local-title .local-version.header-dropdown .local-header.header-dropdown-content {
+  left: 0;
+  float: none;
+  padding: 0;
+  background-color: #F5F6F7;
+  border: none;
+  box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  li {
+    padding: 5px;
+    font-weight: normal;
+    margin: 0;
+  }
+  li:hover {
+    background-color: #d3d5d7;
+    border-bottom: none;
+  }
+  a:link:hover {
+    background-color: #d3d5d7;
+    width: 100%;
+    z-index: 100;
+  }
+}
+
+.local-header.local-search {
+  border: 1px solid lightgrey;
+  border-radius: 22px;
 }
