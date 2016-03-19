@@ -216,17 +216,17 @@
       <main class="content content-layout" id="js-content" role="main">
         <a id="top"></a>
         <% if current_page.data.title && !current_page.data.dita %>
-          <% if vars.use_local_header %>
+          <% if product_info.use_local_header %>
             <div class="local-header title-container">
               <div class="local-header version-info">
-                LATEST STABLE VERSION: <%= vars.latest_stable_version %> - <a href="<%= vars.changelog_href %>">CHANGELOG</a>
+                LATEST STABLE VERSION: <%= product_info.latest_stable_version %> - <a href="<%= product_info.changelog_href %>">CHANGELOG</a>
               </div>
               <div class="local-header local-title clearfix">
-                <img src="<%= vars.local_header_img %>">
-                <span class="local-header-title"><%= vars.local_header_title %>
+                <img src="<%= product_info.local_header_img %>">
+                <span class="local-header-title"><%= product_info.local_header_title %>
                 </span>
                 <span class="local-header local-version header-dropdown">
-                  <a class="local-header header-dropdown-link">v<%= vars.latest_stable_version %></a>
+                  <a class="local-header header-dropdown-link">v<%= product_info.latest_stable_version %></a>
                   <span class="local-header header-dropdown-content">
                     <ul>
                       <% if vars.products %>
@@ -245,7 +245,7 @@
                 </span>
 
                 <span class="local-header local-search"><a class="search-icon" id="local-header-search" data-behavior="Search">
-                  &nbsp;Search PCF <%= vars.latest_stable_version %>
+                  &nbsp;Search PCF <%= product_info.latest_stable_version %>
                 </a>
                 </span>
               </div>
