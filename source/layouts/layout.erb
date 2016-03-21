@@ -229,17 +229,11 @@
                   <a class="local-header header-dropdown-link">v<%= product_info.latest_stable_version %></a>
                   <span class="local-header header-dropdown-content">
                     <ul>
-                      <% if vars.products %>
-                        <% this_product = vars.products['pivotal_cf'] %>
-                        <% this_product['local_header_version_list'].each do |version| %>
+                      <% if product_info.local_header_version_list %>
+                        <% product_info.local_header_version_list.each do |version| %>
                           <li><%= version %></li>
                         <% end %>
                       <% end %>
-                      <!--<li><a href="/archives/pcf-docs-1.6.pdf">v1.6.0.0</a></li>-->
-                      <!--<li><a href="/archives/pcf-docs-1.5.pdf">v1.5.0.0</a></li>-->
-                      <!--<li><a href="/archives/pcf-docs-1.4.pdf">v1.4.0.0</a></li>-->
-                      <!--<li><a href="/archives/pcf-docs-1.3.pdf">v1.3.0.0</a></li>-->
-                      <!--<li><a href="/archives/pcf-docs-1.2.pdf">v1.2.0.0</a></li>-->
                     </ul>
                   </span>
                 </span>
@@ -250,7 +244,7 @@
                 </span>
               </div>
               <div class="local-header local-header-links">
-                <% vars.local_header_links.each do |link| %>
+                <% product_info.local_header_links.each do |link| %>
                   <%= link %>
                 <% end %>
               </div>
