@@ -216,7 +216,7 @@
       <main class="content content-layout" id="js-content" role="main">
         <a id="top"></a>
         <% if current_page.data.title && !current_page.data.dita %>
-            <% if defined?(:product_info) && product_info.use_local_header %>
+            <% if product_info.use_local_header %>
               <div class="local-header title-container">
                 <div class="local-header version-info">
                   LATEST STABLE VERSION: <%= product_info.latest_stable_version %> - <a href="<%= product_info.changelog_href %>">CHANGELOG</a>
