@@ -28,9 +28,12 @@
       _gaq.push(['_trackPageview']);
 
       (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
       })();
     }
   </script>
@@ -38,7 +41,7 @@
   <script type="text/javascript">
     var blackList = ['acceptance'];
 
-    blackList.forEach(function(blackListedEnv){
+    blackList.forEach(function(blackListedEnv) {
       if (document.URL.indexOf(blackListedEnv) > -1 && blackListedEnv != "") {
         $('head').append('<meta name="hashtag" content="PivotalMoment">');
       }
@@ -47,10 +50,14 @@
 
   <!-- CrazyEgg Tracking Script -->
   <script type="text/javascript">
-    setTimeout(function(){var a=document.createElement("script");
-    var b=document.getElementsByTagName("script")[0];
-    a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0020/8294.js?"+Math.floor(new Date().getTime()/3600000);
-    a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+    setTimeout(function() {
+      var a = document.createElement("script");
+      var b = document.getElementsByTagName("script")[0];
+      a.src = document.location.protocol + "//script.crazyegg.com/pages/scripts/0020/8294.js?" + Math.floor(new Date().getTime() / 3600000);
+      a.async = true;
+      a.type = "text/javascript";
+      b.parentNode.insertBefore(a, b)
+    }, 1);
   </script>
 </head>
 
@@ -76,7 +83,7 @@
       (function() {
         var wf = document.createElement('script');
         wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-          '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
         wf.type = 'text/javascript';
         wf.async = 'true';
         var s = document.getElementsByTagName('script')[0];
@@ -84,98 +91,122 @@
       })();
     </script>
 
-    <%# @TODO: Replace with better if(homepage) check %>
-    <% if current_page.data.title %>
-      <header class="header header-layout">
-        <h1 class="logo">
-          <a href="/"><%= vars.book_title || 'Default Book Title' %></a>
-        </h1>
-        <%= yield_for_archive_drop_down_menu %>
-        <%# @TODO: Replace with dynamic versioning %>
-        <% if page_classes.match(/^pivotalcf /) %>
-          <div class="header-dropdown">
-            <a class="header-dropdown-link">
-              v1.6.0.0
-            </a>
-
-            <div class="header-dropdown-content">
-              <ul>
-				<li><a href="/archives/pcf-docs-1.6.pdf">v1.6.0.0</a></li>
-                <li><a href="/archives/pcf-docs-1.5.pdf">v1.5.0.0</a></li>
-                <li><a href="/archives/pcf-docs-1.4.pdf">v1.4.0.0</a></li>
-                <li><a href="/archives/pcf-docs-1.3.pdf">v1.3.0.0</a></li>
-                <li><a href="/archives/pcf-docs-1.2.pdf">v1.2.0.0</a></li>
-              </ul>
-            </div>
+    <% if vars.use_global_header %>
+      <header class="global-header header header-layout">
+        <a class="global-header pivotal-logo" href="http://docs.pivotal.io">
+        </a>
+        <a href="http://docs.pivotal.io" class="global-header header-item global-header-title">
+          <%= vars.title %>
+        </a>
+        <div class="global-header header-links js-bar-links">
+          <!--<div class="global-header header-item" data-behavior="MenuMobile"></div>-->
+          <div class="global-header header-item">
+            <a href="<%= vars.global_header_product_href %>"><%= vars.global_header_product_link_text %></a>
           </div>
-        <% end %>
-        <% if page_classes.match(/^p-mysql /) %>
-          <div class="header-dropdown">
-            <a class="header-dropdown-link">
-              v1.7
-            </a>
-
-            <div class="header-dropdown-content">
-              <ul>
-                <li><a href="/archives/p-mysql/mysql-docs-1.6.pdf">v1.6</a></li>
-                <li><a href="/archives/p-mysql/mysql-docs-1.5.pdf">v1.5</a></li>
-                <li><a href="/archives/p-mysql/mysql-docs-1.4.pdf">v1.4</a></li>
-              </ul>
-            </div>
-          </div>
-        <% end %>
-        <% if page_classes.match(/^pivotalhd-ds /) %>
-          <div class="header-dropdown">
-            <a class="header-dropdown-link">
-              v1.3.2.0
-            </a>
-
-            <div class="header-dropdown-content">
-              <ul>
-                <li><a href="/archives/phd-data-service-v1.2.pdf">v1.2.0.0</a></li>
-              </ul>
-            </div>
-          </div>
-        <% end %>
-        <% if page_classes.match(/^spring-cloud-services /) %>
-          <div class="header-dropdown">
-            <a class="header-dropdown-link" >
-              v1.0.0
-            </a>
-            <div class="header-dropdown-content">
-              <ul>
-              <li><a href="/archives/p-spring-cloud-services/spring-cloud-services-docs-0.1.1.BETA.pdf">v0.1.1.BETA</a></li>
-              </ul>
-            </div>
-          </div>
-        <% end %>
-        <div class="header-links js-bar-links">
-          <div class="btn-menu" data-behavior="MenuMobile"></div>
-          <%= vars.product_link %>
-          <div class="header-item">
+          <div class="global-header header-item">
             <%= vars.support_link %>
           </div>
           <%= partial 'layouts/book-search' %>
         </div>
       </header>
+      <% if !current_page.data.title %>
+        <div class="global-header-spacer"></div>
+      <% end %>
     <% else %>
-      <header class="header-home">
-        <div class="home-links js-bar-links">
-          <div class="btn-menu" data-behavior="MenuMobile"></div>
-          <%= vars.product_link %>
-          <div class="header-item">
-            <%= vars.support_call_to_action %>
-          </div>
-          <%= partial 'layouts/book-search' %>
-        </div>
-        <h1 class="title-flashy">
-          <%= partial 'layouts/book-title' %>
-        </h1>
+      <% if current_page.data.title %> <%# this is a proxy for if !homepage %>
+        <header class="header header-layout">
+          <h1 class="logo">
+            <a href="/"><%= vars.book_title || 'Default Book Title' %></a>
+          </h1>
+          <%= yield_for_archive_drop_down_menu %>
+          <%# @TODO: Replace with dynamic versioning %>
+          <% if page_classes.match(/^pivotalcf /) %>
+            <div class="header-dropdown">
+              <a class="header-dropdown-link">
+                v1.6.0.0
+              </a>
 
-        <h2 class="title-intro">
-          <%= vars.hero_text %>
-        </h2>
-      </header>
+              <div class="header-dropdown-content">
+                <ul>
+                  <li><a href="/archives/pcf-docs-1.6.pdf">v1.6.0.0</a></li>
+                  <li><a href="/archives/pcf-docs-1.5.pdf">v1.5.0.0</a></li>
+                  <li><a href="/archives/pcf-docs-1.4.pdf">v1.4.0.0</a></li>
+                  <li><a href="/archives/pcf-docs-1.3.pdf">v1.3.0.0</a></li>
+                  <li><a href="/archives/pcf-docs-1.2.pdf">v1.2.0.0</a></li>
+                </ul>
+              </div>
+            </div>
+          <% end %>
+          <% if page_classes.match(/^p-mysql /) %>
+            <div class="header-dropdown">
+              <a class="header-dropdown-link">
+                v1.7
+              </a>
+
+              <div class="header-dropdown-content">
+                <ul>
+                  <li><a href="/archives/p-mysql/mysql-docs-1.6.pdf">v1.6</a></li>
+                  <li><a href="/archives/p-mysql/mysql-docs-1.5.pdf">v1.5</a></li>
+                  <li><a href="/archives/p-mysql/mysql-docs-1.4.pdf">v1.4</a></li>
+                </ul>
+              </div>
+            </div>
+          <% end %>
+          <% if page_classes.match(/^pivotalhd-ds /) %>
+            <div class="header-dropdown">
+              <a class="header-dropdown-link">
+                v1.3.2.0
+              </a>
+
+              <div class="header-dropdown-content">
+                <ul>
+                  <li><a href="/archives/phd-data-service-v1.2.pdf">v1.2.0.0</a></li>
+                </ul>
+              </div>
+            </div>
+          <% end %>
+          <% if page_classes.match(/^spring-cloud-services /) %>
+            <div class="header-dropdown">
+              <a class="header-dropdown-link">
+                v1.0.0
+              </a>
+              <div class="header-dropdown-content">
+                <ul>
+                  <li>
+                    <a href="/archives/p-spring-cloud-services/spring-cloud-services-docs-0.1.1.BETA.pdf">v0.1.1.BETA</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          <% end %>
+          <div class="header-links js-bar-links">
+            <div class="btn-menu" data-behavior="MenuMobile"></div>
+            <%= vars.product_link %>
+            <div class="header-item">
+              <%= vars.support_link %>
+            </div>
+            <%= partial 'layouts/book-search' %>
+          </div>
+        </header>
+      <% else %>
+        <header class="header-home">
+          <div class="home-links js-bar-links">
+            <div class="btn-menu" data-behavior="MenuMobile"></div>
+            <%= vars.product_link %>
+            <div class="header-item">
+              <%= vars.support_call_to_action %>
+            </div>
+            <%= partial 'layouts/book-search' %>
+          </div>
+          <h1 class="title-flashy">
+            <%= partial 'layouts/book-title' %>
+          </h1>
+
+          <h2 class="title-intro">
+            <%= vars.hero_text %>
+          </h2>
+        </header>
+      <% end %>
     <% end %>
 
     <div class="container">
@@ -185,9 +216,44 @@
       <main class="content content-layout" id="js-content" role="main">
         <a id="top"></a>
         <% if current_page.data.title && !current_page.data.dita %>
-          <h1 class="title-container">
-            <%= current_page.data.title %>
-          </h1>
+            <% if product_info.use_local_header %>
+              <div class="local-header title-container">
+                <div class="local-header version-info">
+                  LATEST STABLE VERSION: <%= product_info.latest_stable_version %> - <a href="<%= product_info.changelog_href %>">CHANGELOG</a>
+                </div>
+                <div class="local-header local-title clearfix">
+                  <img src="<%= product_info.local_header_img %>">
+                  <span class="local-header-title"><%= product_info.local_header_title %>
+                  </span>
+                  <span class="local-header local-version header-dropdown">
+                    <a class="local-header header-dropdown-link">v<%= product_info.latest_stable_version %></a>
+                    <span class="local-header header-dropdown-content">
+                      <ul>
+                        <% if product_info.local_header_version_list %>
+                          <% product_info.local_header_version_list.each do |version| %>
+                            <li><%= version %></li>
+                          <% end %>
+                        <% end %>
+                      </ul>
+                    </span>
+                  </span>
+
+                  <span class="local-header local-search"><a class="search-icon" id="local-header-search" data-behavior="Search">
+                    &nbsp;Search PCF <%= product_info.latest_stable_version %>
+                  </a>
+                  </span>
+                </div>
+                <div class="local-header local-header-links">
+                  <% product_info.local_header_links.each do |link| %>
+                    <%= link %>
+                  <% end %>
+                </div>
+              </div>
+          <% else %>
+            <h1 class="title-container">
+              <%= current_page.data.title %>
+            </h1>
+          <% end %>
           <% if quick_links %>
             <div id="js-quick-links">
               <%= quick_links %>
@@ -197,35 +263,38 @@
         <div class="to-top" id="js-to-top">
           <a href="#top" title="back to top"></a>
         </div>
+        <gcse:searchresults></gcse:searchresults>
         <%= yield %>
         <%= render_repo_link(include_environments: ['staging', 'acceptance', 'cloudfoundry', 'localhost']) %>
       </main><!--end of content-->
 
-  </div><!-- end of container -->
+    </div><!-- end of container -->
 
-  <script type="text/javascript">
-    (function() {
-      var didInit = false;
-      function initMunchkin() {
-        if(didInit === false) {
-          didInit = true;
-          Munchkin.init('625-IUJ-009');
+    <script type="text/javascript">
+      (function() {
+        var didInit = false;
+
+        function initMunchkin() {
+          if (didInit === false) {
+            didInit = true;
+            Munchkin.init('625-IUJ-009');
+          }
         }
-      }
-      var s = document.createElement('script');
-      s.type = 'text/javascript';
-      s.async = true;
-      s.src = document.location.protocol + '//munchkin.marketo.net/munchkin.js';
-      s.onreadystatechange = function() {
-        if (this.readyState == 'complete' || this.readyState == 'loaded') {
-          initMunchkin();
-        }
-      };
-      s.onload = initMunchkin;
-      document.getElementsByTagName('head')[0].appendChild(s);
-    })();
-  </script>
-</div><!--end of wrap-->
+
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = document.location.protocol + '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+          if (this.readyState == 'complete' || this.readyState == 'loaded') {
+            initMunchkin();
+          }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+      })();
+    </script>
+  </div><!--end of wrap-->
 </div><!--end of viewport-->
 
 <div id="scrim"></div>

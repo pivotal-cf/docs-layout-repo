@@ -96,9 +96,9 @@ CFDocs.SubmitFeedback = function(element) {
 CFDocs.DisplayModifiedDate = function(element) {
   var $el = $(element);
 
-  var lastModifiedDate = new Date($el.data().modifiedDate);
+  var lastModifiedDate = new Date.parse($el.data().modifiedDate.replace(" UTC", ""));
 
-  var month = lastModifiedDate.toLocaleString('en-us', {month: 'long'});
+  var month = lastModifiedDate.toString('MMMM');
   var day = lastModifiedDate.getDate();
   var year = lastModifiedDate.getFullYear();
 

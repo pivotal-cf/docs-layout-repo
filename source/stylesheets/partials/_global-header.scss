@@ -1,0 +1,55 @@
+/*
+ * FILE: _global-header.scss
+======================================================================== */
+
+.global-header.pivotal-logo {
+  background-image: url(http://docs.pivotal.io/images/icon-p-green.jpg);
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-size: 100%;
+  height: 64px;
+  width: 64px;
+}
+
+.global-header.header-item.global-header-title {
+  vertical-align: top;
+  padding-top: 22px;
+  padding-left: 10px;
+}
+
+.global-header.header.header-layout {
+  padding: 0;
+  height: 64px;
+  border: none;
+}
+
+.global-header.header-item {
+  font-size: 18px;
+  padding: 0;
+}
+
+.global-header.header-item:after {
+  content: "";
+}
+
+.global-header.header-links {
+  padding-top: 18px;
+  a {
+    font-weight: normal;
+  }
+}
+
+.global-header a {
+  border: none;
+}
+
+.global-header-spacer {
+  height: 105px;
+}
+
+.global-header.nav-container {
+  @media (min-width: $bp-wide) {
+    top: 80px;
+  }
+}
+
