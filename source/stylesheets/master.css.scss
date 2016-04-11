@@ -1,20 +1,20 @@
 @import "compass";
 
 // HELPERS
-@import "vendor/bourbon/_bourbon.scss";
-@import "vendor/neat/_neat.scss";
-@import "vendor/fontawesome/_font-awesome.scss";
+@import "vendor/bourbon/bourbon";
+@import "vendor/neat/neat";
+@import "vendor/fontawesome/font-awesome";
 @import "vendor/mermaid.css";
 
 // CUSTOM HELPER PARTIALS
-@import "partials/_vars.scss";
-@import "partials/_mixins.scss";
+@import "partials/vars";
+@import "partials/mixins";
 
 // PARTIALS WITH CSS CODE
 // base
-@import "partials/_reset.scss";
-@import "partials/_default.scss";
-@import "partials/_extends.scss";
+@import "partials/reset";
+@import "partials/default";
+@import "partials/extends";
 
 // content
 @import "partials/syntax-highlight";
