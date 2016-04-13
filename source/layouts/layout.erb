@@ -238,9 +238,12 @@
                     </span>
                   </span>
 
-                  <span class="local-header local-search"><a class="search-icon" id="local-header-search" data-behavior="Search">
-                    &nbsp;Search PCF <%= product_info.latest_stable_version %>
-                  </a>
+                  <span class="local-header local-search">
+                    <% if page_classes.match(/^pivotalcf /) %>
+                      <gcse:searchbox as_sitesearch="docs.pivotal.io/pivotalcf"></gcse:searchbox>
+                    <% else %>
+                      <gcse:searchbox placeholder="something"></gcse:searchbox>
+                    <% end %>
                   </span>
                 </div>
                 <div class="local-header local-header-links">
