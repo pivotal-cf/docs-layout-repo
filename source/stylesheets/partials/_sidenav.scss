@@ -204,6 +204,11 @@ category: basics
   padding-top: 2em;
   @include transition(all 0.1s linear);
 }
+
+.menu-subtitle-bold {
+  font-weight: 600;
+}
+
 .menu-title {
   font-size: 1em;
   font-style: normal;
