@@ -211,7 +211,9 @@
 
     <div class="container">
 
+      <!--googleoff: index-->
       <%= yield_for_subnav %>
+      <!--googleon: index-->
 
       <main class="content content-layout" id="js-content" role="main">
         <a id="top"></a>
@@ -219,7 +221,7 @@
             <% if product_info.use_local_header %>
               <div class="local-header title-container">
                 <div class="local-header version-info">
-                  LATEST STABLE VERSION: <%= product_info.latest_stable_version %> - <a href="<%= product_info.changelog_href %>">CHANGELOG</a>
+                  LATEST VERSION: <%= product_info.latest_stable_version %> - <a href="<%= product_info.changelog_href %>">CHANGELOG</a>
                 </div>
                 <div class="local-header local-title clearfix">
                   <img src="<%= product_info.local_header_img %>">
@@ -239,7 +241,11 @@
                   </span>
 
                   <span class="local-header local-search">
-                    <gcse:searchbox placeholder="something"></gcse:searchbox>
+                    <% if page_classes.match(/^pivotalcf /) %>
+                      <gcse:searchbox as_sitesearch="docs.pivotal.io/pivotalcf"></gcse:searchbox>
+                    <% else %>
+                      <gcse:searchbox placeholder="something"></gcse:searchbox>
+                    <% end %>
                   </span>
                 </div>
                 <div class="local-header local-header-links">
@@ -248,6 +254,9 @@
                   <% end %>
                 </div>
               </div>
+            <h1 class="title-container">
+              <%= current_page.data.title %>
+            </h1>
           <% else %>
             <h1 class="title-container">
               <%= current_page.data.title %>
