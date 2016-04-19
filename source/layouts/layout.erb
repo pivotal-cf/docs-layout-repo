@@ -239,7 +239,11 @@
                   </span>
 
                   <span class="local-header local-search">
-                    <% if page_classes.match(/^pivotalcf /) %>
+                    <% if defined?(elastic_search?) && elastic_search? %>
+                      <form method="get" action="/search">
+                        <input name="q" placeholder="Search Pivotal CF" />
+                      </form>
+                    <% elsif page_classes.match(/^pivotalcf /) %>
                       <gcse:searchbox as_sitesearch="docs.pivotal.io/pivotalcf"></gcse:searchbox>
                     <% else %>
                       <gcse:searchbox placeholder="something"></gcse:searchbox>
@@ -269,7 +273,9 @@
         <div class="to-top" id="js-to-top">
           <a href="#top" title="back to top"></a>
         </div>
-        <gcse:searchresults></gcse:searchresults>
+        <% unless defined?(elastic_search?) && elastic_search? %>
+          <gcse:searchresults></gcse:searchresults>
+        <% end %>
         <%= yield %>
         <%= render_repo_link(include_environments: ['staging', 'acceptance', 'cloudfoundry', 'localhost']) %>
       </main><!--end of content-->
