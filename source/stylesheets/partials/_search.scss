@@ -1,9 +1,20 @@
 .search-results {
-  list-style: none;
-  padding-left: 20px;
-  margin-top: 20px;
+  .search-results-list {
+    list-style: none;
+    padding-left: 20px;
+    margin-top: 20px;
 
-  li {
-    margin: 30px 0;
+    li {
+      margin: 30px 0;
+    }
+  }
+
+  .no-results {
+    text-align: center;
+    padding: 50px 0;
+    border-bottom: 2px solid #F4F4F4;
+    font-size: 20px;
+    color: #66747B;
+    font-weight: bold;
   }
 }
