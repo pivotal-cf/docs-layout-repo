@@ -240,8 +240,8 @@
 
                   <span class="local-header local-search">
                     <% if defined?(elastic_search?) && elastic_search? %>
-                      <form method="get" action="/search">
-                        <input name="q" placeholder="Search Pivotal CF" />
+                      <form class="local-header-search-form" method="get" action="/search">
+                        <input class="local-header-search-input" name="q" placeholder="Search" />
                       </form>
                     <% elsif page_classes.match(/^pivotalcf /) %>
                       <gcse:searchbox as_sitesearch="docs.pivotal.io/pivotalcf"></gcse:searchbox>
