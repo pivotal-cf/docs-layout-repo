@@ -61,7 +61,7 @@
   </script>
 </head>
 
-<body class="<%= page_classes %> <%= yield_for_subnav.empty? ? '' : 'has-subnav' %>">
+<body class="<%= body_classes %> <%= yield_for_subnav.empty? ? '' : 'has-subnav' %>">
 
 <div class="viewport">
   <div class='wrap'>
@@ -120,7 +120,7 @@
           </h1>
           <%= yield_for_archive_drop_down_menu %>
           <%# @TODO: Replace with dynamic versioning %>
-          <% if page_classes.match(/^pivotalcf /) %>
+          <% if body_classes.match(/^pivotalcf /) %>
             <div class="header-dropdown">
               <a class="header-dropdown-link">
                 v1.6.0.0
@@ -137,7 +137,7 @@
               </div>
             </div>
           <% end %>
-          <% if page_classes.match(/^p-mysql /) %>
+          <% if body_classes.match(/^p-mysql /) %>
             <div class="header-dropdown">
               <a class="header-dropdown-link">
                 v1.7
@@ -152,7 +152,7 @@
               </div>
             </div>
           <% end %>
-          <% if page_classes.match(/^pivotalhd-ds /) %>
+          <% if body_classes.match(/^pivotalhd-ds /) %>
             <div class="header-dropdown">
               <a class="header-dropdown-link">
                 v1.3.2.0
@@ -165,7 +165,7 @@
               </div>
             </div>
           <% end %>
-          <% if page_classes.match(/^spring-cloud-services /) %>
+          <% if body_classes.match(/^spring-cloud-services /) %>
             <div class="header-dropdown">
               <a class="header-dropdown-link">
                 v1.0.0
@@ -241,7 +241,7 @@
                   </span>
 
                   <span class="local-header local-search">
-                    <% if page_classes.match(/^pivotalcf /) %>
+                    <% if body_classes.match(/^pivotalcf /) %>
                       <gcse:searchbox as_sitesearch="docs.pivotal.io/pivotalcf"></gcse:searchbox>
                     <% else %>
                       <gcse:searchbox placeholder="something"></gcse:searchbox>
