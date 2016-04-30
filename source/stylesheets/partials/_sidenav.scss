@@ -229,6 +229,8 @@ category: basics
 // navigation menu
 .nav-content .menu {
   margin-top: 0;
+  margin-bottom: 100vh;
+  margin-bottom: calc(100vh - 165px);
 }
 .js-sidenav select {
   display: none;

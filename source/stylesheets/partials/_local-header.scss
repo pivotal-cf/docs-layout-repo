@@ -130,4 +130,24 @@
   .gsc-search-button, .gsc-clear-button {
     display: none;
   }
+
+  input.local-header-search-input {
+    border-radius: 50px;
+    font-size: 16px;
+  }
+
+  .local-header-search-form {
+    position: relative;
+
+    &:before {
+      font-family: FontAwesome;
+      content: "";
+      display: block;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      font-size: 16px;
+      color: #969696;
+    }
+  }
 }

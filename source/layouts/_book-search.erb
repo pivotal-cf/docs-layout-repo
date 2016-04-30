@@ -3,9 +3,14 @@
 <div class="header-item searchbar js-searchbar">
   <a class="search-icon" data-behavior="Search"></a>
   <div class="search-input">
-    <!-- Google CSE Search Box -->
     <div class="search-input-inner" id="docs-search">
-      <gcse:searchbox></gcse:searchbox>
+      <% if defined?(elastic_search?) && elastic_search? %>
+        <form method="get" action="/search">
+          <input name="q" placeholder="search" class="search-box" />
+        </form>
+      <% else %>
+        <gcse:searchbox></gcse:searchbox>
+      <% end %>
     </div>
   </div>
 </div>
