@@ -61,7 +61,7 @@
   </script>
 </head>
 
-<body class="<%= page_classes %> <%= yield_for_subnav.empty? ? '' : 'has-subnav' %>">
+<body class="<%= defined?(body_classes) ? body_classes : page_classes %> <%= yield_for_subnav.empty? ? '' : 'has-subnav' %>">
 
 <div class="viewport">
   <div class='wrap'>
@@ -120,7 +120,8 @@
           </h1>
           <%= yield_for_archive_drop_down_menu %>
           <%# @TODO: Replace with dynamic versioning %>
-          <% if page_classes.match(/^pivotalcf /) %>
+          <% case defined?(body_classes) ? body_classes : page_classes %>
+          <% when /^pivotalcf / %>
             <div class="header-dropdown">
               <a class="header-dropdown-link">
                 v1.7.0.0
@@ -136,8 +137,7 @@
                 </ul>
               </div>
             </div>
-          <% end %>
-          <% if page_classes.match(/^p-mysql /) %>
+          <% when /^p-mysql / %>
             <div class="header-dropdown">
               <a class="header-dropdown-link">
                 v1.7
@@ -151,8 +151,7 @@
                 </ul>
               </div>
             </div>
-          <% end %>
-          <% if page_classes.match(/^pivotalhd-ds /) %>
+          <% when /^pivotalhd-ds / %>
             <div class="header-dropdown">
               <a class="header-dropdown-link">
                 v1.3.2.0
@@ -164,8 +163,7 @@
                 </ul>
               </div>
             </div>
-          <% end %>
-          <% if page_classes.match(/^spring-cloud-services /) %>
+          <% when /^spring-cloud-services / %>
             <div class="header-dropdown">
               <a class="header-dropdown-link">
                 v1.0.0
@@ -211,7 +209,9 @@
 
     <div class="container">
 
+      <!--googleoff: index-->
       <%= yield_for_subnav %>
+      <!--googleon: index-->
 
       <main class="content content-layout" id="js-content" role="main">
         <a id="top"></a>
@@ -243,7 +243,7 @@
                       <form class="local-header-search-form" method="get" action="/search">
                         <input class="local-header-search-input" name="q" placeholder="Search" />
                       </form>
-                    <% elsif page_classes.match(/^pivotalcf /) %>
+                    <% elsif (defined?(body_classes) ? body_classes : page_classes).match(/^pivotalcf /) %>
                       <gcse:searchbox as_sitesearch="docs.pivotal.io/pivotalcf"></gcse:searchbox>
                     <% else %>
                       <gcse:searchbox placeholder="something"></gcse:searchbox>
