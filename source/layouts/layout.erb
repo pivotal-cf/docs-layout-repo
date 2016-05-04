@@ -110,7 +110,11 @@
         </div>
       </header>
       <% if !current_page.data.title %>
-        <div class="global-header-spacer"></div>
+        <header class="header-home-global">
+          <h2 class="title-intro">
+            <%= vars.hero_text %>
+          </h2>
+        </header>
       <% end %>
     <% else %>
       <% if current_page.data.title %> <%# this is a proxy for if !homepage %>

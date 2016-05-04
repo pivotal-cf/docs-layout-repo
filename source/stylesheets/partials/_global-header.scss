@@ -2,6 +2,10 @@
  * FILE: _global-header.scss
 ======================================================================== */
 
+header.global-header {
+  background-color: #232B2F;
+}
+
 .global-header.pivotal-logo {
   background-image: url(/images/icon-p-green.jpg);
   background-repeat: no-repeat;
@@ -43,13 +47,17 @@
   border: none;
 }
 
-.global-header-spacer {
-  height: 105px;
-}
-
 .global-header.nav-container {
   @media (min-width: $bp-wide) {
     top: 80px;
   }
 }
 
+
+.header-home-global {
+  background: $color-bg-header;
+  color: #fff;
+  padding: 2em 1.5em;
+  text-align: center;
+  margin-top: 64px;
+}
