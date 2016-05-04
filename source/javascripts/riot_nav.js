@@ -64,8 +64,7 @@
 
 	  var jsonLocation = $(rootElement).data("props-location");
 
-	  var rootUrl = window.location.host;
-	  var url = "http://" + rootUrl + "/subnavs/" + jsonLocation;
+	  var url = "/subnavs/" + jsonLocation;
 
 	  navGenerator.generate_from(url, rootElement);
 	});
