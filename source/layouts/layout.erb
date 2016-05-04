@@ -91,7 +91,7 @@
       })();
     </script>
 
-    <% if vars.use_global_header %>
+    <% if vars.use_global_header && current_page.data.owner != "Identity Service" && current_page.data.owner != "MySQL" && current_page.data.owner != "Pivotal HD" &&  current_page.data.owner != "Spring Cloud Services" %>
       <header class="global-header header header-layout">
         <a class="global-header pivotal-logo" href="/">
         </a>
