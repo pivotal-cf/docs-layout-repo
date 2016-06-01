@@ -1,3 +1,6 @@
+@import "vendor/bourbon/bourbon";
+@import "vendor/neat/neat";
+
 /*
  * FILE: _vars.scss
 ======================================================================== */
@@ -95,6 +98,7 @@ $color-border: $gray4;
 $color-border-light: $gray4;
 $color-border-superlight: $gray4;
 $color-border-dark: $gray3;
+$color-border-tip: $blue2;
 
 // background-colors
 $color-bg: $gray5;
