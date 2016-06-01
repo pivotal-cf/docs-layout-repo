@@ -3,4 +3,4 @@
 //= require 'vendor/mermaid'
 //= require 'src/documentation'
 //= require 'page_initializers/documentation'
-//= require 'sidenav'
+//= require 'riot_nav'

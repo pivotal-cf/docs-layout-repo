@@ -2,6 +2,9 @@
  * FILE: _reset.scss
 ========================================================================== */
 
+// Correct `block` display not defined for any HTML5 element in IE 8/9.
+@include reset-html5();
+
 //! normalize.css v3.0.0 | MIT License | git.io/normalize
 
 // 1. Set default font family to sans-serif.
