@@ -56,22 +56,6 @@ CFDocs.Search = function(element) {
     });
 };
 
-// Show and hide main navigation mobile menu
-CFDocs.MenuMobile = function(element) {
-    var $el = $(element);
-    $el.click(function() {
-        $('.js-bar-links').toggleClass('menu-active');
-    });
-};
-
-// Show and hide side navigation mobile menu
-CFDocs.SubMenuMobile = function(element) {
-    var $el = $(element);
-    $el.click(function() {
-        $('.js-sidenav').toggleClass('active');
-    });
-};
-
 // Submit feedback form
 CFDocs.SubmitFeedback = function(element) {
     var $el = $(element);
@@ -91,16 +75,4 @@ CFDocs.SubmitFeedback = function(element) {
             $('#feedback').empty().append("<hr>Feedback submission failed. Please try again.<hr>");
         });
     });
-};
-
-CFDocs.DisplayModifiedDate = function(element) {
-  var $el = $(element);
-
-  var lastModifiedDate = new Date.parse($el.data().modifiedDate.replace(" UTC", ""));
-
-  var month = lastModifiedDate.toString('MMMM');
-  var day = lastModifiedDate.getDate();
-  var year = lastModifiedDate.getFullYear();
-
-  $el.text(month + " " + day + ", " + year);
 };

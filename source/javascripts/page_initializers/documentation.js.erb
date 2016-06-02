@@ -43,6 +43,7 @@ $(function () {
 
 });
 
+<% if !defined?(elastic_search?) || !elastic_search? %>
 //Global Google Search
 (function() {
     var gcse = document.createElement('script');
@@ -53,6 +54,7 @@ $(function () {
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(gcse, s);
 })();
+<% end %>
 
 $(function () {
   window.addEventListener("orientationchange", function() {
