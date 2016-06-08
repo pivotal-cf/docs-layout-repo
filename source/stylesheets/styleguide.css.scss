@@ -1,8 +1,4 @@
-@import "compass";
-
-// HELPERS
-@import "vendor/bourbon/_bourbon.scss";
-@import "vendor/neat/_neat.scss";
+@import "compass/utilities/color/contrast";
 
 // CUSTOM HELPER PARTIALS
 @import "partials/_vars.scss";

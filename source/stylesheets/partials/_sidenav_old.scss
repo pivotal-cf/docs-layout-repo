@@ -161,7 +161,7 @@ Add <code>.nav-container</code> to get fixed positioning.
   padding-top: 0.5em;
 }
 .collapsible .menu-title {
-  @extend %h-normal;
+  font-size: $font-size-xs;
   border-top: 1px solid $color-border;
   display: block;
   padding-bottom: 0.5em;
@@ -251,8 +251,8 @@ Add <code>.nav-container</code> to get fixed positioning.
   padding-left: 1em;
 }
 .deepnav-content .hasSubMenuClosed {
-  @extend .fa-angle-right;
   &:before {
+    content: $fa-var-angle-right;
     @extend .fa;
     float: left;
     width: 1rem;
@@ -271,7 +271,9 @@ Add <code>.nav-container</code> to get fixed positioning.
   padding-left: 1em;
 }
 .deepnav-content .hasSubMenuOpened {
-  @extend .fa-angle-down;
+  &:before {
+    content: $fa-var-angle-down;
+  }
 }
 .deepnav-content a {
   overflow-wrap: break-word;

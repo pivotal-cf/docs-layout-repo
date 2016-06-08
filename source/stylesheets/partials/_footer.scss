@@ -2,7 +2,7 @@
  * FILE: _footer.scss
 ======================================================================== */
 .site-footer-links {
-  @extend %h-xs;
+  font-size: $font-size-xs;
   clear: both;
   padding: 1em 30px 4em 30px;
   a {

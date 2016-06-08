@@ -1,6 +1,4 @@
-@import "compass";
-@import "extends";
-
+@import "compass/utilities/color/contrast";
 /*
  * FILE: _header.scss
 ======================================================================== */
@@ -116,7 +114,7 @@ Add <code>.header-layout</code> to header tag to get fixed positioning.
   display: none;
   font-weight: bold;
   @include transition (opacity);
-  @extend %h-xs;
+  font-size: $font-size-xs;
   line-height: 1;
   @media (min-width: $bp-wide) {
     clear: none;
