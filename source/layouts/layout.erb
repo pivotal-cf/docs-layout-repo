@@ -21,6 +21,21 @@
   <link href='/images/favicon.ico' rel='shortcut icon'>
   <%= javascript_include_tag "all" %>
 
+  <% if !defined?(elastic_search?) || !elastic_search? %>
+  <script>
+  //Global Google Search
+  (function() {
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+          '//www.google.com/cse/cse.js?cx=' + '<%= vars.cse_id %>';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+  })();
+  </script>
+  <% end %>
+
   <script type="text/javascript">
     if (window.location.host === '<%= production_host %>') {
       var _gaq = _gaq || [];
