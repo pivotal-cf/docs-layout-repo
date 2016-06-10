@@ -1,11 +1,14 @@
-@import "base";
+@import "partials/mixins";
 
 // content
 @import "partials/3rdparty";
 @import "partials/global-header";
 @import "partials/local-header";
-@import "partials/sidenav_old";
 @import "partials/fix-search-tables";
+
+* {
+  box-sizing: border-box;
+}
 
 // ~BREADCRUMB
 // ===================================================
