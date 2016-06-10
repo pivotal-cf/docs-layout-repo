@@ -1,20 +1,27 @@
 # docs-layout-repo
 
-The centralized layout repository for Pivotal and Cloud Foundry documentation, for use with [Bookbinder](https://github.com/pivotal-cf/bookbinder).
+This is the centralized layout repository for Pivotal and Cloud Foundry documentation, for use with [Bookbinder](https://github.com/pivotal-cf/bookbinder).
 
-To use this layout repo, include the following in your book's `config.yml`:
+This repository is intended to contain layouts, formatting, and styles used across all (or most) documentation sets.  
+
+**Note**: Content specific to a book should be stored in the book, and not in this repo. For example, all subnav templates for the documentation set published by the docs-book-pcfservices book should be stored in the docs-book-pcfservices repository.
+
+To include this centralized layout repository in your book, add the following line to your book's config.yml:
+
 ```
 layout_repo: pivotal-cf/docs-layout-repo
 ```
+
+Note: You must clone this repo in order to bind locally.
+
+Upon running bind or watch, all files from the layout repo will be used in the bound book. 
 
 ### Overview
 
 All book-specific overrides should be done in the following files in your book's `master_middleman/source` directory, according to the type of changes you would like to make.
 
-Upon running `bind` or `watch`, all files from the layout repo will be used in the bound book. Any files of the same name held in your book's `master_middleman/source` will override files of the same name provided by this repo.
+Upon running `bind` or `watch`, all files from the layout repo will be used in the bound book.
 
-**Note:**
-You must clone this repo in order to bind locally.
 
 ### Styles
 Overrides are held in two files:
@@ -32,7 +39,6 @@ Overrides are held in two files:
 	```
 	$navy: #333333;
 	```
-	
 
 * `stylesheets/partials/_book-vars.scss`
 	
@@ -56,7 +62,7 @@ If any additional libraries are to be added to the book (e.g. `my-javascript-fil
 
 ### Layout
 
-As of now, the books all use the layout repo's layout `layouts/layout.erb`. They define partials and template variables to change the layout contents where needed. 
+The Pivotal and Cloud Foundry books all use the layout repo's layout `layouts/layout.erb`. They define partials and template variables to change the layout contents where needed. 
 
 The following items are defined by books, and used by `layouts/layout.erb`:
 
