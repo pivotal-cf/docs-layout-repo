@@ -369,3 +369,41 @@ category: basics
   display: block;
   margin: 0;
 }
+
+.embedded-searchbar {
+  margin-right: 0.5em;
+
+  .gsc-search-box {
+    padding: 0;
+    margin: 0;
+
+    table {
+      margin: 0;
+      padding: 0;
+
+      td {
+        margin: 0 2px;
+
+        &.gsc-clear-button {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $bp-wide) {
+    margin-top: -3px;
+    width: 30%;
+    max-width: 250px;
+    position: relative;
+
+    .gsc-search-box {
+      position: absolute;
+      top: -11px;
+    }
+
+    input {
+      padding: 0.25em 0.5em;
+    }
+  }
+}

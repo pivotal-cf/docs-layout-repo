@@ -13,7 +13,15 @@
       <div class="global-header header-item">
         <%= vars.support_link %>
       </div>
-      <%= partial 'layouts/book-search' %>
+      <div class="global-header header-item embedded-searchbar">
+        <% if elastic_search? %>
+          <form method="get" action="/search">
+            <input name="q" placeholder="search" class="search-box" />
+          </form>
+        <% else %>
+          <gcse:searchbox></gcse:searchbox>
+        <% end %>
+      </div>
     </div>
   </header>
   <% if !current_page.data.title %>
