@@ -1,19 +1,19 @@
 <% if vars.use_global_header && current_page.data.owner != "Identity Service" && current_page.data.owner != "MySQL" && current_page.data.owner != "Pivotal HD" &&  current_page.data.owner != "Spring Cloud Services" %>
-  <header class="global-header header header-layout">
-    <a class="global-header pivotal-logo" href="/">
+  <header class="global-header header header-layout js-bar-links">
+    <a class="pivotal-logo" href="/">
     </a>
-    <a href="/" class="global-header header-item global-header-title">
+    <a href="/" class="global-header-title">
       <%= vars.title %>
     </a>
-    <div class="global-header header-links js-bar-links">
-      <!--<div class="global-header header-item" data-behavior="MenuMobile"></div>-->
-      <div class="global-header header-item">
+    <div class="btn-menu" data-behavior="MenuMobile"></div>
+    <div class="header-links">
+      <div class="header-item">
         <a href="<%= vars.global_header_product_href %>"><%= vars.global_header_product_link_text %></a>
       </div>
-      <div class="global-header header-item">
+      <div class="header-item">
         <%= vars.support_link %>
       </div>
-      <div class="global-header header-item embedded-searchbar">
+      <div class="header-item embedded-searchbar">
         <% if elastic_search? %>
           <form method="get" action="/search">
             <input name="q" placeholder="search" class="search-box" />
