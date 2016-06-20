@@ -4,26 +4,6 @@ $(document).ready(function() {
 });
 
 
-// Repo link conditional display
-$(function(){
-
-  var repoLink = $('#repo-link');
-
-  // Only execute conditional logic if repo link enabled
-  if (repoLink.length != 0) {
-    var whiteList = repoLink[0].dataset.whitelist.split(" ");
-    var display = 'none';
-
-    whiteList.forEach(function(whiteListedEnv){
-      if (document.URL.indexOf(whiteListedEnv) > -1 && whiteListedEnv != "") {
-        display = 'block';
-      }
-    });
-
-    repoLink.css("display", display);
-  };
-});
-
 $(function () {
 
 	if (document.location.pathname.indexOf('/pivotalax/') > -1 ||
