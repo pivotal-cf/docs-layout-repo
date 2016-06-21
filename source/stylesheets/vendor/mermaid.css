@@ -2,32 +2,34 @@
 /* Sequence Diagram variables */
 /* Gantt chart variables */
 .mermaid .label {
-  font-family: 'trebuchet ms', verdana, arial;
-  color: #333333;
+  color: #333;
 }
 .node rect,
 .node circle,
+.node ellipse,
 .node polygon {
-  fill: #cde498;
-  stroke: #13540c;
+  fill: #ECECFF;
+  stroke: #CCCCFF;
   stroke-width: 1px;
 }
 .edgePath .path {
-  stroke: green;
-  stroke-width: 1.5px;
+  stroke: #333333;
+}
+.edgeLabel {
+  background-color: #e8e8e8;
 }
 .cluster rect {
-  fill: #cdffb2 !important;
-  rx: 4  !important;
-  stroke: #6eaa49 !important;
+  fill: #ffffde !important;
+  rx: 4 !important;
+  stroke: #aaaa33 !important;
   stroke-width: 1px !important;
 }
 .cluster text {
-  fill: #333333;
+  fill: #333;
 }
 .actor {
-  stroke: #13540c;
-  fill: #cde498;
+  stroke: #CCCCFF;
+  fill: #ECECFF;
 }
 text.actor {
   fill: black;
@@ -40,27 +42,27 @@ text.actor {
   stroke-width: 1.5;
   stroke-dasharray: "2 2";
   marker-end: "url(#arrowhead)";
-  stroke: #333333;
+  stroke: #333;
 }
 .messageLine1 {
   stroke-width: 1.5;
   stroke-dasharray: "2 2";
-  stroke: #333333;
+  stroke: #333;
 }
 #arrowhead {
-  fill: #333333;
+  fill: #333;
 }
 #crosshead path {
-  fill: #333333 !important;
-  stroke: #333333 !important;
+  fill: #333 !important;
+  stroke: #333 !important;
 }
 .messageText {
-  fill: #333333;
+  fill: #333;
   stroke: none;
 }
 .labelBox {
-  stroke: #326932;
-  fill: #cde498;
+  stroke: #CCCCFF;
+  fill: #ECECFF;
 }
 .labelText {
   fill: black;
@@ -74,10 +76,10 @@ text.actor {
   stroke-width: 2;
   stroke-dasharray: "2 2";
   marker-end: "url(#arrowhead)";
-  stroke: #326932;
+  stroke: #CCCCFF;
 }
 .note {
-  stroke: #6eaa49;
+  stroke: #aaaa33;
   fill: #fff5ad;
 }
 .noteText {
@@ -92,10 +94,10 @@ text.actor {
   opacity: 0.2;
 }
 .section0 {
-  fill: #6eaa49;
+  fill: rgba(102, 102, 255, 0.49);
 }
 .section2 {
-  fill: #6eaa49;
+  fill: #fff400;
 }
 .section1,
 .section3 {
@@ -103,16 +105,16 @@ text.actor {
   opacity: 0.2;
 }
 .sectionTitle0 {
-  fill: #333333;
+  fill: #333;
 }
 .sectionTitle1 {
-  fill: #333333;
+  fill: #333;
 }
 .sectionTitle2 {
-  fill: #333333;
+  fill: #333;
 }
 .sectionTitle3 {
-  fill: #333333;
+  fill: #333;
 }
 .sectionTitle {
   text-anchor: start;
@@ -164,8 +166,8 @@ text.actor {
 .task1,
 .task2,
 .task3 {
-  fill: #487e3a;
-  stroke: #13540c;
+  fill: #8a90dd;
+  stroke: #534fbc;
 }
 .taskTextOutside0,
 .taskTextOutside2 {
@@ -180,8 +182,8 @@ text.actor {
 .active1,
 .active2,
 .active3 {
-  fill: #cde498;
-  stroke: #13540c;
+  fill: #bfc7ff;
+  stroke: #534fbc;
 }
 .activeText0,
 .activeText1,
@@ -218,7 +220,7 @@ text.actor {
 .activeCrit2,
 .activeCrit3 {
   stroke: #ff8888;
-  fill: #cde498;
+  fill: #bfc7ff;
   stroke-width: 2;
 }
 .doneCrit0,
@@ -252,7 +254,7 @@ text.actor {
 
 
 */
-text {
+.node text {
   font-family: 'trebuchet ms', verdana, arial;
   font-size: 14px;
 }
@@ -263,8 +265,8 @@ div.mermaidTooltip {
   padding: 2px;
   font-family: 'trebuchet ms', verdana, arial;
   font-size: 12px;
-  background: #cdffb2;
-  border: 1px solid #6eaa49;
+  background: #ffffde;
+  border: 1px solid #aaaa33;
   border-radius: 2px;
   pointer-events: none;
   z-index: 100;
