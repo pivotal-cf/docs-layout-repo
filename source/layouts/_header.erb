@@ -56,6 +56,31 @@
             </ul>
           </div>
         </div>
+      <% when /^pcf-metrics / %>
+        <div class="header-dropdown">
+          <a class="header-dropdown-link">
+            v1.7
+          </a>
+
+          <div class="header-dropdown-content">
+            <ul>
+              <li><a href="/edge/pcf-metrics/">Edge</a></li>
+            </ul>
+          </div>
+        </div>
+      <% when /^edge\/pcf-metrics / %>
+        <div class="header-dropdown">
+          <a class="header-dropdown-link">
+            Edge
+          </a>
+
+          <div class="header-dropdown-content">
+            <ul>
+              <li><a href="/pcf-metrics/">v1.7</a></li>
+            </ul>
+          </div>
+        </div>
+
       <% when /^p-mysql / %>
         <div class="header-dropdown">
           <a class="header-dropdown-link">
@@ -71,7 +96,7 @@
             </ul>
           </div>
         </div>
-      <% when /^edge / %>
+      <% when /^edge\/p-mysql / %>
         <div class="header-dropdown">
           <a class="header-dropdown-link">
             v1.8
