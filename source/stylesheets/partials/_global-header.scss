@@ -1,63 +1,82 @@
+@import "partials/vars";
+
 /*
  * FILE: _global-header.scss
-======================================================================== */
+ ======================================================================== */
 
 header.global-header {
   background-color: #232B2F;
-}
-
-.global-header.pivotal-logo {
-  background-image: url(/images/icon-p-green.jpg);
-  background-repeat: no-repeat;
-  background-position: center left;
-  background-size: 100%;
-  height: 64px;
-  width: 64px;
-}
-
-.global-header.header-item.global-header-title {
-  vertical-align: top;
-  padding-top: 22px;
-  padding-left: 10px;
-}
-
-.global-header.header.header-layout {
+  line-height: 64px;
   padding: 0;
-  height: 64px;
   border: none;
-}
 
-.global-header.header-item {
-  font-size: 18px;
-  padding: 0;
-}
+  > a, .header-item {
+    font-size: 18px;
+    vertical-align: top;
+  }
 
-.global-header.header-item:after {
-  content: "";
-}
+  .pivotal-logo {
+    background-image: url(/images/icon-p-green.jpg);
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-size: 100%;
+    height: 64px;
+    width: 64px;
+  }
 
-.global-header.header-links {
-  padding-top: 18px;
+  .global-header-title {
+    padding-left: 10px;
+    font-weight: bold;
+  }
+
+  .header-item {
+    padding: 0;
+    padding-left: 10px;
+
+    @media(min-width: $bp-wide) {
+      padding-left: 0;
+      line-height: 64px;
+    }
+  }
+
+  .header-item:after {
+    content: "";
+  }
+
+  .header-links {
+    a {
+      font-weight: normal;
+    }
+  }
+
   a {
-    font-weight: normal;
+    border: none;
   }
-}
 
-.global-header a {
-  border: none;
-}
-
-.global-header.nav-container {
-  @media (min-width: $bp-wide) {
-    top: 40px;
+  .nav-container {
+    @media (min-width: $bp-wide) {
+      top: 40px;
+    }
   }
-}
 
+  .embedded-searchbar {
+    vertical-align: baseline;
+    margin-bottom: 5px;
 
-.header-home-global {
-  background: $color-bg-header;
-  color: #fff;
-  padding: 2em 1.5em;
-  text-align: center;
-  margin-top: 64px;
+    @media(min-width: $bp-wide) {
+      margin-bottom: 0;
+    }
+  }
+
+  .header-home-global {
+    background: $color-bg-header;
+    color: #fff;
+    padding: 2em 1.5em;
+    text-align: center;
+    margin-top: 64px;
+  }
+
+  .btn-menu:before {
+    font-size: $font-size-l;
+  }
 }

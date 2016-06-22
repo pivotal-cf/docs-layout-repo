@@ -1,19 +1,27 @@
 <% if vars.use_global_header && current_page.data.owner != "Identity Service" && current_page.data.owner != "MySQL" && current_page.data.owner != "Pivotal HD" &&  current_page.data.owner != "Spring Cloud Services" %>
-  <header class="global-header header header-layout">
-    <a class="global-header pivotal-logo" href="/">
+  <header class="global-header header header-layout js-bar-links">
+    <a class="pivotal-logo" href="/">
     </a>
-    <a href="/" class="global-header header-item global-header-title">
+    <a href="/" class="global-header-title">
       <%= vars.title %>
     </a>
-    <div class="global-header header-links js-bar-links">
-      <!--<div class="global-header header-item" data-behavior="MenuMobile"></div>-->
-      <div class="global-header header-item">
+    <div class="btn-menu" data-behavior="MenuMobile"></div>
+    <div class="header-links">
+      <div class="header-item">
         <a href="<%= vars.global_header_product_href %>"><%= vars.global_header_product_link_text %></a>
       </div>
-      <div class="global-header header-item">
+      <div class="header-item">
         <%= vars.support_link %>
       </div>
-      <%= partial 'layouts/book-search' %>
+      <div class="header-item embedded-searchbar">
+        <% if elastic_search? %>
+          <form method="get" action="/search">
+            <input name="q" placeholder="search" class="search-box" />
+          </form>
+        <% else %>
+          <gcse:searchbox></gcse:searchbox>
+        <% end %>
+      </div>
     </div>
   </header>
   <% if !current_page.data.title %>
@@ -48,6 +56,31 @@
             </ul>
           </div>
         </div>
+      <% when /^pcf-metrics / %>
+        <div class="header-dropdown">
+          <a class="header-dropdown-link">
+            v1.7
+          </a>
+
+          <div class="header-dropdown-content">
+            <ul>
+              <li><a href="/edge/pcf-metrics/">Edge</a></li>
+            </ul>
+          </div>
+        </div>
+      <% when /^pcf-metrics-edge / %>
+        <div class="header-dropdown">
+          <a class="header-dropdown-link">
+            Edge
+          </a>
+
+          <div class="header-dropdown-content">
+            <ul>
+              <li><a href="/pcf-metrics/">v1.7</a></li>
+            </ul>
+          </div>
+        </div>
+
       <% when /^p-mysql / %>
         <div class="header-dropdown">
           <a class="header-dropdown-link">
@@ -56,12 +89,29 @@
 
           <div class="header-dropdown-content">
             <ul>
+              <li><a href="/edge/p-mysql/">v1.8</a></li>
               <li><a href="/archives/p-mysql/mysql-docs-1.6.pdf">v1.6</a></li>
               <li><a href="/archives/p-mysql/mysql-docs-1.5.pdf">v1.5</a></li>
               <li><a href="/archives/p-mysql/mysql-docs-1.4.pdf">v1.4</a></li>
             </ul>
           </div>
         </div>
+      <% when /^edge / %>
+        <div class="header-dropdown">
+          <a class="header-dropdown-link">
+            v1.8
+          </a>
+
+          <div class="header-dropdown-content">
+            <ul>
+              <li><a href="/p-mysql/">v1.7</a></li>
+              <li><a href="/archives/p-mysql/mysql-docs-1.6.pdf">v1.6</a></li>
+              <li><a href="/archives/p-mysql/mysql-docs-1.5.pdf">v1.5</a></li>
+              <li><a href="/archives/p-mysql/mysql-docs-1.4.pdf">v1.4</a></li>
+            </ul>
+          </div>
+        </div>
+
       <% when /^p-identity / %>
         <div class="header-dropdown">
           <a class="header-dropdown-link">
