@@ -68,15 +68,16 @@ header.global-header {
     }
   }
 
-  .header-home-global {
-    background: $color-bg-header;
-    color: #fff;
-    padding: 2em 1.5em;
-    text-align: center;
-    margin-top: 64px;
-  }
-
   .btn-menu:before {
     font-size: $font-size-l;
   }
 }
+
+header.header-home-global {
+  background: $color-bg-header;
+  color: #fff;
+  padding: 2em 1.5em;
+  text-align: center;
+  margin-top: 64px;
+}
+

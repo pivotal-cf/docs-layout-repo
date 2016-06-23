@@ -10,43 +10,6 @@ $(function () {
         document.location.pathname.indexOf('/chorus/') > -1) {
 		document.location.href = "https://alpine.atlassian.net/wiki/display/DOC/Alpine+Overview";
 	}
-
-    // For main search
-    $('#click-to-search').click(function () {
-        $('#search-dropdown-box').show();
-        $('html,body').scrollTop(0);
-    });
-
-    $('.search-dropdown--container .close-menu-large').click(function() {
-        $('#search-dropdown-box').hide();
-    });
-
-});
-
-$(function () {
-  window.addEventListener("orientationchange", function() {
-    var deviceHeight = jQuery(window).height();
-    var openDrawer = jQuery(".js-open-nav-drawer.js-slide-right");
-    if (!openDrawer.length) {
-      return;
-    } else {
-      jQuery(".viewport").height(deviceHeight).addClass("constrained");
-    }
-  }, false);
-
-  $(".js-open-nav-drawer").click(function() {
-    $(".navigation-drawer--container").addClass("js-open");
-    $(".mobile-nav, .body--container, .homepage--body").addClass("js-slide-right");
-
-    var deviceHeight = jQuery(window).height();
-    $(".viewport").height(deviceHeight).addClass("constrained");
-    $("#scrim").addClass("js-show js-open-mobile-nav");
-    $("#scrim").click(function() {
-      $(".navigation-drawer--container").removeClass("js-open");
-      $(".mobile-nav, .body--container, .homepage--body").removeClass("js-slide-right");
-      $(".viewport").removeClass("constrained");
-    });
-  });
 });
 
 // NAVIGATION
@@ -64,31 +27,6 @@ $(function() {
             }
         }
     });
-
-    var currentUrl = window.location.pathname;
-
-    var strippedUrl = currentUrl.replace(/index\.html$/, '');
-    var $activeNavLink = $(".js-sidenav a[href='" + strippedUrl + "']");
-    if ($activeNavLink.length === 0) {
-      $activeNavLink = $(".js-sidenav a[href='" + strippedUrl + "index.html']");
-    }
-
-    var headerHeight = 45;
-
-    if ($activeNavLink.length) {
-        // Highlight side navigation link that matches current url path
-        $activeNavLink.attr('class', "active");
-        $activeParent = $activeNavLink.parents('.js-menu-item');
-
-        $activeParent.addClass('is-clicked');
-
-        $activeNavLink.parents('.js-menu-content').slideDown(function() {
-            // Scroll to active side navigation link
-            $('.js-sidenav').animate({
-            scrollTop: $activeNavLink.offset().top - (headerHeight * 2)
-            }, 100);
-        });
-    }
 
     // Show and hide back to top
     if(jQuery().waypoint) {
