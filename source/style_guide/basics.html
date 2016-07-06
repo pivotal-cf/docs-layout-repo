@@ -84,7 +84,7 @@
 <span class="nb">require</span> <span class="s1">'vsphere_clients'</span>
 
 <span class="no">OvaManager</span><span class="o">::</span><span class="no">Deployer</span><span class="p">.</span><span class="nf">new</span><span class="p">({</span>
-  <span class="ss">host: </span><span class="s2">"172.16.74.3"</span><span class="p">,</span>
+  <span class="ss">host: </span><span class="s2">"192.0.2.3"</span><span class="p">,</span>
   <span class="ss">user: </span><span class="s2">"root"</span><span class="p">,</span>
   <span class="ss">password: </span><span class="s2">"vmware"</span>
 <span class="p">})</span>
@@ -100,8 +100,8 @@
 <span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
 </pre></div></div></div>
 <h1 id="code_example-inline">Code Example - Inline</h1>
-<div class="codeExample"><div class="exampleOutput"><code>"mbus"=&gt;"nats://nats:nats@192.168.86.17:4222"</code>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;code&gt;</span>&quot;mbus&quot;=<span class="ni">&amp;gt;</span>&quot;nats://nats:nats@192.168.86.17:4222&quot;<span class="nt">&lt;/code&gt;</span>
+<div class="codeExample"><div class="exampleOutput"><code>"mbus"=&gt;"nats://nats:nats@192.0.2.17:4222"</code>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;code&gt;</span>&quot;mbus&quot;=<span class="ni">&amp;gt;</span>&quot;nats://nats:nats@192.0.2.17:4222&quot;<span class="nt">&lt;/code&gt;</span>
 </pre></div></div></div>
 <h1 id="code_example-terminal">Code Example - Terminal</h1>
 <div class="codeExample"><div class="exampleOutput"><pre class="terminal">$ keytool -import -alias ops-metrics-ssl -file ops-metrics.cer -keystore localhost.truststore</pre>
