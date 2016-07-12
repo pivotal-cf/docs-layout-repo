@@ -1,0 +1,248 @@
+<div id="sub-nav" class="js-sidenav nav-container" role="navigation">
+  <a class="sidenav-title" data-behavior="SubMenuMobile">
+    Doc Index
+  </a>
+  <div class="nav-content deepnav-content">
+    <ul>
+      <li>
+        <a id='home-nav-link' href="/on-demand-service-broker/index.html">On-demand Service Broker for Pivotal Cloud Foundry&reg;</a>
+      </li>
+
+      <li class="has_submenu">
+        <a href="/on-demand-service-broker/overview.html">Overview</a>
+        <ul>
+          <li>
+            <a href="/on-demand-service-broker/overview.html#what-is-a-cloud-foundry-service-broker">What is a Cloud Foundry service broker?</a>
+          </li>
+          <li>
+            <a href="/on-demand-service-broker/overview.html#what-is-an-on-demand-service-broker">What is an on-demand service broker?</a>
+          </li>
+          <li>
+            <a href="/on-demand-service-broker/overview.html#what-is-a-service-adapter">What is a service adapter</a>
+          </li>
+          <li>
+            <a href="/on-demand-service-broker/overview.html#why-provision-iaas-resources-on-demand">Why provision IAAS resources on-demand?</a>
+          </li>
+          <li>
+            <a href="/on-demand-service-broker/overview.html#why-use-odb-to-develop-on-demand-service-offerings">Why use ODB to develop on-demand service offerings?</a>
+          </li>
+          <li class="has_submenu">
+            <a href="/on-demand-service-broker/overview.html#prerequisites-for-deploying-brokers-that-use-odb">Prerequisites for deploying brokers that use ODB</a>
+            <ul>
+              <li>
+                <a href="/on-demand-service-broker/overview.html#bosh-v2-features-we-use">BOSH v2 Features we use</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/on-demand-service-broker/overview.html#steps-required-to-use-on-demand-service-broker">Steps required to use on-demand service broker</a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="/on-demand-service-broker/getting-started.html">Setting up a local environment</a>
+      </li>
+
+
+      <li class="has_submenu">
+        <a href="/on-demand-service-broker/creating.html">Creating a service adapter</a>
+        <ul>
+          <li>
+            <a href="/on-demand-service-broker/creating.html#what-is-required-of-the-service-authors">What is required of the Service Authors?</a>
+          </li>
+          <li>
+            <a href="/on-demand-service-broker/creating.html#creating-a-service-release">Creating a Service Release</a>
+          </li>
+          <li class="has_submenu">
+            <a href="/on-demand-service-broker/creating.html#creating-a-service-adapter">Creating a Service Adapter</a>
+
+            <ul>
+              <li>
+                <a href="/on-demand-service-broker/creating.html#handling-errors">Handling errors</a>
+              </li>
+            </ul>
+          </li>
+          <li class="has_submenu">
+            <a href="/on-demand-service-broker/creating.html#inputs-for-manifest-generation">Inputs for manifest generation</a>
+
+            <ul>
+              <li>
+                <a href="/on-demand-service-broker/creating.html#arbitrary-parameters">Arbitrary parameters</a>
+              </li>
+              <li>
+                <a href="/on-demand-service-broker/creating.html#previous-manifest-properties">Previous manifest properties</a>
+              </li>
+              <li>
+                <a href="/on-demand-service-broker/creating.html#service-plan-properties">Service plan properties</a>
+              </li>
+              <li>
+                <a href="/on-demand-service-broker/creating.html#order-of-precedence">Order of precedence</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/on-demand-service-broker/creating.html#service-adapter-interface">Service adapter interface</a>
+          </li>
+          <li class="has_submenu">
+            <a href="/on-demand-service-broker/creating.html#sub-commands">Subcommands</a>
+
+            <ul>
+              <li>
+                <a href="/on-demand-service-broker/creating.html#generate-manifest">generate-manifest</a>
+              </li>
+              <li>
+                <a href="/on-demand-service-broker/creating.html#dashboard-url">dashboard-url</a>
+              </li>
+              <li>
+                <a href="/on-demand-service-broker/creating.html#create-binding">create-binding</a>
+              </li>
+              <li>
+                <a href="/on-demand-service-broker/creating.html#delete-binding">delete-binding</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/on-demand-service-broker/creating.html#packaging">Packaging</a>
+          </li>
+          <li>
+            <a href="/on-demand-service-broker/creating.html#sdk">Golang SDK</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="has_submenu">
+        <a href="/on-demand-service-broker/operating.html">Operating the On-demand Service Broker</a>
+        <ul>
+          <li>
+            <a href="/on-demand-service-broker/operating.html#what-are-the-responsibilities-of-the-operator">What are the responsibilities of the Operator?</a>
+          </li>
+          <li class="has_submenu">
+            <a href="/on-demand-service-broker/operating.html#configure-bosh">Setting up your BOSH director</a>
+
+            <ul>
+              <li>
+                <a href="/on-demand-service-broker/operating.html#ssl-certificates">SSL certificates</a>
+              </li>
+              <li>
+                <a href="/on-demand-service-broker/operating.html#bosh-teams">BOSH teams</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/on-demand-service-broker/operating.html#upload-required-releases">Upload Required Releases</a>
+          </li>
+          <li class="has_submenu">
+            <a href="/on-demand-service-broker/operating.html#write-a-broker-manifest">Write a Broker Manifest</a>
+
+            <ul>
+              <li>
+                <a href="/on-demand-service-broker/operating.html#core-broker-configuration">Core Broker Configuration</a>
+              </li>
+              <li>
+                <a href="/on-demand-service-broker/operating.html#service-catalog-and-plan-composition">Service catalog and Plan composition</a>
+              </li>
+            </ul>
+          </li>
+          <li class="has_submenu">
+            <a href="/on-demand-service-broker/operating.html#broker-management">Broker Management</a>
+
+            <ul>
+                <li><span class="topic"><a href="/on-demand-service-broker/operating.html#register-broker">register-broker</a></span></li>
+                <li><span class="topic"><a href="/on-demand-service-broker/operating.html#deregister-broker">deregister-broker</a></span></li>
+                <li><span class="topic"><a href="/on-demand-service-broker/operating.html#administering-instances">Administering service instances</a></span></li>
+                <li><span class="topic"><a href="/on-demand-service-broker/operating.html#upgrading-the-broker">Upgrading the broker</a></span></li>
+                <li><span class="topic"><a href="/on-demand-service-broker/operating.html#upgrading-existing-service-instances">Upgrading existing service instances</a></span></li>
+                <li><span class="topic"><a href="/on-demand-service-broker/operating.html#deleting-all-service-instances">Deleting all service instances</a></span></li>
+                <li><span class="topic"><a href="/on-demand-service-broker/operating.html#updating-service-plans">Updating service plans</a></span></li>
+                <li><span class="topic"><a href="/on-demand-service-broker/operating.html#disabling-service-plans">Disabling service plans</a></span></li>
+                <li><span class="topic"><a href="/on-demand-service-broker/operating.html#removing-service-plans">Removing service plans</a></span></li>
+            </ul>
+          </li>
+          <li class="has_submenu">
+            <a href="/on-demand-service-broker/operating.html#security">Security</a>
+
+            <ul>
+              <li>
+                <a href="/on-demand-service-broker/operating.html#bosh-api-endpoints">BOSH API Endpoints</a>
+              </li>
+              <li>
+                <a href="/on-demand-service-broker/operating.html#bosh-uaa-permissions">BOSH UAA permissions</a>
+              </li>
+            </ul>
+          </li>
+          <li class="has_submenu">
+            <a href="/on-demand-service-broker/operating.html#troubleshooting">Troubleshooting</a>
+            <ul>
+              <li>
+                <a href="/on-demand-service-broker/operating.html#logs">Logs</a>
+              </li>
+              <li>
+                <a href="/on-demand-service-broker/operating.html#identifying-deployments">Identifying deployments in BOSH</a>
+              </li>
+              <li>
+                <a href="/on-demand-service-broker/operating.html#identifying-tasks">Identifying BOSH tasks</a>
+              </li>
+              <li>
+                <a href="/on-demand-service-broker/operating.html#identifying-bosh-uaa-issues">Identifying issues with connecting to BOSH and/or UAA</a>
+              </li>
+              <li>
+                <a href="/on-demand-service-broker/operating.html#listing-service-instances">Listing service instances</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+      <li class="has_submenu">
+        <a href="/on-demand-service-broker/tile.html">Creating a PCF OpsMan Tile</a>
+        <ul>
+          <li>
+            <a href="/on-demand-service-broker/tile.html#requirements">Requirements</a>
+          </li>
+          <li>
+            <a href="/on-demand-service-broker/tile.html#deploying">Deploying OpsMan to AWS</a>
+          </li>
+          <li>
+            <a href="/on-demand-service-broker/tile.html#building">Building a tile</a>
+          </li>
+          <li>
+            <a href="/on-demand-service-broker/tile.html#accessors">Non exhaustive Accessors Reference</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="has_submenu">
+        <a href="/on-demand-service-broker/concepts.html">On-demand Service Broker Concepts/Reference</a>
+        <ul>
+          <li>
+            <a href="/on-demand-service-broker/concepts.html#catalog">Catalog</a>
+          </li>
+          <li>
+            <a href="/on-demand-service-broker/concepts.html#create-service-instance">Create service instance</a>
+          </li>
+          <li>
+            <a href="/on-demand-service-broker/concepts.html#delete-service-instance">Delete service instance</a>
+          </li>
+          <li>
+            <a href="/on-demand-service-broker/concepts.html#update-service-instance">Update service instance</a>
+          </li>
+          <li>
+            <a href="/on-demand-service-broker/concepts.html#bind">Bind</a>
+          </li>
+          <li>
+            <a href="/on-demand-service-broker/concepts.html#unbind">Unbind</a>
+          </li>
+          <li>
+            <a href="/on-demand-service-broker/concepts.html#upgrade-all-instances">Upgrade all instances</a>
+          </li>
+          <li>
+            <a href="/on-demand-service-broker/concepts.html#delete-all-instances">Delete all instances</a>
+          </li>
+        </ul>
+      </li>
+
+
+    </ul>
+  </div>
+</div><!--end of sub-nav-->
