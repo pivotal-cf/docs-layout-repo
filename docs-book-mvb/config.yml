@@ -1,0 +1,11 @@
+---
+book_repo: pivotal-cf-experimental/docs-pcfservices-template/docs-book-mvb
+layout_repo: pivotal-cf/docs-layout-repo
+
+public_host: ''
+
+sections:
+- repository:
+    name: pivotal-cf-experimental/docs-pcfservices-template
+  directory: partners
+  subnav_template: _templates-subnav.erb

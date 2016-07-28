@@ -1,0 +1,98 @@
+---
+title: <short product name> # <---- For example "Non-Stop Party Service for PCF"
+owner: <your group name> # <---- For example "London Services"
+---
+
+<-- Introductory text: Provide a sentence or two to introduce and describe this documentation. 
+Make sure to use the full product name with trademarks the first time you mention the product in the text. -->
+
+This documentation describes the <product name> (Non-Stop Party Service for Pivotal Cloud Foundry&reg;). 
+<short product name> is a Pivotal Cloud Foundry service that provides a non-stop party for PCF components. Follow the procedures in this document to learn how to install, configure, use, and maintain <short product name>.
+
+## <a id='overview'></a>Overview
+
+Whereas the introductory text above describes the documentation, this second-level section describes the service itself.
+ 
+Begin the overview with one or two short paragraphs describing what the service does and why it is useful. The goal is to give readers who are unfamiliar with the service enough information to decide if it is something they want or need to use.
+
+Example, from partner services documentation:
+The Dynatrace Application Monitoring (AppMon) service enables in-depth monitoring of applications running on Pivotal Cloud Foundry (PCF). It uses an embedded agent bundled with applications that are deployed using Buildpacks. The service agent instruments the application by adding tracing and monitoring hooks to the code, then continuously sends the resulting data to AppMon account collectors. The AppMon account draws from this data to publish performance metrics and other details on the dashboards of the Dynatrace AppMon Client Application.
+
+If you need more than three or four paragraphs to explain and describe the service, put the additional information into an “About <short product name>” page (see below).
+
+## <a id='product-snapshot'></a>Product Snapshot
+
+This section lists the version, the release date, and versions of compatible components in the following format:
+
+Model:
+<dl>
+<dt>Details about versioning and compatible components for the <short product name>:</dt>
+<dd><strong>Version</strong>: v[version number]
+<dd><strong>Release date</strong>: [month] [day], [four-digit year]
+<dd><strong>Software components versions</strong>: related product names and version numbers
+<dd><strong>Compatible Ops Manager version(s)</strong>: v[x.y.z], v[x'.y'.z']  (most recent version last) 
+<dd><strong>Compatible Elastic Runtime version(s)</strong>: v[x.y.z], v[x'.y'.z']
+<dd><strong>vSphere support?</strong> [Yes/No]
+<dd><strong>AWS support?</strong> [Yes/No]
+<dd><strong>OpenStack support?</strong> [Yes/No]</dd>
+</dl>
+
+Example:
+<dl>
+<dt>Details about versioning and compatible components for the Spring Cloud Services for PCF Details</dt>
+<dd><strong>Version</strong>: v1.1.1 </dd>
+<dd><strong>Release date</strong>: July 1, 2016</dd>
+<dd><strong>Software component version</strong>: Spring Cloud OSS Brixton.SR1</dd>
+<dd><strong>Compatible Ops Manager Version(s)</strong>: v1.7.x, v1.6.x</dd>
+<dd><strong>Compatible Elastic Runtime version(s)</strong>: v1.7.x, v1.6.x</dd>
+<dd><strong>vSphere support?</strong> Yes</dd>
+<dd><strong>AWS support?</strong> Yes</dd>
+</dl>
+
+## <a id='new-features'></a>New Features
+
+This section is optional. 
+
+Short description or bullet points highlighting the most significant or interesting new features in the latest version of the product. This is just highlights—the full accounting of new stemcell compatibilities etc. belongs in the Release Notes topic.
+
+The key new features in this release are:
+* Feature 1
+* Feature 2
+
+## <a id='prerequisites'></a>Prerequisites
+
+Provide any general or specific requirements here. (Other documentation has called this 
+Requirements, Includes, Dependencies, Client Dependencies, and Resources.) A general prerequisite might be something like, “An AppDynamics account.” A specific prerequisite might be something like, “Packaging Dependencies for Offline Buildpacks.”
+
+## <a id='known-issues'></a>Known Issues
+
+Under this second-level heading, list any known issues in this release. 
+
+If there are many minor, known issues associated with this service that are not worthy of landing page space, you can add them to the release notes. 
+
+If there are no known issues, say so. See Example 2 below.
+
+Example 1:
+During a stemcell upgrade, there will be two ~2 min (time it takes your IaaS to create new VM) intervals where logs are not ingested. This happens when the singleton Queue and Router nodes are recreated. There is no workaround yet.
+ValueMetrics and CounterEvents consumed from the Firehose contain the incorrect @source information—specifically, the @source information is that of the consuming Firehose-to-Syslog VM from the PCF Log Search deployment rather than the information about the VM that generated the metric.
+Additional minor issues are listed in the Release Notes. 
+
+Example 2:
+There are no known issues for this release. 
+
+## <a id=''></a>Feedback
+
+Under this second-level heading, use the following boilerplate text:
+
+Please provide any bugs, feature requests, or questions to the [PCF Feedback list](pivotal-cf-feedback@pivotal.io).
+
+## <a id='see-also'></a>See Also
+
+Under this second-level heading, list helpful references, a link to the current release notes, and a link to the Upgrade path.
+
+Example
++ [Release Notes for Riak CS for PCF](http://docs.pivotal.io/p-riakcs/release-notes.html)
++ Upgrade Path for Riak CS for PCF
++ [Riak Cloud Storage Documentation](http://docs.basho.com/)
+
+
