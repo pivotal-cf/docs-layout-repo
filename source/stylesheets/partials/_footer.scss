@@ -1,0 +1,82 @@
+/*
+ * FILE: _footer.scss
+======================================================================== */
+.site-footer-links {
+  font-size: $font-size-xs;
+  clear: both;
+  padding: 1em 30px 4em 30px;
+  a {
+    color: $color-text;
+  }
+}
+
+.copyright {
+  @media (min-width: $bp-wide) {
+    float: left;
+  }
+}
+
+.support {
+  @media (min-width: $bp-wide) {
+    float: right;
+  }
+}
+
+#feedback {
+  margin-top: 48px;
+  margin-bottom: 48px;
+/*  #feedback-comments {
+    margin-top: 1em;
+    width: 49%;
+  }
+  #feedback-helpful {
+    border: none;
+    margin-top: 1em;
+  }
+  .feedback-option {
+    float: left;
+    margin-left: 2em;
+    margin-top: 0.5em;
+    width: 22%;
+  }
+  form fieldset {
+    width: 11em;
+    float: left;
+  }
+  textarea {
+    width: 100%;
+  }
+  */
+  .feedback-option {
+    display: inline-block;
+    padding: 8px 4px 16px 4px;
+    input[type='radio'] {
+      display: inline;
+      width: initial;
+    }
+  }
+  textarea {
+    width: 100%;
+    border-radius: $radius;
+    border-color: #ccc;
+  }
+  input[type='submit'] {
+    color: #1B78B3;
+    margin-top: 8px;
+    background-color: #fff;
+    border: 1px solid #49A8D5;
+    width: initial;
+    &:hover {
+      background-color: #e6e6e6;
+    }
+  }
+}
+
+#repo-link {
+  display: block;
+  border-bottom: solid 1px #eceae9;
+  border-top: solid 1px #eceae9;
+  text-align: center;
+  padding: 1em 0;
+  font-weight: bold;
+}

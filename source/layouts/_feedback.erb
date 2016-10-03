@@ -1,26 +1,24 @@
 <div id="feedback">
-  <hr>
   <form data-behavior="SubmitFeedback">
-    <fieldset id="feedback-helpful">
-      <legend>Was this page helpful?</legend>
-      <div class="feedback-option">
-        <input type="radio" name="helpful" value="true" id="is-helpful" required />
-        <label for="is-helpful">Yes</label>
-      </div>
-      <div class="feedback-option">
-        <input type="radio" name="helpful" value="false" id="is-not-helpful" />
-        <label for="is-not-helpful">No</label>
-      </div>
-    </fieldset>
-    <fieldset id="feedback-comments">
-      <legend>How can we improve this page?</legend>
-      <textarea name="comments" placeholder="I would like this topic to..."></textarea>
-    </fieldset>
-    <input type="hidden" name="date" />
-    <input type="hidden" name="page_url" />
+ 
+    <strong>Was this helpful?</strong><br/>
+
+    <div class='feedback-option'>
+      <label for="is-helpful"><input type="radio" name="helpful" value="true" id="is-helpful" required /> Yes</label>
+    </div>
+    <div class='feedback-option'>
+      <label for="is-not-helpful"><input type="radio" name="helpful" value="false" id="is-not-helpful" /> No</label>
+    </div>
+
+    <div>
+      <strong>What can we do to improve?</strong><br/>
+      <textarea name="comments"> </textarea>
+      <input type="hidden" name="date" />
+      <input type="hidden" name="page_url" />
+    </div>
     <div id="errors">
     </div>
     <input type="submit" value="Submit Feedback" id="feedback-submit"/>
+
   </form>
-  <hr>
 </div>
