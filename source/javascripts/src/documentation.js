@@ -70,9 +70,9 @@ CFDocs.SubmitFeedback = function(element) {
 
         // Send post to our API
         $.post('/api/feedback', $el.serialize()).done(function(){
-            $('#feedback').empty().append("We are constantly working hard to improve our docs. <a href='https://uxresearch.cfapps.io/?context=docs'>Participate in UX Research</a> and help us improve!");
+            $('#feedback').empty().append("<strong>Thanks!</strong><br/>We are constantly working hard to improve our docs. <a href='https://uxresearch.cfapps.io/?context=docs'>Participate in UX Research</a> and help us improve!");
         }).fail(function(){
-            $('#feedback').empty().append("<hr>Feedback submission failed. Please try again.<hr>");
+            $('#feedback').empty().append("<hr>Sorry, the feedback submission failed. Please try again.<hr>");
         });
     });
 };
