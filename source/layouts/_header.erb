@@ -13,10 +13,13 @@
       <div class="header-item">
         <%= vars.support_link %>
       </div>
+      <div class="header-item">
+        <%= vars.kb_link %>
+      </div>
       <div class="header-item embedded-searchbar">
         <% if elastic_search? %>
           <form method="get" action="/search">
-            <input name="q" placeholder="search" class="search-box" />
+            <input name="q" placeholder="Search Pivotal Docs" class="search-box" />
           </form>
         <% else %>
           <gcse:searchbox></gcse:searchbox>
