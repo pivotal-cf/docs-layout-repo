@@ -26,7 +26,21 @@
         </span>
       </span>
 
-      <!-- search was here -->
+      <span class="local-header local-search">
+        <% if defined?(elastic_search?) && elastic_search? %>
+          <form class="local-header-search-form" method="get" action="/search">
+            <input class="local-header-search-input" name="q" placeholder="<%= product_info['search_placeholder'] || 'Search' %>" />
+            <input type="hidden" name="product_name" value="<%= product_info['local_header_title'] %>" />
+            <% unless product_info['local_product_version'].nil? %>
+              <input type="hidden" name="product_version" value="<%= product_info['local_product_version'] %>"/>
+            <% end %>
+          </form>
+        <% elsif (defined?(body_classes) ? body_classes : page_classes).match(/^pivotalcf /) %>
+          <gcse:searchbox as_sitesearch="docs.pivotal.io/pivotalcf"></gcse:searchbox>
+        <% else %>
+          <gcse:searchbox placeholder="something"></gcse:searchbox>
+        <% end %>
+      </span>
     </div>
     <div class="local-header local-header-links">
       <% product_info['local_header_links'].each do |link| %>
