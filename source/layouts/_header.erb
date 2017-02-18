@@ -16,26 +16,15 @@
       <div class="header-item">
         <%= vars.kb_link %>
       </div>
-
-
       <div class="header-item embedded-searchbar">
         <% if elastic_search? %>
           <form method="get" action="/search">
-            <input name="q" placeholder="<%= product_info['search_placeholder'] || 'Search' %>" class="search-box" />
-            <input type="hidden" name="product_name" value="<%= product_info['local_header_title'] %>" />
-            <% unless product_info['local_product_version'].nil? %>
-              <input type="hidden" name="product_version" value="<%= product_info['local_product_version'] %>"/>
-            <% end %>
+            <input name="q" placeholder="Search Pivotal Docs" class="search-box" />
           </form>
         <% else %>
           <gcse:searchbox></gcse:searchbox>
         <% end %>
       </div>
-
-      
-    </div>
-    <div class="header-item edge-banner" style="background-color: #bf1919; font-size: 1em; line-height: 2; color: white; text-align: center; position: fixed; top: 64px; left: 0; right: 0;">
-     PRE-RELEASE DOCUMENTATION: This topic describes pre-release features that may change. Please do not distribute outside PCF.
     </div>
   </header>
   <% if !current_page.data.title %>
