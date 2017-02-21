@@ -16,15 +16,23 @@
       <div class="header-item">
         <%= vars.kb_link %>
       </div>
+
+
       <div class="header-item embedded-searchbar">
         <% if elastic_search? %>
           <form method="get" action="/search">
-            <input name="q" placeholder="Search Pivotal Docs" class="search-box" />
+            <input name="q" placeholder="<%= product_info['search_placeholder'] || 'Search' %>" class="search-box" />
+            <input type="hidden" name="product_name" value="<%= product_info['local_header_title'] %>" />
+            <% unless product_info['local_product_version'].nil? %>
+              <input type="hidden" name="product_version" value="<%= product_info['local_product_version'] %>"/>
+            <% end %>
           </form>
         <% else %>
           <gcse:searchbox></gcse:searchbox>
         <% end %>
       </div>
+
+      
     </div>
   </header>
   <% if !current_page.data.title %>
