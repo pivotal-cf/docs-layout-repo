@@ -19,7 +19,7 @@
       <div class="header-item embedded-searchbar">
         <% if elastic_search? %>
           <form method="get" action="/search">
-            <input name="q" placeholder="Search Pivotal Docs" class="search-box" />
+            <input name="q" placeholder="<%=vars.global_search_text%>"" class="search-box" />
           </form>
         <% else %>
           <gcse:searchbox></gcse:searchbox>
