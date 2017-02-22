@@ -2,7 +2,7 @@
   <header class="global-header header header-layout js-bar-links">
     <a class="pivotal-logo" href="/">
     </a>
-    <a href="/" class="global-header-title">
+    <a href="<%= vars.title_href %>" class="global-header-title">
       <%= vars.title %>
     </a>
     <div class="btn-menu" data-behavior="MenuMobile"></div>
@@ -19,7 +19,7 @@
       <div class="header-item embedded-searchbar">
         <% if elastic_search? %>
           <form method="get" action="/search">
-            <input name="q" placeholder="<%=vars.global_search_text%>"" class="search-box" />
+            <input name="q" placeholder="Search Pivotal Docs" class="search-box" />
           </form>
         <% else %>
           <gcse:searchbox></gcse:searchbox>

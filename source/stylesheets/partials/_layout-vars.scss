@@ -1,13 +1,11 @@
-$navy: #555555;
+$navy: #243640;
 $blue1: #2185c5;
 $blue2: #a7cae1;
 $bluegray1: #4b6475;
 $teal1: #03786D;
 $teal2: #00a79d;
 $global_header_bg_color: #232B2F;
-$global_header_pivotal_logo: url(/images/icon-p-green.jpg);
-$global_header_pivotal_logo_height: 64px;
-$global_header_pivotal_logo_width: 64px;
+$title_href: url(/); 
 
 // ~COLORS
 // ===================================================
@@ -18,7 +16,7 @@ name: colors
 category: basics
 ---
 <div class="swatch-1">
-  $navy: #555555
+  $navy: #243640
 </div>
 <div class="swatch-2">
   $gray1: #424242
@@ -55,15 +53,15 @@ category: basics
 </div>
 */
 
-$color-accent: $teal2;
+$color-accent: $teal1;
 $color-accent-bright: $teal2;
 
 // link colors
-$color-link: $teal2;
-$color-link-border: $teal2;
+$color-link: $blue1;
+$color-link-border: $blue2;
 
-$color-border-tip: $teal2;
+$color-border-tip: $blue2;
 
-$color-bg-header: $teal2;
-$color-bg-dark: $teal2;
+$color-bg-header: $navy;
+$color-bg-dark: $bluegray1;
 

@@ -16,12 +16,12 @@ header.global-header {
   }
 
   .pivotal-logo {
-    background-image: $global_header_pivotal_logo;
+    background-image: url(/images/icon-p-green.jpg);
     background-repeat: no-repeat;
     background-position: center left;
     background-size: 100%;
-    height: $global_header_pivotal_logo_height;
-    width: $global_header_pivotal_logo_width;
+    height: 64px;
+    width: 64px;
   }
 
   .global-header-title {
