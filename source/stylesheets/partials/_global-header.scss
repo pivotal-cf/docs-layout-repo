@@ -60,7 +60,7 @@ header.global-header {
   }
 
   .embedded-searchbar {
-    vertical-align: baseline;
+    vertical-align: middle;
     margin-bottom: 5px;
 
     @media(min-width: $bp-wide) {
