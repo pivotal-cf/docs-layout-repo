@@ -1,5 +1,9 @@
 <% if vars.use_global_header && current_page.data.owner != "Identity Service" && current_page.data.owner != "Pivotal HD" %>
+  <% if current_page.path.include? "partners" %>
+  <header class="partners-global-header header header-layout js-bar-links">
+  <% else %>
   <header class="global-header header header-layout js-bar-links">
+  <% end %>
     <a class="pivotal-logo" href="/">
     </a>
     <a href="/" class="global-header-title">
