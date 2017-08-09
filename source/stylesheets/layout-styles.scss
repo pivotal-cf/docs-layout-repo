@@ -371,6 +371,24 @@ category: basics
   list-style-type: lower-roman;
 }
 
+/*doc
+---
+title: Link Default
+name: link_default
+category: basics
+---
+```html_example
+<a class="link" href="#">Link</a>
+```
+*/
+
+a, .link {
+  border-bottom: 1px dotted lighten(desaturate($color-link, 40%), 40%);
+  color: $color-link;
+  text-decoration: none;
+  white-space: nowrap;
+  @include transition(all 0.1s linear);
+}
 
 // ~LOGOS ON TITLES
 // ===================================================
