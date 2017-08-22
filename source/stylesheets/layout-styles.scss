@@ -95,6 +95,7 @@ category: basics
   text-align: center;
   &[href^="http"]:after {
     display: none;
+    white-space: nowrap;
   }
 }
 .content .panel a:hover {
@@ -118,6 +119,29 @@ category: basics
   font-style: italic;
   margin-top: 0.5em;
   display: none;
+}
+
+// ~CONTENT
+// ===================================================
+// Designate external links with an icon
+
+/*doc
+---
+title: Link External
+name: link_external
+category: basics
+---
+```html_example
+<a class="external-link" href="#">Link</a>
+```
+*/
+.content a[href^="http"]:after,
+.external-link:after {
+  @extend .fa;
+  content: $fa-var-external-link;
+  font-size: 0.75em;
+  padding-left: 0.5em;
+  white-space: nowrap;
 }
 
 // ~TITLES
