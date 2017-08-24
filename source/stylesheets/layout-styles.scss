@@ -461,10 +461,8 @@ category: basics
 }
 
 .note.warning {
-//  background-color: #fdd;
-//  border-color: #fbb;
-  background: #ffffed;
-  border-color: #ebebd3;
+  background-color: #fdd;
+  border-color: #fbb;
   &:before {
     content: "\F071";
     font-family: FontAwesome;
