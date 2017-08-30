@@ -505,3 +505,52 @@ category: basics
     top: 0.8em;
   }
 }
+
+/*doc
+---
+title: Code Example - Inline
+name: code_example-inline
+
+category: basics
+---
+```html_example
+<code>"mbus"=&gt;"nats://nats:nats@192.168.86.17:4222"</code>
+```
+*/
+
+code {
+  background-color: #f5f5ff;
+  border: 1px solid #e4e4e4;
+  display: inline-block;
+  font-size: rem(13);
+  line-height: 1.4;
+  margin: 0.2em 0.1em 0.1em;
+  padding: 0 0.4em 0 0.4em;
+  vertical-align: text-top;
+}
+code a {
+  color: #fefefe;
+}
+
+hr {
+  background-color: $color-border-light;
+  border: 0;
+  height: 1px;
+  float: left;
+  width: 100%;
+}
+.content pre {
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+    height: 7px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(181,181,181,181);
+    -webkit-box-shadow: 0 0 0px 2px rgba(248,248,248,1);
+  }
+}
+.hidden {
+  display: none !important;
+}
