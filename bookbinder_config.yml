@@ -1,0 +1,741 @@
+---
+:archive_menu:
+  ".": 
+:production_host: docs.pivotal.io
+:subnav_templates:
+  pivotalcf_1-12_buildpacks: pcf-subnav
+  pivotalcf_1-12_adminguide: pcf-subnav
+  pivotalcf_1-12_cf-cli: pcf-subnav
+  pivotalcf_1-12_concepts: pcf-subnav
+  pivotalcf_1-12_devguide: pcf-subnav
+  pivotalcf_1-12_loggregator: pcf-subnav
+  pivotalcf_1-12_routing: pcf-subnav
+  pivotalcf_1-12_services: pcf-subnav
+  pivotalcf_1-12_uaa: pcf-subnav
+  pivotalcf_1-12_monitoring: pcf-subnav
+  pivotalcf_1-12_opsguide: pcf-subnav
+  pcf-dev: pivotal_pcfdev_subnav
+  pivotalcf_1-12_installing: pcf-subnav
+  pivotalcf_1-12_customizing: pcf-subnav
+  pivotalcf_1-12_appsman-services: pcf-subnav
+  pivotalcf_1-12_refarch: pcf-subnav
+  pivotalcf_1-12_security: pcf-subnav
+  pivotalcf_1-12_windows: pcf-subnav
+  pivotalcf_1-12_console: pcf-subnav
+  pivotalcf_1-12_pcf-release-notes: pcf-subnav
+  archives: default
+  resources: pcf-subnav
+:template_variables:
+  book_title: Pivotal Documentation
+  book_title_short: Pivotal Docs
+  title: <span class="title-deemph">Pivotal</span> Documentation
+  title_image: images/icon-p-green.jpg
+  hero_text: Detailed documentation to help you install, understand, and succeed with
+    Pivotal's enterprise-grade software.
+  product_full: Elastic Runtime
+  product_short: Elastic Runtime
+  product_name: PCF
+  product_abbr: 
+  first_product_name: Pivotal Cloud Foundry (PCF)
+  product_link: <div class="header-item"><a href="https://network.pivotal.io/products/pivotal-cf">Back
+    to Product Page</a></div>
+  product_url: https://network.pivotal.io/products/pivotal-cf
+  support_link: <a href="http://support.pivotal.io" target="_blank">Support</a>
+  support_call_to_action: <a href="http://support.pivotal.io" target="_blank">Need
+    Support?</a>
+  support_url: http://support.pivotal.io
+  current_major_version: '1.12'
+  api_version: '259'
+  dumpling: dumpling
+  add_volumes_link: See the <a href="../../opsguide/enable-vol-services.html">Enabling
+    NFS Volume Services</a> topic for more information.
+  admin: your Cloud Foundry administrator
+  admin_read_only_role: "<ul><li><strong>Admin Read-Only</strong> is a user role that
+    has been assigned the <code>cloud_controller.admin_read_only</code> scope in UAA.
+    This role has read-only access to all Cloud Controller API resources.</li></ul>"
+  admin_role: <ul><li><strong>Admin</strong> is a user role that has been assigned
+    the <code>cloud_controller.admin</code> scope in UAA. An admin user has permissions
+    on all orgs and spaces and can perform operational actions using the <a href="http://apidocs.cloudfoundry.org/">Cloud
+    Controller API</a>. To create an account with <code>cloud_controller.admin</code>
+    scope for your installation, see <a href="../uaa/uaa-user-management.html#creating-admin-users">Create
+    an Admin User</a>.</li></ul>
+  api_endpoint: <a href="http://docs.pivotal.io/pivotalcf/opsguide/api-endpoint.html">the
+    URL of the Cloud Controller in your Elastic Runtime instance</a>
+  api_endpoint_book: For more information, see the [Identifying the API Endpoint for
+    your Elastic Runtime Instance](http://docs.pivotal.io/pivotalcf/opsguide/api-endpoint.html)
+    topic.
+  api_v1_format: <a href="http://docs.pivotal.io/pivotalcf/services/api-v1.html">v1
+    format</a>
+  api_v2_format: <a href="http://docs.pivotal.io/pivotalcf/services/api.html">v2 format</a>
+  app_domain: shared-domain.example.com
+  app_healthcheck_timeout: In Pivotal Cloud Foundry, the default timeout is 60 seconds
+    and the maximum configurable timeout is 600 seconds.
+  app_sec_groups: <a href="http://docs.pivotal.io/pivotalcf/concepts/asg.html">Application
+    Security Groups</a>
+  app_sec_groups_default: Allowing administrators to configure ASGs to block outbound
+    connections from application containers.
+  app_sec_groups_link: For information about creating and configuring ASGs, see [Application
+    Security Groups](./asg.html).
+  app_sec_groups_link_2: For information about creating and configuring ASGs, see
+    [Application Security Groups](../concepts/asg.html).
+  asg_note: <p class="note"><strong>Note</strong><span>:</span> You can also view
+    ASGs in Apps Manager under the <strong>Settings</strong> tab of a space or an
+    app.</p>
+  asg_notifications_prereq: You also must configure <a href="../opsguide/notifications-asg.html">Application
+    Security Groups (ASGs)</a>.
+  aws_network_elb: You can also select this option if you are installing PCF on AWS.
+  az: <a href="http://docs.pivotal.io/pivotalcf/customizing/understand-az.html">availability
+    zones</a>
+  azs: You can configure your deployment so that Diego cells are created across these
+    AZs. Follow the configuration for your specific IaaS&#58; <a href="http://docs.pivotal.io/pivotalcf/customizing/pcf-aws-manual-er-config.html#az-networks">AWS</a>,
+    <a href="http://docs.pivotal.io/pivotalcf/customizing/gcp-er-config.html#assign-az">GCP</a>,
+    <a href="http://docs.pivotal.io/pivotalcf/customizing/openstack-er-config.html#assign-az">OpenStack</a>,
+    or <a href="http://docs.pivotal.io/pivotalcf/customizing/config-er-vmware.html#er-az-networks">vSphere</a>.
+  azure_deploy: See <a href="../../customizing/azure-prepare-env.html">Preparing to
+    Deploy PCF on Azure</a> for more information.
+  billing_manager_role: 
+  billing_manager_role_note: 
+  bosh2_sub: <p class="note"><strong>Note</strong><span>:</span> To run the BOSH commands
+    in this topic on the Ops Manager-deployed BOSH Director, use <code>bosh2</code>
+    in place of <code>bosh</code>.</p>
+  bosh_cloud_check: cloudcheck
+  bosh_create_release: create release
+  bosh_delete: bosh-init delete
+  bosh_delete_deployment: delete deployment
+  bosh_delete_stemcell: delete stemcell
+  bosh_deploy: bosh-init deploy
+  bosh_init_release: init release
+  bosh_generate_package: generate package
+  bosh_generate_job: generate job
+  bosh_login: login
+  bosh_run_errand: run errand
+  bosh_update_cloud_config: update cloud-config
+  bosh_update_runtime_config: update runtime-config
+  bosh_upload_blobs: upload blobs
+  bosh_upload_release: upload release
+  bosh_upload_stemcell: upload stemcell
+  bosh_cli_link: See <a href="../customizing/trouble-advanced.html">Advanced Troubleshooting
+    with the BOSH CLI</a> for more information about using this tool.
+  blobstore_kb: See this <a href="https://discuss.zendesk.com/hc/en-us/articles/217982188-How-to-use-Elastic-Runtime-blob-storage-data-">Knowledge
+    Base article</a> for more information about the blobstore.
+  capi_link: For more information, see the [CAPI documentation](http://v3-apidocs.cloudfoundry.org/version/3.4.0/index.html).
+  cc_logging_default: 
+  cfdot_kb: When logged into a VM hosting an app, you can use tools like the Cloud
+    Foundry Diego Operator Toolkit (cfdot) to run app status diagnostics. For more
+    information, see [How to use CF Diego Operator Toolkit](https://discuss.pivotal.io/hc/en-us/articles/115004883487).
+  cipher_suites: You can override the default cipher suites in the <strong>TLS Cipher
+    Suites for Router</strong> field in the <strong>Networking</strong> tab of the
+    Elastic Runtime tile. See the following procedures for either <a href="#pass-through">Gorouter
+    Only</a> or <a href="#lb-and-router">Load Balancer and Gorouter</a> for more information
+    about using custom SSL ciphers.
+  cli_download: the Tools page of your Apps Manager instance
+  cli_v6: <a href="https://docs.pivotal.io/pivotalcf/cf-cli/getting-started.html">Getting
+    Started with cf CLI</a>
+  cli_rec_min_version: <p class="note"><strong>Note</strong><span>:</span> For use
+    with Pivotal Cloud Foundry v1.10, the recommended minimum version is cf CLI v6.23
+    or later.</p>
+  cloud_controller_dea_agent: <p class="note"><strong>Note</strong><span>:</span>
+    Pivotal Cloud Foundry (PCF) versions 1.6 and above no longer use Droplet Execution
+    Agents (DEAs). <a href="http://docs.pivotal.io/pivotalcf/1-9/concepts/diego/diego-architecture.html#core">Diego
+    Cells</a> replace their function. This topic is published here to help people
+    who are running older versions of PCF.</p>
+  cloud_controller_dea_algorithm: <p class="note"><strong>Note</strong><span>:</span>
+    Pivotal Cloud Foundry (PCF) versions 1.6 and above no longer use the DEA Placement
+    Algorithm. The <a href="../diego/diego-auction.html">Diego Auction</a> replaces
+    its function. This section is published here to help people who are running older
+    versions of PCF.</p>
+  cloud_controller_logging: 
+  collector_singleton: The singleton compilation components do
+  concepts_product_model_header: "<h3><a id='commercial-model'></a>How Pivotal Cloud
+    Foundry Differs from Open Source Cloud Foundry</h3>"
+  concepts_product_model_image: <img src="../customizing/images/pcf-commercialization.png">
+  concepts_product_model_text: "../customizing/pcf_overview_model"
+  console: <a href="../customizing/console-login.html">Logging in to Apps Manager</a>
+  console_2: If you have a Pivotal Elastic Runtime account, refer to the <a href="http://docs.pivotal.io/pivotalcf/customizing/console-login.html">Logging
+    in to Apps Manager</a> topic to determine your Pivotal Elastic Runtime URL. Click
+    <strong>Manage Cloud...</strong> to add this URL to your Cloud Foundry account.
+    Validate the account and continue through the wizard.</a>
+  console_3: Review the <a href="../customizing/console-login.html">Logging in to
+    Apps Manager</a> topic for more information.
+  console_4: To access Apps Manager as the Admin user, see the <a href="../customizing/console-login.html">Logging
+    in to Apps Manager</a> topic.
+  console_accounting_report: <li><a href="../opsguide/accounting-report-apps-man.html"
+    class="subnav">Monitoring Instance Usage with Apps Manager</a></li>
+  console_ev: user role and the <a href="../adminguide/listing-feature-flags.html">feature
+    flags</a> that the Admin sets
+  console_links: For more information, see <a href="http://docs.pivotal.io/pivotalcf/console/dev-console.html">Getting
+    Started with the Apps Manager</a> and <a href="http://docs.pivotal.io/pivotalcf/console/console-roles.html">Managing
+    User Accounts and Permissions Using the Apps Manager</a>.
+  console_org: images/pcf/console-org.png
+  console_pcf_pws: <a href="../../customizing/console-login.html">Logging into the
+    Apps Manager</a>
+  contact_support: Contact <a href="http://support.pivotal.io" target="_blank">Pivotal
+    Support</a> if you need assistance.
+  container_network_link: For information about administering container-to-container
+    network policies, see <a href="../devguide/deploy-apps/cf-networking.html">Administering
+    Container-to-Container Networking</a>.
+  cookies_shared_domain_1: 
+  cookies_shared_domain_2: For an application using a shared domain such as <code>example.com</code>,
+    a cookie set to use the highest domain has a <code>Domain</code> attribute of
+    <code>.example.com</code> in its HTTP response header.
+  create_org: 
+  create_orgs: "<sup>&dagger;</sup>"
+  create_orgs_footnote: <sup>&dagger;</sup>Defaults to no. Yes if <a href="../adminguide/listing-feature-flags.html">feature
+    flag</a> `user_org_creation` is set to `true`.
+  cse_id: 012029519579280034868:3hzywhss5ik
+  custom_load_balancer: See <a href="../customizing/custom-load-balancer.html">Using
+    Your Own Load Balancer</a>.
+  custom_services: If you are interested in building services for Cloud Foundry and
+    making them available to end users, see the <a href="http://docs.pivotal.io/pivotalcf/services/">Custom
+    Services</a> documentation.
+  custom_stack: 
+  custom_stack_nav_link: 
+  dea_diego_table_row: "<tr><td>1.5 and below</td><td>1.6 and above</td><td>CF version
+    numbers</td><td></td></tr>"
+  dea_diego_version: Diego architecture for version 1.5
+  dev_console_1: You can use either the CLI or <a href="http://docs.pivotal.io/pivotalcf/console/index.html">Apps
+    Manager</a> to perform this task.
+  dev_console_2: CLI or <a href="http://docs.run.pivotal.io/console/index.html">Apps
+    Manager</a>
+  dev_console_3: For more information about using the Apps Manager, refer to the <a
+    href="http://docs.pivotal.io/pivotalcf/console/index.html">Using the Apps Manager</a>
+    topics.
+  dev_console_4: See also <a href="http://docs.pivotal.io/pivotalcf/console/index.html">Using
+    the Apps Manager</a>.
+  dev_console_5: You can also bind a service using the <a href="http://docs.run.pivotal.io/console/index.html">Apps
+    Manager</a>.
+  dev_console_note: For more information about specific Admin commands you can perform
+    with the Apps Manager, depending on your user role, refer to the <a href="http://docs.pivotal.io/pivotalcf/console/dev-console.html">Getting
+    Started with the Apps Manager</a> topic.
+  diego_architecture: This topic provides an overview of the structure and components
+    of Diego, the container management system for Pivotal Cloud Foundry versions 1.6
+    and newer.
+  diego_deploy: 
+  diego_ssh_link: <a href="../../concepts/diego/ssh-conceptual.html">Diego SSH package</a>
+  disable_custom: "<h2> <a id='disabling-custom-buildpacks'></a>Disable Custom Buildpacks
+    </h2> Operators can choose to disable custom buildpacks. For more information,
+    see [Disabling Custom Buildpacks](../adminguide/buildpacks.html#disabling-custom-buildpacks)."
+  disable_custom_buildpacks: You can disable custom buildpacks using your Ops Manager
+    Elastic Runtime tile. From the <strong>Cloud Controller</strong> tab, check the
+    <strong>Disable Custom Buildpacks</strong> checkbox, as shown in the image below.<img
+    src="images/disable-custom-buildpacks.png"><br><br>By default, the cf CLI gives
+    developers the option of using a custom buildpack when they deploy apps to Elastic
+    Runtime. To do so, they use the <code>-b</code> option to provide a custom buildpack
+    URL with the <code>cf push</code> command. The <strong>Disable Custom Buildpacks</strong>
+    checkbox prevents the <code>-b</code> option from being used with external buildpack
+    URLs.<br><br>For more information about custom buildpacks, refer to the <a href="../buildpacks/">buildpacks</a>
+    section of the PCF documentation.
+  disable_custom_buildpacks_note: Operators can choose to disable custom buildpacks
+    in an entire deployment. For more information, see the <a href="../adminguide/buildpacks.html#disabling-custom-buildpacks">Disabling
+    Custom Buildpacks</a> section of the Managing Custom Buildpacks topic.
+  docker_auth: To support Docker, Pivotal Cloud Foundry needs the ability to access
+    Docker registries using either a Certificate Authority or an IP address whitelist.
+    The <a href="../opsguide/docker-registry.html">Using Docker Registries</a> topic
+    explains how to configure this access.
+  domain_name: pivotal.io
+  domains_shared_domains: For more information about using custom domains shared across
+    all orgs in your Cloud Foundry account, refer to the <a href="./domains.html">Domains
+    and Shared Domains</a> topic.
+  email_notifications: <p class="note"><strong>Note</strong><span>:</span> In Pivotal
+    Cloud Foundry, you can configure email notifications in the <strong>Director Config</strong>
+    section of the Ops Manager Director tile. For example, see the <a href="../customizing/pcf-aws-manual-om-config.html#pcfaws-om-dirconfig">Manually
+    Configuring Ops Manager Director for AWS</a> topic for more information about
+    how to configure email notifications on Amazon Web Services (AWS).</p>
+  enable_syslog_drain: See the [Configuring System Logging in Elastic Runtime](../opsguide/logging-config-opsman.html)
+    topic for more information.
+  enable_syslog_forwarding_link: <p class="note"><strong>Note</strong>&#58; For this
+    procedure to work, you must enable system log forwarding. For more information,
+    see the <a href="https://docs.pivotal.io/pivotalcf/opsguide/logging-config-opsman.html#syslog-forward">
+    Enabling System Log Forwarding</a>  topic. </p>
+  er_network_subnav: <li><a href="../opsguide/er_network.html">Understanding the Elastic
+    Runtime Network Architecture</a></li>
+  example_domain: www.example.com
+  example_domain_edu: www.example.edu
+  example_domain_net: www.example.net
+  example_domain_no_www: ".example.com"
+  example_domain_org: www.example.org
+  example_ip_1: 192.0.2.1
+  example_ip_2: 198.51.100.1
+  example_ip_3: 203.0.113.1
+  external_ips: external IP addresses
+  ga_account_id: UA-39702075-1
+  gen_GSG: 
+  global_auditor_role: "<ul><li><strong>Global Auditor</strong> is a user role that
+    has been assigned the <code>cloud_controller.global_auditor</code> scope in UAA.
+    This role has read-only access to all Cloud Controller API resources except for
+    secrets such as environment variables. The Global Auditor role cannot access those
+    values.</li></ul>"
+  global_header_product_href: https://network.pivotal.io/
+  global_header_product_link_text: Downloads
+  GSG_intro_sentence: 
+  http_routing: For more information, see the [Securing Traffic into Cloud Foundry](../adminguide/securing-traffic.html)
+    topic.
+  incompatible_ldap_saml: "<p class='note'><strong>Note</strong>&#58; The procedures
+    described here are not compatible with using SAML or LDAP for user identity management.
+    To create and manage user accounts in a SAML- or LDAP-enabled Cloud Foundry deployment,
+    see <a href='../opsguide/external-user-management.html'>Adding Existing SAML or
+    LDAP Users to a Pivotal Cloud Foundry Deployment</a>.</p>"
+  info_loc: In Pivotal Operations Manager
+  invite_members: images/pcf/invite-members.png
+  ipsec_note: <li>Use the <a href="http://docs.pivotal.io/addon-ipsec/index.html">IPsec
+    add-on</a> to encrypt IP data traffic within your deployment.</li>
+  kb_link: <a href="http://support.pivotal.io/kb" target="_blank">Knowledge Base</a>
+  keepalive: Operators should see [Router Idle Keepalive Connections](../adminguide/routing-keepalive.html)
+    for details.
+  keepalive_router: An operator can enable the feature by entering a non-zero value
+    for the <b>Router Max Idle Keepalive Connections</b> field in the Networking Pane
+    of the Elastic Runtime tile.
+  known_issues: <a href="http://docs.pivotal.io/pivotalcf/pcf-release-notes/index.html">Known
+    Issues</a>
+  lb_subnav: <li><a href="../customizing/custom-load-balancer.html" class="subnav">Using
+    Your Own Load Balancer</a></li><p><li><a href="../customizing/elb-ssh-proxy.html">Creating
+    a Proxy ELB for Diego SSH</a></li>
+  lb_health_chk_healthy: Unhealthy Threshold
+  lb_health_chk_unhealthy: Unhealthy Threshold
+  link_adminguide_buildpack: You can find more documentation in the <a href="../adminguide/buildpacks.html">Managing
+    Custom Buildpacks</a> topic.
+  link_adminguide_commands: <p class="note"><strong>Note</strong>&#58; An Org Manager
+    needs explicit administrator permissions to perform certain actions. Refer to
+    the <a href="../uaa/uaa-user-management.html">Creating and Managing Users with
+    the UAA CLI (UAAC)</a> topic to learn how to create a user with admin rights.</p>
+  link_adminguide_domains: For admin-specific commands, refer to the <a href="../../adminguide/manage-domains-routes.html">Managing
+    Domains and Routes</a> topic.
+  log_management: 
+  logg_forwarding: <a href="../opsguide/logging-config-opsman.html#syslog-forward">Configuring
+    System Logging in Elastic Runtime</a>
+  logg_scaling: <a href="../opsguide/logging-config-opsman.html#scaling">Configuring
+    Logging in Elastic Runtime</a>
+  loggregator_links: <ul><li><a href="../monitoring/kpi.html" class="subnav">Key Performance
+    Indicators</a></li><li><a href="../monitoring/key-cap-scaling.html" class="subnav">Key
+    Capacity Scaling Indicators</a></li><li><a href="../monitoring/metrics.html" class="subnav">Monitoring
+    a Pivotal Cloud Foundry Deployment</a></li><li><a href="https://docs.pivotal.io/jmx-bridge/self-signed-ssl.html"
+    class="subnav">Using SSL with a Self-Signed Certificate in JMX Bridge</a><li><a
+    href="https://docs.pivotal.io/jmx-bridge/deploy-metrics.html" class="subnav">Deploying
+    JMX Bridge</a></li><li><a href="https://docs.pivotal.io/jmx-bridge/use-metrics.html"
+    class="subnav">Using JMX Bridge</a></li></ul>
+  loggregator_name_or_link: <a href="http://docs.pivotal.io/pivotalcf/loggregator/architecture.html">Loggregator</a>
+  loggregator_firehose_link: <a href="../../loggregator/architecture.html#firehose">Loggregator
+    Firehose</a>
+  manage_iso_seg_link: See the <a href="../customizing/installing-pcf-is.html">Installing
+    PCF Isolation Segment</a> and <a href="../adminguide/isolation-segments.html">Managing
+    Isolation Segments</a> topics for more information about how to create and manage
+    isolation segments in a PCF deployment.
+  manage_roles_footnote: <sup>&Dagger;</sup>Defaults to no. Yes if <a href="../adminguide/listing-feature-flags.html">feature
+    flags</a> `set_roles_by_username` and `unset_roles_by_username` are set to `true`.
+  manage_roles_pws_no: "<sup>&Dagger;</sup>"
+  manage_roles_pws_yes: "<sup>&Dagger;</sup>"
+  manifest_vs_cli_asg: 
+  max_app_size: the maximum app file size that an admin sets in <strong>Ops Manager
+    &gt; Elastic Runtime &gt; Application Developer Controls</strong>
+  max_app_size_table: Set in <strong>Ops Manager &gt; Elastic Runtime &gt; Application
+    Developer Controls</strong>
+  max_in_flight_config: "<br/><br/> To retrieve or override the existing `max_in_flight`
+    value in Ops Manager Director, use the Ops Manager API. See the Ops Manager API
+    documentation provided with your Ops Manager installation at `https://YOUR-OPSMAN-FQDN/docs/`."
+  metrics_login: In a browser, navigate to `metrics.YOUR-SYSTEM-DOMAIN` and log in
+    with your User Account and Authentication (UAA) credentials.
+  metrics_viewapps: PCF Metrics uses UAA to retrieve a list of apps that correspond
+    to your user's org roles, space roles, and permissions. To view metrics information
+    for an app, enter the name of the app in the search box and select it from the
+    dropdown menu.
+  mysql_metrics_origin: "/mysql"
+  net_traffic_rules: <a href="http://docs.pivotal.io/pivotalcf/adminguide/app-sec-groups.html">network
+    traffic rules</a>
+  notifications_api_1: 
+  notifications_link: <a href="../../adminguide/notifications.html">Notification Service</a>
+  om_resurrector_header: "<h4>Ops Manager Resurrector</h4>"
+  om_resurrector_text: Enable the <a href="http://docs.pivotal.io/pivotalcf/customizing/resurrector.html#enabling">Ops
+    Manager Resurrector</a>.
+  or_apps_man2: or <a href="../console/dev-console.html">Apps Manager</a>
+  or_apps_man: <span>&nbsp;</span> or <a href="../console/console-roles.html">Apps
+    Manager</a>
+  org_members: images/pcf/org-members.png
+  org_members_multi: images/pcf/org-members-multi.png
+  org_roles: Organization Manager and Organization Auditor
+  pcf_pools: For [Amazon Web Services](http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2),
+    review the documentation regarding scaling instances. If you are using OpenStack,
+    see the topic regarding [managing projects and users](http://docs.openstack.org/openstack-ops/content/projects_users.html).
+    For vSphere, review the [Configuring Ops Manager Director for VMware vSphere](http://docs.pivotal.io/pivotalcf/customizing/vsphere-config.html#resource-config)
+    topic.
+  pcf_rec: Pivotal
+  platform_ssh_configuration: Pivotal Cloud Foundry deployments control SSH access
+    to apps at the Elastic Runtime level. Additionally, Cloud Foundry supports load
+    balancing of SSH sessions with your load balancer. The [Configuring SSH Access](../../opsguide/config-ssh.html)
+    topic describes how to set SSH access for your deployment.
+  pools_link: <a href="http://docs.pivotal.io/pivotalcf/customizing/vsphere-config.html">resource
+    pools</a>
+  port_limitations: To support WebSockets, the operator must configure the load balancer
+    correctly. Depending on the configuration, clients may have to use a different
+    port for WebSocket connections, such as port 4443, or a different domain name.
+    For more information, see the [Supporting WebSockets](../../adminguide/supporting-websockets.html)
+    topic.
+  port_limitations_1: To support WebSockets, the operator must configure the load
+    balancer correctly. Depending on the configuration, clients may have to use a
+    different port for WebSocket connections, such as port 4443, or a different domain
+    name. For more information, see the [Supporting WebSockets](../adminguide/supporting-websockets.html)
+    topic.
+  private_app_domain: private-domain.example.com
+  pw_policy: See the <a href="../opsguide/pw-policy.html">Configuring UAA Password
+    Policy</a> topic to configure the password policy.
+  pws_metrics: 
+  python_cf245only: 
+  quota_resource: quota space
+  resurrector: To enable the Resurrector, see the following pages for your particular
+    IaaS&#58; <a href="http://docs.pivotal.io/pivotalcf/customizing/pcf-aws-manual-om-config.html#pcfaws-om-dirconfig">AWS</a>,
+    <a href="http://docs.pivotal.io/pivotalcf/customizing/azure-om-config.html#director-config">Azure</a>,
+    <a href="http://docs.pivotal.io/pivotalcf/customizing/gcp-om-config.html#director-config">GCP</a>,
+    <a href="http://docs.pivotal.io/pivotalcf/customizing/openstack-om-config.html#director-config">OpenStack</a>,
+    or <a href="http://docs.pivotal.io/pivotalcf/customizing/resurrector.html">vSphere</a>.
+  roles_table: "../console/pcf_roles_table"
+  open_service_broker_api: "../open-service-broker/spec"
+  open_service_broker_rn: "../open-service-broker/release-notes"
+  route_services_config: <h2><a id='enabling-route-services'></a>Enabling Route Services
+    in Pivotal Cloud Foundry</h2>You configure Route Services for your deployment
+    in the Elastic Runtime tile, under **Settings** > **Networking**. Depending on
+    your infrastructure, refer to the Elastic Runtime configuration topics for <a
+    href="../customizing/pcf-aws-manual-er-config.html">AWS</a>, <a href="../customizing/openstack-er-config.html#route-services">OpenStack</a>,
+    or <a href="../customizing/config-er-vmware.html#route-services">vSphere</a>.
+  saml_provider: Retrieve the name of your SAML provider by navigating to the Elastic
+    Runtime tile on the Ops Manager Installation Dashboard, clicking <strong>Authentication
+    and Enterprise SSO</strong>, and recording the value under <strong>Provider Name</strong>.
+    For more information about configuring PCF for a SAML identity provider, see the
+    [Configuring Authentication and Enterprise SSO for Elastic Runtime](../opsguide/auth-sso.html#configure-saml)
+    topic.
+  scale_table: "../customizing/pcf_scale_table"
+  scaling_ert: For more information regarding zero downtime deployment, see the [Scaling
+    Instances in Elastic Runtime](./../opsguide/scaling-ert-components.html) topic.
+  scaling_ert_db: For more information about scaling internal database components,
+    see the [Scaling Instances in Elastic Runtime](./../opsguide/scaling-ert-components.html)
+    topic.
+  select_org: images/pcf/select-org.png
+  self_signed: Review the [Securing Traffic into Cloud Foundry](../adminguide/securing-traffic.html)
+    topic for more information about how to retrieve certificates from the deployment
+    manifest.
+  services: <a href="http://docs.pivotal.io/pivotalcf/services/">services</a>
+  services_link: <a href="http://docs.pivotal.io/pivotalcf/services/overview.html">services</a>
+  sharding: "../opsguide/pcf_sharding"
+  spring_trace: images/pcf/trace.png
+  spring_trace_label: "<strong>Hide Pivotal Apps Manager Requests</strong>"
+  ssh_marketplace_output: p-mysql  100mb MySQL databases on demand
+  ssh_marketplace_step: List the marketplace services installed as product tiles on
+    your Pivotal Cloud Foundry (PCF) Ops Manager. See the <a href="../../customizing/add-delete.html">Adding
+    and Deleting Products</a> topic if you need to add the service as a tile. In this
+    example, we create a p-mysql service instance.
+  ssh_service: p-mysql
+  ssh_service_access_key: <br>{<br>"hostname"<span>:</span> "us-cdbr-iron-east-01.p-mysql.net",<br>"jdbcUrl"<span>:</span>
+    "jdbc:mysql://us-cdbr-iron-east-03.p-mysql.net/ad\_b2fca6t49704585d?user=b5136e448be920\u0026password=231f435o05",<br>"name"<span>:</span>
+    "ad\_b2fca6t49704585d",<br>"password"<span>:</span> "231f435o05",<br>"port"<span>:</span>
+    "3306",<br>"uri"<span>:</span> "mysql://b5136e448be920:<span>231f435o05<span>@</span>us-cdbr-iron-east-03.p-mysql.net</span>:3306/ad\_b2fca6t49704585d?reconnect=true",<br>"username"<span>:</span>
+    "b5136e448be920"<br>}<br>
+  ssh_service_host: us-cdbr-iron-east-01.p-mysql.net
+  ssh_service_plan: 100mb
+  ssl: 
+  ssl_term_vsphere: <li><a href="../opsguide/ssl-term.html" class="subnav">Configuring
+    Pivotal Cloud Foundry SSL Termination for vSphere Deployments</a></li>
+  ssl_tls_subnav: <li><a href="../opsguide/security_config.html">Providing a Certificate
+    for Your SSL/TLS Termination Point</a></li>
+  sso_plan_enabled: have the Single Sign-On service broker installed on your PCF deployment.
+    You need to create a plan, grant any plan administrators, and specify any organizations
+    this plan should be the authentication authority for. For help configuring plans,
+    see the <a href="../manage-service-plans.html">Manage Service Plans</a> topic.
+  suspended_roles_table: "../console/pcf_suspended_roles_table"
+  tcp_iaas: Review the Enable TCP Routing steps in the _Deploying Elastic Runtime_
+    topic for your IaaS to configure your IP addresses for your PCF deployment&#58;
+    <a href="../customizing/pcf-aws-manual-er-config.html#networking">AWS</a>, <a
+    href="../customizing/openstack-er-config.html#networking">OpenStack</a>, or <a
+    href="../customizing/config-er-vmware.html#networking">vSphere</a>.
+  tcp_mod_port_change: "../adminguide/tcp_empty_file"
+  tcp_port: "../adminguide/tcp_port_review"
+  uaa: <a href="http://docs.pivotal.io/pivotalcf/adminguide/notifications.html">UAA</a>
+  uaa_cli: For more information, see [Creating and Managing Users with the UAA CLI
+    (UAAC)](../../uaa/uaa-user-management.html) and [Orgs, Spaces, Roles, and Permissions](../../concepts/roles.html).
+  uaa_cred: refer to <strong>Elastic Runtime > Credentials</strong>
+  upload_custom_buildpacks: You can also use the <code>cf create-buildpack</code>
+    command to upload the buildpack into your Cloud Foundry deployment, making it
+    accessible without the <code>-b</code> flag&#58; <pre class="terminal">$ cf create-buildpack
+    BUILDPACK PATH POSITION [--enable|--disable]</pre>
+  use_global_header: true
+  user_org_creation: If enabled, this flag activates the <strong>Create a New Org</strong>
+    link in the dropdown menu of the left navigation menu in Apps Manager.
+  understanding_asg_individual_link: <a href="https://docs.pivotal.io/pivotalcf/concepts/asg.html#asg-individual">Understanding
+    Application Security Groups</a>
+  v3_cli_versions: The experimental commands described in this topic require Pivotal
+    Cloud Foundry (PCF) 1.12+ and the cf CLI v6.30.0+.
+  warden_garden: <p class="note"><strong>Note</strong><span>:</span> Pivotal Cloud
+    Foundry versions 1.6 and above no longer use Warden. The platform-independent
+    Garden subsystem replaces its function. This topic is intended for users who are
+    running older versions of PCF.</p>
+  ssl_gorouter_link: <a href="../opsguide/security_config.html#gorouter_term">Terminating
+    SSL/TLS at the Gorouter only</a>
+  ssl_lb_gorouter_link: <a href="../opsguide/security_config.html#gorouter_lb">Terminating
+    SSL/TLS at the Load Balancer and the Gorouter</a>
+  ssl_lb_link: <a href="../opsguide/security_config.html#unencrypted">Terminating
+    SSL/TLS at the Load Balancer Only</a>
+  ssl_haproxy: <tr><th>Optionally, if you are deploying HAProxy, and</th><th>Then
+    in addition, terminate SSL/TLS at<span>:</span></th><th>Related topic and configuration
+    procedure</th></tr><tr><td><ul><li>You would like to secure traffic to the HAProxy,
+    and</li><li>You can use a single SAN certificate for your deployment for your
+    wildcard domains.</li></ul></td><td><b>HAProxy</b></td><td><a href="../opsguide/ssl-term-haproxy.html#haproxy">Terminating
+    SSL/TLS at HAProxy</a></td></tr>
+  ssl_haproxy_2: <p class="note"><strong>Note</strong><span>:</span> If you are using
+    HAProxy in a PCF deployment, you can choose to terminate SSL/TLS at HAProxy in
+    addition to any of the SSL/TLS termination options above. For more information,
+    see <a href="ssl-term-haproxy.html">Configuring SSL/TLS Termination at HAProxy</a>.</p>
+  zipkin_enable: "../customizing/zipkin-pcf-config"
+  zipkin_enable_link: <p>When the <a href="../adminguide/zipkin_tracing.html">Zipkin
+    feature is enabled in Cloud Foundry</a>, the Gorouter examines the HTTP request
+    headers and performs the following:</p>
+  starting_container_count_maximum: For information about how to configure this setting,
+    see the <a href="../adminguide/max-container-starts.html">Setting a Maximum Number
+    of Started Containers</a> topic.
+  garden_runc: <p class="note"><strong>Note</strong><span>:</span> Elastic Runtime
+    versions v1.8.8 and above use Garden-runC instead of Garden-Linux.</p>
+  autoscaler_bullet: <li><a href="../appsman-services/autoscaler/using-autoscaler.html"
+    class="subnav">Scaling an Application Using App Autoscaler</a></li>
+  autoscaler_note_dev_guide: <p class="note"><strong>Note</strong>&#58; You can configure
+    your app to scale automatically based on rules that you set. See the <a href="../../appsman-services/autoscaler/using-autoscaler.html">Scaling
+    an Application Using Autoscaler</a> topic for more information.</p>
+  tasks_ai: <p class="note"><strong>Note</strong>&#58; Running a task consumes an
+    application instance, and will be billed accordingly.</p>
+  cf_networking: Container-to-Container Networking is always enabled in Elastic Runtime.
+    For more information about how to configure Container-to-Container Networking,
+    see the [Administering Container-to-Container Networking](../devguide/deploy-apps/cf-networking.html)
+    topic.
+  isolation_segments_intro: To enable isolation segments, an operator must install
+    the PCF Isolation Segment tile by performing the procedures in the [Installing
+    PCF Isolation Segment](../customizing/installing-pcf-is.html) topic. Installing
+    the tile creates a single isolation segment.
+  isolation_segments_create: Before you create an isolation segment in PCF, you must
+    install the PCF Isolation Segment tile by performing the procedures in the [Installing
+    PCF Isolation Segment](../customizing/installing-pcf-is.html) topic.
+  isolation_segments_note: <p class="note"><strong>Note<span>:</span></strong> The
+    isolation segment name used in the cf CLI command must match the value specified
+    in the <b>Segment Name</b> field of the PCF Isolation Segment tile. If the names
+    do not match, PCF fails to place apps in the isolation segment when apps are started
+    or restarted in the space assigned to the isolation segment.</p>
+  install_isolation_segments: For more information about creating isolation segments,
+    see the [Installing PCF Isolation Segment](../customizing/installing-pcf-is.html)
+    topic.
+  pcf_networking_is1: Navigate to the **Assign AZs and Networks** section of the PCF
+    Isolation Segment tile to assign your isolation segment to the network you created
+    in Step 1. See the [Installing PCF Isolation Segment](../customizing/installing-pcf-is.html#config)
+    topic for more information.
+  pcf_networking_is2: Navigate to the **Resource Config** section of the PCF Isolation
+    Segment tile and use the dropdown menu to set your **Router** instances to a number
+    greater than zero. See the [Installing PCF Isolation Segment](../customizing/installing-pcf-is.html#config)
+    topic for more information.
+  pcf_networking_is3: If your IaaS supports it, navigate to the **Resource Config**
+    section of the PCF Isolation Segment tile and enter the name of your load balancer
+    under **Load Balancers**. See the documentation specific to your IaaS in [Installing
+    Pivotal Cloud Foundry](../installing/index.html) for more information. If your
+    IaaS does not support this configuration, you must create static IP addresses
+    and assign them to your load balancer out of band.
+  config_ssh_link: For more information, see <a href="../../opsguide/config-ssh.html">Configuring
+    SSH Access for PCF</a>.
+  inflight_img: <img src="../opsguide/images/max-container-starts.png">
+  asg_first_time: <p class="note"><strong>Note</strong>&#58; If you are creating ASGs
+    for the first time, see <a href="../opsguide/app-sec-groups.html">Restricting
+    App Access to Internal PCF Components</a>.</p>
+  ssl_term_haproxy: <li><a href="../opsguide/ssl-term-haproxy.html">Configuring SSL/TLS
+    Termination at HAProxy</a></li>
+  tcp_ert_subnav: <br><li><a href="../opsguide/tcp-routing-ert-config.html">Configuring
+    TCP Routing in Elastic Runtime</a></li><br>
+  tls_info_subnav: <li><a href="../security/networking/tls-info.html">TLS Connections
+    in PCF Deployments</a></li>
+  vsphere_az_subnav: <li><a href="../customizing/understand-az.html">Understanding
+    Availability Zones in VMWare Installations</a></li>
+  ha_ert: <p class="note"><strong>Note</strong>&#58; In PCF v1.11 and later, Elastic
+    Runtime defaults to a highly available resource configuration. However, you may
+    need to complete additional procedures described below to make your deployment
+    highly available.</p>
+  enable_invitations: <p class="note"><strong>Note</strong>&#58; The <strong>Enable
+    Invitations</strong> checkbox in the Apps Manager section of the Elastic Runtime
+    tile must be selected to invite new users.</p>
+  route_services_appsman1: <p class="note"><strong>Note</strong>&#58; The procedures
+    in this topic use the Cloud Foundry Command Line Interface (cf CLI). You can also
+    manage route services using Apps Manager. For more information, see the <a href="../console/manage-apps.html#manage-route-services">Manage
+    Route Services</a> section of the <em>Managing Apps and Service Instances Using
+    Apps Manager</em> topic.</p>
+  route_services_appsman2: <p class="note"><strong>Note</strong>&#58; The procedures
+    in this topic use the Cloud Foundry Command Line Interface (cf CLI). You can also
+    manage route services using Apps Manager. For more information, see the <a href="../../console/manage-apps.html#manage-route-services">Manage
+    Route Services</a> section of the <em>Managing Apps and Service Instances Using
+    Apps Manager</em> topic.</p>
+  user_provided_apps_man: <p class="note"><strong>Note</strong>&#58 The procedures
+    in this topic use the Cloud Foundry Command Line Interface (cf CLI). You can also
+    create user-provided service instances in Apps Manager from the Marketplace. To
+    update existing user-provided service instances, navigate to the service instance
+    page and select the <strong>Configuration</strong> tab.</p>
+  xfcc_always_forward: This mode is enabled by default or when the <b>Always forward
+    the XFCC header in the request, regardless of whether the client connection is
+    mTLS</b> (default) option is selected in the **Networking** configuration screen
+    of the Elastic Runtime tile.
+  xfcc_mtls_forward: This mode is enabled when the <b>Forward the XFCC header received
+    from the client only when the client connection is mTLS</b> option is selected
+    in the **Networking** configuration screen of the Elastic Runtime tile.
+  xfcc_strip: This mode is enabled when the <b>Strip the XFCC header when present
+    and set it to the client certificate from the mTLS handshake</b> option is selected
+    in the **Networking** configuration screen of the Elastic Runtime tile.
+  aws_lb_cipher_suites: "../customizing/pcf_aws_lb_cipher_suites"
+  ssl_cert_ert: <p class="note">Alternately, you can use the Elastic Runtime Ops Manager
+    interface to <a href="#ert_certgen">generate a certificate</a> for you. Certificates
+    generated in Elastic Runtime are signed by the Ops Manager Certificate Authority.
+    They are not technically self-signed, but they are sometimes referred to as "Self-Signed
+    Certificates" in the Ops Manager UI and throughout this documentation.</p>
+  ssl_single_sans_wildcard: "<li>You can use a single certificate with SANs in your
+    deployment for your wildcard domains, and</li>"
+  ssl_gorouter_sans: "<li>You can use a single SAN certificate on the Gorouter, and</li>"
+  ssl_single_san_restriction: "<li>You cannot use a single SAN certificate for all
+    system and application domains for your deployment, or</li>"
+  gorouter_sni: "<li>The Gorouter only supports a single TLS certificate key-pair. In
+    addition, if you are using HAProxy, the Gorouter and HAProxy are configured with the
+    same TLS certificate."
+:local_repo_dir: "/Users/chollingsworth/workspace"
+:workspace: !ruby/object:Pathname
+  path: "/Users/chollingsworth/workspace/docs-book-pivotalcf/output/master_middleman/source"
+:feedback_enabled: true
+:repo_link_enabled: true
+:repo_links:
+  pivotalcf/1-12/buildpacks:
+    repo: cloudfoundry/docs-buildpacks
+    ref: '272'
+    at_path: 
+  pivotalcf/1-12/adminguide:
+    repo: cloudfoundry/docs-cf-admin
+    ref: '272'
+    at_path: 
+  pivotalcf/1-12/cf-cli:
+    repo: cloudfoundry/docs-cf-cli
+    ref: '272'
+    at_path: 
+  pivotalcf/1-12/concepts:
+    repo: cloudfoundry/docs-cloudfoundry-concepts
+    ref: '272'
+    at_path: 
+  pivotalcf/1-12/devguide:
+    repo: cloudfoundry/docs-dev-guide
+    ref: '272'
+    at_path: 
+  pivotalcf/1-12/loggregator:
+    repo: cloudfoundry/docs-loggregator
+    ref: '272'
+    at_path: 
+  pivotalcf/1-12/routing:
+    repo: cloudfoundry/docs-routing
+    ref: '272'
+    at_path: 
+  pivotalcf/1-12/services:
+    repo: cloudfoundry/docs-services
+    ref: '272'
+    at_path: 
+  pivotalcf/1-12/uaa:
+    repo: cloudfoundry/docs-uaa
+    ref: '272'
+    at_path: 
+  pivotalcf/1-12/monitoring:
+    repo: pivotal-cf/docs-monitoring
+    ref: '1.12'
+    at_path: docs-content
+  pivotalcf/1-12/opsguide:
+    repo: pivotal-cf/docs-ops-guide
+    ref: '1.12'
+    at_path: 
+  pcf-dev:
+    repo: pivotal-cf/docs-pcf-dev
+    ref: '1.12'
+    at_path: 
+  pivotalcf/1-12/installing:
+    repo: pivotal-cf/docs-pcf-gsg
+    ref: '1.12'
+    at_path: 
+  pivotalcf/1-12/customizing:
+    repo: pivotal-cf/docs-pcf-install
+    ref: '1.12'
+    at_path: 
+  pivotalcf/1-12/appsman-services:
+    repo: pivotal-cf/docs-pcf-pws
+    ref: '1.12'
+    at_path: 
+  pivotalcf/1-12/refarch:
+    repo: pivotal-cf/docs-pcf-refarch
+    ref: '1.12'
+    at_path: 
+  pivotalcf/1-12/security:
+    repo: pivotal-cf/docs-pcf-security
+    ref: '1.12'
+    at_path: 
+  pivotalcf/1-12/windows:
+    repo: pivotal-cf/docs-pcf-windows
+    ref: '1.12'
+    at_path: docs-content
+  pivotalcf/1-12/console:
+    repo: pivotal-cf/docs-pivotalcf-console
+    ref: '1.12'
+    at_path: 
+  pivotalcf/1-12/pcf-release-notes:
+    repo: pivotal-cf/pcf-release-notes
+    ref: '1.12'
+    at_path: 
+  archives:
+    repo: pivotal-cf/docs-pdfs
+    ref: master
+    at_path: 
+  resources:
+    repo: pivotal-cf/product-compatibility-matrix
+    ref: master
+    at_path: 
+:product_info:
+  pivotalcf_1-12_buildpacks: &1
+    use_local_header: true
+    latest_stable_version: '1.12'
+    changelog_href: https://docs.pivotal.io/pivotalcf/pcf-release-notes/
+    local_header_img: "/images/cloud_rings.png"
+    local_header_title: Pivotal Cloud Foundry
+    search_placeholder: Search PCF 1.12
+    local_product_version: '1.12'
+    url_prefix: pivotalcf/1-12
+    local_header_links:
+    - <a href="https://network.pivotal.io/">Download</a>
+    - <a href="https://support.pivotal.io/hc/en-us/requests/new">Ask for Help</a>
+    - <a href="https://discuss.pivotal.io/hc/en-us/categories/200072648-Pivotal-CF-Knowledge-Base">PCF
+      Knowledge Base</a>
+    - <a href="/archives/pcf-docs-1.12.pdf">PDF</a>
+    local_header_version_list:
+    - url_prefix: https://docs.pivotal.io/pivotalcf/1-11
+      display_name: v1.11
+    - url_prefix: https://docs.pivotal.io/pivotalcf/1-10
+      display_name: v1.10
+    - url_prefix: https://docs.pivotal.io/pivotalcf/1-9
+      display_name: v1.9
+    - url_prefix: https://docs.pivotal.io/pivotalcf/1-8
+      display_name: v1.8
+    - url_prefix: https://docs.pivotal.io/pivotalcf/1-7
+      display_name: v1.7
+    - url_prefix: https://docs.pivotal.io/pivotalcf/1-6
+      display_name: v1.6
+    - <a href="/archives/pcf-docs-1.5.pdf">v1.5</a>
+    - <a href="/archives/pcf-docs-1.4.pdf">v1.4</a>
+    - <a href="/archives/pcf-docs-1.3.pdf">v1.3</a>
+    - <a href="/archives/pcf-docs-1.2.pdf">v1.2</a>
+  pivotalcf_1-12_adminguide: *1
+  pivotalcf_1-12_cf-cli: *1
+  pivotalcf_1-12_concepts: *1
+  pivotalcf_1-12_devguide: *1
+  pivotalcf_1-12_loggregator: *1
+  pivotalcf_1-12_routing: *1
+  pivotalcf_1-12_services: *1
+  pivotalcf_1-12_uaa: *1
+  pivotalcf_1-12_monitoring: *1
+  pivotalcf_1-12_opsguide: *1
+  pcf-dev: {}
+  pivotalcf_1-12_installing: *1
+  pivotalcf_1-12_customizing: *1
+  pivotalcf_1-12_appsman-services: *1
+  pivotalcf_1-12_refarch: *1
+  pivotalcf_1-12_security: *1
+  pivotalcf_1-12_windows: *1
+  pivotalcf_1-12_console: *1
+  pivotalcf_1-12_pcf-release-notes: *1
+  archives: {}
+  resources: {}
+:elastic_search: true
