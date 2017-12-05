@@ -474,6 +474,20 @@ category: basics
   }
 }
 
+.note.breaking {
+  background-color: #fdd;
+  border-color: #fbb;
+  &:before {
+    content: "\F127";
+    font-family: FontAwesome;
+    color: #000000;
+    font-size: 1.2em;
+    left: 0.6em;
+    position: absolute;
+    top: 0.75em;
+  }
+}
+
 /*doc
 ---
 title: Content Helper - New User Tip
