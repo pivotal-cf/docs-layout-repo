@@ -78,6 +78,6 @@ The following items are defined by books, and used by `layouts/layout.erb`:
 
 ##### Partials:
 
-* `layouts/_book_title.erb`: On home page, how the title and logo are displayed
-* `layouts/_book_footer.erb`: Copyright and support information in footer
-* `layouts/_book_search.erb` [**Optional**]: Google Custom Search Engine box
+* `layouts/_book-title.erb`: On home page, how the title and logo are displayed
+* `layouts/_book-footer.erb`: Copyright and support information in footer
+* `layouts/_book-search.erb` [**Optional**]: Google Custom Search Engine box
