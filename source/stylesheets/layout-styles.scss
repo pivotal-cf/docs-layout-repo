@@ -313,6 +313,13 @@ category: basics
 </ol>
 ```
 */
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  margin-top: 1em;
+  padding-bottom: 0
+}
 .list-steps {
   counter-reset: list-steps;
   list-style: none;
