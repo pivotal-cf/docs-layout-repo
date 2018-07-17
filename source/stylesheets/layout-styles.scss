@@ -16,6 +16,7 @@
   box-sizing: border-box;
 }
 
+
 // ~BREADCRUMB
 // ===================================================
 .breadcrumbs {
@@ -58,6 +59,8 @@
 }
 
 // Add notebook like shadows
+
+
 /*doc
 ---
 title: Panel
@@ -146,6 +149,16 @@ category: basics
   font-size: 0.75em;
   padding-left: 0.5em;
   white-space: nowrap;
+}
+
+// Anchor hack for fixed header
+main a[id]:before {
+  @media (min-width: $bp-wide) {
+    content: "";
+    display: block;
+    height: 80px;
+    margin: -80px 0 0;
+  }
 }
 
 // ~TITLES
