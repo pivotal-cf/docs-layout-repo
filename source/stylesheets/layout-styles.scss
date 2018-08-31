@@ -569,3 +569,60 @@ hr {
 .hidden {
   display: none !important;
 }
+
+.container {
+  max-width: 1180px !important;
+  padding: 0 20px !important;
+  width: 100% !important;
+  @media(min-width:1200px) {
+    width: 100% !important;
+  }
+  @media(min-width:992px) {
+    width: 100% !important;
+  }
+  @media(min-width:992px) {
+    width: 100% !important;
+  }
+}
+
+.content-layout {
+  padding: 2em 0;
+  @media (min-width: $bp-wide) {
+    padding: 2em 0;
+  }
+}
+
+.has-subnav .container {
+  @media (min-width: $bp-wide) {
+    margin-left: auto;
+  }
+}
+
+.has-subnav .content-layout {
+  margin-left: 22.9375em !important;
+  @media (min-width: $bp-wide) {
+    margin-left: 22.9375em;
+  }
+  @media(max-width:899px) {
+    margin-left: 17.375em !important;
+  }
+}
+
+.nav-container {
+  left: 0;
+  @media (min-width: $bp-wide) {
+    left: auto;
+  }
+}
+
+@media (max-width: 1170px) {
+  .nav-content {
+    padding-left: 0 !important;
+  }
+}
+
+@media (max-width: $bp-small) {
+  .has-subnav .content-layout {
+    margin-left: 0 !important;
+  }  
+}
