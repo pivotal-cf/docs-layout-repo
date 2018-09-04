@@ -1,6 +1,16 @@
 $(document).ready(function() {
   Elemental.load(document);
   Bookbinder.boot();
+
+  $('.search-icon').click( function() {
+      var toggleWidth = $("#header-search").width() == 0 ? "228px" : "0";
+      $('#header-search').animate({ 
+        width: toggleWidth
+        }, 700, function() {
+          setTimeout("$('#header-search input[type=text]').focus();");
+        });
+  });
+  
 });
 
 
