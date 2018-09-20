@@ -1,13 +1,13 @@
 <% if product_info['use_local_header'] %>
   <div class="local-header title-container">
     <div class="local-header version-info">
-      LATEST VERSION: <%= product_info['latest_stable_version'] %> - <a href="<%= product_info['changelog_href'] %>">CHANGELOG</a>
+      LATEST VERSION: <%= product_info['latest_stable_version'] %> - <a href="<%= product_info['changelog_href'] %>">RELEASE NOTES</a>
     </div>
     <div class="local-header local-title clearfix">
       <img src="<%= product_info['local_header_img'] %>">
       <span class="local-header-title"><%= product_info['local_header_title'] %>
       </span>
-      <span class="local-header local-version header-dropdown">
+      <span onClick="return true" class="local-header local-version header-dropdown">
         <a class="local-header header-dropdown-link">v<%= product_info['local_product_version'] || product_info['latest_stable_version'] %></a>
         <span class="local-header header-dropdown-content">
           <ul>
