@@ -14,8 +14,8 @@
 
 .has-subnav .site-footer-links {
   margin-left: 31em;
-   @media(max-width:899px) {
-      margin-left: 24em;
+   @media(max-width: 1121px) {
+      margin-left: 30px;
    }  
    @media (max-width: $bp-small) {
       margin-left: 0;

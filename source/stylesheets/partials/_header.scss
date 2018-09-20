@@ -54,6 +54,10 @@ Add <code>.header-layout</code> to header tag to get fixed positioning.
   min-height: em(38);
   padding: em(5) 1em em(5) 1em;
   @include clearfix;
+  @media(max-width: 1210px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 .header a {
   color: #fff;
@@ -119,10 +123,13 @@ Add <code>.header-layout</code> to header tag to get fixed positioning.
   @include transition (opacity);
   font-size: $font-size-xs;
   line-height: 1;
-  @media (min-width: $bp-wide) {
+  @media (min-width: $bp-medium) {
     clear: none;
     display: inline-block;
     padding-top: 0.55em;
+    &:after {
+      content: "";
+    }
   }
 }
 .menu-active .header-item {
@@ -136,18 +143,19 @@ Add <code>.header-layout</code> to header tag to get fixed positioning.
       padding: 0.5em 0;
     }
   }
+  &.searchbar,
   &#search-header-item,
   &#docs-header-item {
     display: none !important;
   }
 }
 .header-item:after {
-  @media (min-width: $bp-wide) {
+  @media (min-width: $bp-medium) {
     content: "|";
   }
 }
 .header-item:last-child:after {
-  @media (min-width: $bp-wide) {
+  @media (min-width: $bp-medium) {
     content: "";
   }
 }
