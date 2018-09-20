@@ -54,6 +54,10 @@ Add <code>.header-layout</code> to header tag to get fixed positioning.
   min-height: em(38);
   padding: em(5) 1em em(5) 1em;
   @include clearfix;
+  @media(max-width: 1210px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 .header a {
   color: #fff;
@@ -80,16 +84,20 @@ Add <code>.header-layout</code> to header tag to get fixed positioning.
 
 // header links
 .header-links {
-  @media (min-width: $bp-wide) {
+  @media (min-width: $bp-medium) {
     float: right;
     text-align: right;
-    width: 50%;
   }
 }
 .btn-menu {
   float: right;
   position: relative;
   right: -1em;
+  display: block;
+  padding: 0 1em;
+  @media (min-width: $bp-medium) {
+    display: none;
+  }
   &:before {
     content: $fa-var-bars;
     @extend .fa;
@@ -98,10 +106,6 @@ Add <code>.header-layout</code> to header tag to get fixed positioning.
   }
   &:hover {
     cursor: pointer;
-  }
-  padding: 0 1em;
-  @media (min-width: $bp-wide) {
-    display: none;
   }
 }
 .menu-active .btn-menu {
@@ -119,27 +123,43 @@ Add <code>.header-layout</code> to header tag to get fixed positioning.
   @include transition (opacity);
   font-size: $font-size-xs;
   line-height: 1;
-  @media (min-width: $bp-wide) {
+  @media (min-width: $bp-medium) {
     clear: none;
     display: inline-block;
     padding-top: 0.55em;
+    &:after {
+      content: "";
+    }
   }
 }
 .menu-active .header-item {
+  display: block !important;
   @media (max-width: $bp-wide) {
     display: block;
   }
+  @media(max-width: $bp-medium) {
+    a {
+      display: block;
+      padding: 0.5em 0;
+    }
+  }
+  &.searchbar,
+  &#search-header-item,
+  &#docs-header-item {
+    display: none !important;
+  }
 }
 .header-item:after {
-  @media (min-width: $bp-wide) {
+  @media (min-width: $bp-medium) {
     content: "|";
   }
 }
 .header-item:last-child:after {
-  @media (min-width: $bp-wide) {
+  @media (min-width: $bp-medium) {
     content: "";
   }
 }
+
 
 /*doc
 ---
@@ -367,7 +387,6 @@ category: basics
 }
 
 .embedded-searchbar {
-  margin-right: 0.5em;
 
   .gsc-search-box {
     padding: 0;
