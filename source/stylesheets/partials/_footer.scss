@@ -1,12 +1,33 @@
 /*
  * FILE: _footer.scss
 ======================================================================== */
+
 .site-footer-links {
   font-size: $font-size-xs;
   clear: both;
+  // padding: 1em 0 4em;
   padding: 1em 30px 4em 30px;
+  overflow: hidden;
   a {
     color: $color-text;
+  }
+}
+
+.has-subnav .site-footer-links {
+  // margin-left: 31em;
+  //  @media(max-width: 1121px) {
+  //     margin-left: 30px;
+  //  }  
+  //  @media (max-width: $bp-small) {
+  //     margin-left: 0;
+  //  }
+  .support {
+    margin-top: 36px;
+    @media(max-width:1400px) {
+      margin-top: 20px;
+      float: left;
+      width: 100%;
+    }
   }
 }
 
@@ -19,6 +40,7 @@
 .support {
   @media (min-width: $bp-wide) {
     float: right;
+    margin-top: 50px;
   }
 }
 

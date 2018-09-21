@@ -16,7 +16,6 @@
   box-sizing: border-box;
 }
 
-
 // ~BREADCRUMB
 // ===================================================
 .breadcrumbs {
@@ -59,8 +58,6 @@
 }
 
 // Add notebook like shadows
-
-
 /*doc
 ---
 title: Panel
@@ -149,16 +146,6 @@ category: basics
   font-size: 0.75em;
   padding-left: 0.5em;
   white-space: nowrap;
-}
-
-// Anchor hack for fixed header
-main a[id]:before {
-  @media (min-width: $bp-wide) {
-    content: "";
-    display: block;
-    height: 80px;
-    margin: -80px 0 0;
-  }
 }
 
 // ~TITLES
@@ -326,13 +313,6 @@ category: basics
 </ol>
 ```
 */
-ul ul,
-ol ol,
-ul ol,
-ol ul {
-  margin-top: 1em;
-  padding-bottom: 0
-}
 .list-steps {
   counter-reset: list-steps;
   list-style: none;
@@ -589,3 +569,80 @@ hr {
 .hidden {
   display: none !important;
 }
+
+// .container {
+//   max-width: 1180px !important;
+//   padding: 0 20px !important;
+//   width: 100% !important;
+//   @media(min-width:1200px) {
+//     width: 100% !important;
+//   }
+//   @media(min-width:992px) {
+//     width: 100% !important;
+//   }
+// }
+
+.content-layout {
+  @media (min-width: $bp-wide) {
+    padding: 2em 0;
+  }
+}
+
+.has-subnav .header .container {
+  // margin-left: auto;
+  margin-left: 0 !important;
+  padding: 0 20px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  @media (min-width: $bp-wide) {
+    // margin-left: auto;
+  }
+}
+
+// .has-subnav .container {
+//   @media (min-width: 1122px) {
+//     margin-left: auto;
+//   }
+//   @media(max-width: 1121px) {
+//     width: auto !important;
+//     padding: 0 !important;
+//   }
+//   @media(max-width: $bp-small) {
+//     padding: 0 20px !important;
+//   }
+// }
+
+// .has-subnav .content-layout {
+//   @media (min-width: 1122px) {
+//     margin-left: 22.9375em;
+//   }
+//   @media(max-width: 899px) {
+//     margin-left: 0;
+//   }
+// }
+
+.partners.has-subnav .content-layout {
+  @media(min-width: $bp-wide) {
+    padding-top: 2em;
+  }
+} 
+
+.nav-container {
+  padding-left: 0 !important;
+  // left: 0;
+  // @media (min-width: 1122px) {
+  //   left: auto;
+  // }
+}
+
+// @media (max-width: 1170px) {
+//   .nav-content {
+//     padding-left: 0 !important;
+//   }
+// }
+
+// @media (max-width: $bp-small) {
+//   .has-subnav .content-layout {
+//     margin-left: 0 !important;
+//   }  
+// }
