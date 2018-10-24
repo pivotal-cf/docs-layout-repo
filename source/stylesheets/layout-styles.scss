@@ -151,15 +151,6 @@ category: basics
   white-space: nowrap;
 }
 
-// Anchor hack for fixed header
-main a[id]:before {
-  @media (min-width: $bp-wide) {
-    content: "";
-    display: block;
-    height: 80px;
-    margin: -80px 0 0;
-  }
-}
 
 // ~TITLES
 // ===================================================
