@@ -140,7 +140,6 @@ CFDocs.SubmitFeedback = function(element) {
      */
     scrollToCurrent: function() {
       this.scrollIfAnchor(window.location.hash);
-      console.log("Scrolling, scrolling, scrolling");
     },
 
     /**
