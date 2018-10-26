@@ -81,7 +81,6 @@ CFDocs.SubmitFeedback = function(element) {
 //Anchor scroll hack
 (function(document, history, location) {
   var HISTORY_SUPPORT = !!(history && history.pushState);
-  var isDesktop = window.screenX != 0 && !isTouchDevice() ? true : false;
 
   var anchorScrolls = {
     ANCHOR_REGEX: /^#[^ ]+$/,
