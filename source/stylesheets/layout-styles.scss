@@ -580,3 +580,31 @@ hr {
 .hidden {
   display: none !important;
 }
+
+.has-subnav {
+  @media (min-width: $bp-medium) {
+    .nav-container {
+      top: 100px;
+    }
+    .content-layout {
+      padding: 3.5em 2em;
+    }
+  }
+}
+
+body.partners.has-subnav {
+  @media (min-width: $bp-medium) {
+    .nav-container {
+      top: 40px;
+    }
+    .content-layout {
+      padding: 2em;
+    }
+  }  
+  @media (min-width: $bp-wide) {
+    .content-layout {
+      padding: 2em;
+    }    
+  }
+}
+
