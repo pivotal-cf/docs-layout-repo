@@ -339,3 +339,47 @@ header.header-home-global {
   }
 }
 
+.edge-banner {
+    z-index: 11;
+    background-color: #bf1919;
+    display: flex;
+    font-size: .75em;
+    line-height: 1.5;
+    text-align: center;
+    min-height: 55px;
+    align-items: center;
+    justify-content: center;
+    a {
+      color: white;
+      border-bottom: none;
+    }
+}
+
+@media (min-width: 700px) {
+  header.header {
+    top: 55px;
+  }
+  .edge-banner {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+  }
+  .wrap > .container {
+    margin-top: 55px;
+  }
+  h2 > a:before, h3 > a:before {
+    height: 168px;
+    margin: -168px 0 0;
+  }
+  .nav-container {
+    top: 80px;
+  }
+}
+
+@media (min-width: 993px) {
+  .has-subnav div.nav-container {
+    top: 155px;
+  }
+}
+
