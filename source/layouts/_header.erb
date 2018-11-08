@@ -1,3 +1,52 @@
+<style>
+.edge-banner {
+    z-index: 11;
+    background-color: #bf1919;
+    display: flex;
+    font-size: .75em;
+    line-height: 1.5;
+    text-align: center;
+    min-height: 55px;
+    align-items: center;
+    justify-content: center;
+}
+
+.edge-banner a {
+    color: white;
+    border-bottom: none;
+}
+
+@media (min-width: 700px) {
+  header.header {
+    top: 55px;
+  }
+  .edge-banner {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+  }
+  .wrap > .container {
+    margin-top: 55px;
+  }
+  h2 > a:before,
+  h3 > a:before {
+    height: 168px;
+    margin: -168px 0 0;
+  }
+  .nav-container {
+    top: 80px;
+  }
+}
+
+@media (min-width: 993px) {
+  .has-subnav div.nav-container {
+    top: 155px;
+  }
+}
+</style>
+
+
 <% if vars.use_global_header && current_page.data.owner != "Pivotal HD" %>
 <div class="edge-banner" ><a href="https://docs-pcf-staging.cfapps.io/pivotalcf/installing/report-issue.html">PRE-RELEASE DOCUMENTATION<br>Please do not distribute outside the Pivotal Early Access Program. Click here to learn how to report an issue or feature enhancement with this early access release.</a></div> 
   <% if current_page.path.include? "partners" %>
