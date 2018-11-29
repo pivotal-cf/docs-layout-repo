@@ -608,3 +608,14 @@ body.partners.has-subnav {
   }
 }
 
+a:not([href]) {
+  display: block;
+  position: relative;
+  top: -130px;
+  visibility: hidden;
+  @media(max-width: 992px) {
+    top: -80px;
+  }
+}
+
+
