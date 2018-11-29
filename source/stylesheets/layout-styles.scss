@@ -618,4 +618,17 @@ a:not([href]) {
   }
 }
 
+a.sidenav-title {
+  display: block;
+  top: 0;
+  @media (min-width: 43.75em) {
+    display: none;
+    top: 0;
+  }
+  @media(max-width: 992px) {
+    top: 0;
+  }
+}
+
+
 
