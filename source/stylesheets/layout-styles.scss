@@ -608,3 +608,27 @@ body.partners.has-subnav {
   }
 }
 
+a:not([href]) {
+  display: block;
+  position: relative;
+  top: -130px;
+  visibility: hidden;
+  @media(max-width: 992px) {
+    top: -80px;
+  }
+}
+
+a.sidenav-title {
+  display: block;
+  top: 0;
+  @media (min-width: 43.75em) {
+    display: none;
+    top: 0;
+  }
+  @media(max-width: 992px) {
+    top: 0;
+  }
+}
+
+
+
