@@ -608,3 +608,22 @@ body.partners.has-subnav {
   }
 }
 
+
+@media (min-width: 700px) {
+  h2 > a:before,
+  h3 > a:before {
+    height: 113px;
+    margin: -113px 0 0;
+  }
+  .nav-container {
+    top: 80px;
+  }
+}
+ @media (min-width: 993px) {
+  .has-subnav div.nav-container {
+    top: 100px;
+  }
+}
+
+
+
