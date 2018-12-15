@@ -84,7 +84,7 @@ CFDocs.SubmitFeedback = function(element) {
 
   var anchorScrolls = {
     ANCHOR_REGEX: /^#[^ ]+$/,
-    OFFSET_HEIGHT_PX: 168,
+    OFFSET_HEIGHT_PX: 113,
 
     /**
      * Establish events, and fix initial scroll position if a hash is provided.
