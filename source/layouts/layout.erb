@@ -23,7 +23,7 @@
   <%= partial 'layouts/additional-scripts' %>
 </head>
 
-<body class="<%= body_classes %> has-subnav">
+<body class="<%= body_classes %><%= yield_for_subnav.empty? ? '' : ' has-subnav' %>">
 
 <div class="viewport">
   <div class='wrap'>
@@ -36,11 +36,7 @@
     <div class="container">
 
       <!--googleoff: index-->
-      <% if yield_for_subnav.empty? %>
-      <div id="sub-nav" class="js-sidenav nav-container" role="navigation"></div>
-      <% else %>
       <%= yield_for_subnav %>
-      <% end %>
       <!--googleon: index-->
 
       <main class="content content-layout" id="js-content" role="main">

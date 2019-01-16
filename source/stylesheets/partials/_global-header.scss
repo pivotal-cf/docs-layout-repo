@@ -329,6 +329,10 @@ header.header-home-global {
   text-align: center;
   // margin-top: 64px;
   margin-top: 0;
+  
+}
+
+body:not(.has-subnav) {
   @media (min-width: $bp-wide) {
     margin-top: 113px;
   }
@@ -339,4 +343,3 @@ header.header-home-global {
     margin-top: 0;
   }
 }
-
