@@ -5,8 +5,8 @@
   <div class="search-input">
     <div class="search-input-inner" id="docs-search">
       <% if defined?(elastic_search?) && elastic_search? %>
-        <form method="get" action="/search">
-          <input name="q" placeholder="search" class="search-box" />
+        <form role="search" method="get" action="/search">
+          <input name="q" role="searchbox" placeholder="search" class="search-box" />
         </form>
       <% else %>
         <gcse:searchbox></gcse:searchbox>
