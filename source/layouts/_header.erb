@@ -17,8 +17,8 @@
 
       <div class="header-item embedded-searchbar">
         <% if elastic_search? %>
-          <form role="search" method="get" action="/search">
-            <input role="searchbox" name="q" placeholder="<%= product_info['search_placeholder'] || 'Search' %>" class="search-box" />
+          <form method="get" action="/search">
+            <input name="q" aria-label="<%= product_info['search_placeholder'] || 'Search' %>" placeholder="<%= product_info['search_placeholder'] || 'Search' %>" class="search-box" />
             <% if !product_info['local_header_title'].nil? %>
               <input type="hidden" name="product_name" value="<%= product_info['local_header_title'] %>" />
             <% end %>
@@ -64,8 +64,8 @@
       </a>
       <div class="header-item embedded-searchbar">
         <% if elastic_search? %>
-          <form role="search" method="get" action="/search">
-            <input role="searchbox" name="q" placeholder="<%= product_info['search_placeholder'] || 'Search' %>" class="search-box" />
+          <form method="get" action="/search">
+            <input name="q" aria-label="<%= product_info['search_placeholder'] || 'Search' %>" placeholder="<%= product_info['search_placeholder'] || 'Search' %>" class="search-box" />
             <% if !product_info['local_header_title'].nil? %>
               <input type="hidden" name="product_name" value="<%= product_info['local_header_title'] %>" />
             <% end %>
