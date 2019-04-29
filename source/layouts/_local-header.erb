@@ -1,16 +1,15 @@
 <% if product_info['use_local_header'] %>
-<div role="banner" aria-label="<%= product_info['local_header_title'] %> product">
   <div class="local-header title-container">
     <div class="local-header version-info">
       LATEST VERSION: <%= product_info['latest_stable_version'] %> - <a href="<%= product_info['changelog_href'] %>">RELEASE NOTES</a>
     </div>
     <div class="local-header local-title clearfix">
-      <img src="<%= product_info['local_header_img'] %>" alt="">
+      <img src="<%= product_info['local_header_img'] %>">
       <span class="local-header-title"><%= product_info['local_header_title'] %>
       </span>
       <span onClick="return true" class="local-header local-version header-dropdown">
         <a class="local-header header-dropdown-link">v<%= product_info['local_product_version'] || product_info['latest_stable_version'] %></a>
-        <div class="local-header header-dropdown-content">
+        <span class="local-header header-dropdown-content">
           <ul>
             <% if product_info['local_header_version_list'] %>
               <% product_info['local_header_version_list'].each do |version| %>
@@ -24,16 +23,15 @@
               <% end %>
             <% end %>
           </ul>
-        </div>
+        </span>
       </span>
 
       <!-- search was here -->
     </div>
-    <nav class="local-header local-header-links">
+    <div class="local-header local-header-links">
       <% product_info['local_header_links'].each do |link| %>
         <%= link %>
       <% end %>
-    </nav>
+    </div>
   </div>
-</div>
 <% end %>

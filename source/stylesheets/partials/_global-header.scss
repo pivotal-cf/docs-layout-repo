@@ -149,7 +149,7 @@ header.global-header {
         }
       }
     }
-    .docs-header-item {
+    #docs-header-item {
       a {
         font-weight: 600;
       }
@@ -200,7 +200,7 @@ header.global-header {
     display: block;
   }
 
-  .docs-header-item {
+  #docs-header-item {
     display: none;
     @media (min-width: $bp-medium) {
       display: inline-block;
