@@ -32,38 +32,51 @@
 
     <%= partial 'layouts/header' %>
 
-    <div class="container">
+    <div class="container" id='container-main'>
+      <div id='container-main-inner'>
 
-      <!--googleoff: index-->
-      <%= yield_for_subnav %>
-      <!--googleon: index-->
+        <!--googleoff: index-->
+        <%= yield_for_subnav %>
+        <!--googleon: index-->
 
-      <main class="content content-layout" id="js-content" role="main">
-        <a id="top"></a>
-        <%= partial 'layouts/local-header' %>
-        <%= partial 'layouts/title' %>
-        <% if quick_links %>
-          <div id="js-quick-links" <%= 'class="list-style-none"' if current_page.data.list_style_none %>>
-            <%= quick_links %>
+        <main class="content content-layout" id="js-content" role="main">
+          <a id="top"></a>
+          <%= partial 'layouts/title' %>
+          <% if quick_links %>
+            <div id="js-quick-links" <%= 'class="list-style-none"' if current_page.data.list_style_none %>>
+              <%= quick_links %>
+            </div>
+          <% end %>
+          <div class="to-top" id="js-to-top">
+            <a href="#top" title="back to top"></a>
           </div>
-        <% end %>
-        <div class="to-top" id="js-to-top">
-          <a href="#top" title="back to top"></a>
+          <%= yield %>
+          <%= partial 'layouts/page-footer' %>
+          <footer class="site-footer-links">
+            <%= partial 'layouts/book-footer' %>
+          </footer>
+        </main>
+        <div class='sidebar'>
+          <% if quick_links %>
+            <div id="js-quick-links" <%= 'class="list-style-none"' if current_page.data.list_style_none %>>
+              <%= quick_links %>
+            </div>
+          <% end %>
+          <% if product_info['use_local_header'] %>
+            <div class='product-info'>
+              <a href="<%= product_info['changelog_href'] %>">Release Notes</a><br/>
+              <% product_info['local_header_links'].each do |link| %>
+                <%= link %><br/>
+              <% end %>
+            </div>
+          <% end %>
         </div>
-        <%= yield %>
-        <%= partial 'layouts/page-footer' %>
-      </main>
+      </div>
     </div>
   </div>
 </div>
 
 <div id="scrim"></div>
-
-<div class="container">
-  <footer class="site-footer-links">
-    <%= partial 'layouts/book-footer' %>
-  </footer>
-</div><!--end of container-->
 
 </body>
 </html>

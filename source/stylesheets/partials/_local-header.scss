@@ -3,19 +3,55 @@
 ======================================================================== */
 
 .local-header.local-title {
-  font-weight: 200;
   padding: 10px 0;
-  font-size: 31px;
+  font-weight: normal;
+  font-size: 28px;
+  -webkit-font-smoothing: auto !important;
+  .img-container {
+    background: white;
+    border-radius: 50%;
+    width: 67px;
+    height: 67px;
+    text-align: center;
+    float: none;
+    display:inline-block;
+    vertical-align: middle;
+    margin-right: 35px;
+    border: 2px solid #a6d6ce;
+    @media(max-width: $bp-medium) {
+      display: none;
+    }
+  }
   img {
-    height: 26px;
+    height: 35px;
+    width: auto;
+    margin: 10px auto;
+  }
+  @media(max-width: 1053px) {
+    font-size: 25px;
+    .img-container {
+      margin-right: 15px;
+    }
+  }
+  @media(max-width: $bp-medium) {
+    font-size: 1.2rem;
+  }
+  @media(max-width: 700px) {
+    max-width: 250px;
+  }
+  @media(max-width: 390px) {
+    max-width: 240px;
   }
 }
 
+
 .local-header.title-container {
-  border-bottom: 1px solid $color-border;
-  padding: 20px 0;
-  margin-bottom: 30px;
-  font-weight: normal;
+  font-weight: 300;
+  border-bottom: none;
+  padding: 0;
+  margin-bottom: 0;
+  max-width: 50%;
+  display: inline-block;
   a {
     border-bottom: none;
     padding: 0 5px;
@@ -39,29 +75,40 @@
       content: "";
     }
   }
-}
-
-.local-header.title-container {
   .local-header.version-info {
     color: grey;
     font-size: 14px;
+    display: inline-block;
+    text-transform: uppercase;
+    color: white;
+    margin-left: 15px;
     a:after {
       content: "";
     }
   }
+  @media (min-width: 43.75em) {
+    font-size: 2em;
+    font-weight: 300;
+  }
+  @media(max-width: 700px) {
+    max-width: 90%;
+  }
 }
 
+
 .local-header.local-version {
-  font-size: x-large;
-  margin-left: 15px;
+  font-size: 20px;
+  margin-left: 5px;
   a {
-    color: $color-text;
+    color: white;
     font-weight: normal;
     display: inline-block;
+    &:hover {
+      border-bottom: none;
+    }
   }
-  a:hover {
-    background-color: $color-bg-panel;
-    border-bottom: none;
+  @media(max-width: 1053px) {
+    font-size: 17px;
   }
 }
 
@@ -74,7 +121,7 @@
   float: none;
   font-size: initial;
   padding: 0;
-  background-color: #F5F6F7;
+  background-color: $mint2;
   border: none;
   box-shadow: 0 6px 12px rgba(0,0,0,.175);
   li {
@@ -83,11 +130,10 @@
     margin: 0;
   }
   li:hover {
-    background-color: #d3d5d7;
+    background-color: rgba(0, 0, 0, 0.26);
     border-bottom: none;
   }
   a:link:hover {
-    background-color: #d3d5d7;
     width: 100%;
     z-index: 100;
   }
@@ -152,3 +198,7 @@
     }
   }
 }
+
+
+
+
