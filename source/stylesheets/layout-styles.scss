@@ -703,6 +703,10 @@ body {
   height: 100%;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight:300;
+}
+
 h2, .h2 {
   font-size: 1.6em;
   font-weight: 300;
@@ -744,7 +748,7 @@ h2, .h2 {
   display: block;
   padding-bottom: 8px;
   font-weight: 700;
-  content: "Table of contents";
+  content: "In this topic";
   font-size: 0.9rem;
 }
 
@@ -763,8 +767,8 @@ h2, .h2 {
   .has_submenu {
     &:before {
       content: "\f078";
-      margin-top: 4px;
-      font-size: 8px;
+      margin-top: 2px;
+      font-size: 11px;
       vertical-align: top;
     }
     &.expanded:before {
