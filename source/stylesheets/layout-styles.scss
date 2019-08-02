@@ -907,7 +907,12 @@ h2, .h2 {
   }
 }
 
-
+@media (min-width: 700px) {
+  h2[id]:before, h3[id]:before, h2 > a:before, h3 > a:before {
+    height: 180px;
+    margin: -180px 0 0;
+  }
+}
 
 
 
