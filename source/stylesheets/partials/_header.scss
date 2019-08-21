@@ -357,6 +357,13 @@ category: basics
   margin: 0;
   padding: 0;
 }
+
+.header-dropdown-content ul {
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 300px;
+}
+
 .header-dropdown-content li {
   display: block;
   margin: 0;
