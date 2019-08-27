@@ -913,7 +913,7 @@ h3, .h3  {
 }
 
 @media (min-width: 700px) {
-  h2[id]:before, h3[id]:before, h2 > a:before, h3 > a:before {
+  h2:before, h3:before, h2 > a:before, h3 > a:before {
     height: 180px;
     margin: -180px 0 0;
   }
