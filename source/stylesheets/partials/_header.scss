@@ -361,7 +361,7 @@ category: basics
 .header-dropdown-content ul {
   overflow: hidden;
   overflow-y: scroll;
-  height: 300px;
+  max-height: 300px;
 }
 
 .header-dropdown-content li {
