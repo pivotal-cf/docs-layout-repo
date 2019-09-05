@@ -587,7 +587,7 @@ hr {
       vertical-align: top;
       margin-left: 15em;
       margin-top: 110px;
-      max-width: 48em;
+      max-width: 48vw;
     }
   }
 }
@@ -705,12 +705,21 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight:300;
+  margin-top: 40px;
 }
 
 h2, .h2 {
   font-size: 1.6em;
   font-weight: 300;
   letter-spacing: -.01em;
+}
+
+h3, .h3  {
+   font-size: 1.2em;
+}
+
+h4, .h4  {
+   font-size: 1.0em;
 }
 
 .title-container {
@@ -908,12 +917,71 @@ h2, .h2 {
 }
 
 @media (min-width: 700px) {
-  h2[id]:before, h3[id]:before, h2 > a:before, h3 > a:before {
+  h2:before, h3:before, h2 > a:before, h3 > a:before {
     height: 180px;
     margin: -180px 0 0;
   }
 }
 
+/* Aug 2019 Updates */
+body[class*=__index] header.header-home-global {
+  background: transparent;
+  padding: 0;
+  color: black;
+}
+
+body[class*=__index] header.global-header #info-search-bar {
+  display: none;
+}
+
+body[class*=__index] {
+  @media(max-width: 993px) {
+    header.global-header #info-search-bar,
+    .super-nav {
+      display: block;
+    }
+    header.header-home-global {
+      padding: 3em 1em 0;
+    }
+    .content-layout {
+      padding-top: 1em;
+    }
+    form#search-home {
+      margin-bottom: 40px;
+    }
+    header.global-header .pivotal-logo {
+      max-width: 100%;
+      width: auto;
+    }
+    header.global-header .header-links a,
+    .btn-menu:before {
+      color: #00253e;
+    }
+    header.global-header .super-nav {
+      display: block;
+    }
+    header.global-header .super-nav .global-header-title {
+      float: none;
+    }
+    header.global-header #info-search-bar {
+      background-color: white;
+      min-height: 0;
+    }
+    header.global-header .menu-active .mobile-only .header-item#docs-header-item {
+      display: none;
+    }
+    .btn-menu {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+  @media (max-width: 700px) {
+    header.global-header .mobile-only, header.global-header .btn-menu {
+      padding: 0;
+    }
+  }
+}
 
 
 
