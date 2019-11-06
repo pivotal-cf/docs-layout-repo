@@ -12,6 +12,17 @@ $(function () {
 	}
 });
 
+
+// MANUAL ToC REPLACEMENT
+// If you create a table of contents with the class 'quick-links'
+// in the body of your page, it replaces the automatic table of
+// contents whereever it appears
+$(function() {
+  $('.js-quick-links').wrap('<div class="js-quick-links"></div>').replaceWith($('main > .quick-links'));
+});
+
+
+
 // NAVIGATION
 $(function() {
     // Smooth scrolling for all jump links
