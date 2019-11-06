@@ -18,10 +18,7 @@ $(function () {
 // in the body of your page, it replaces the automatic table of
 // contents whereever it appears
 $(function() {
-  $('#js-quick-links .quick-links').each(function() {
-    $(this).replaceWith($('main > .quick-links').clone());
-  })
-  $('main > .quick-links').remove();
+  $('.js-quick-links').wrap('<div class="js-quick-links"></div>').replaceWith($('main > .quick-links'));
 });
 
 
