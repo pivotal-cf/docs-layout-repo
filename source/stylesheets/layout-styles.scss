@@ -964,7 +964,6 @@ body[class*=__index] {
     }
     header.global-header #info-search-bar {
       background-color: white;
-      min-height: 0;
     }
     header.global-header .menu-active .mobile-only .header-item#docs-header-item {
       display: none;
@@ -980,6 +979,30 @@ body[class*=__index] {
       padding: 0;
     }
   }
+}
+
+/* Rebrand 2020 Updates */
+
+@media (min-width: 43.75em) {
+    header.global-header .super-nav .pivotal-logo {
+    height: 38px;
+    max-width: 233px;
+    margin: 8px 17px 10px 0;
+    }
+}
+
+.local-header.local-title .img-container {
+    display:none
+}
+
+.local-header.local-title {
+    padding: 20px 0;
+}
+
+@media (min-width: 993px) {
+    header.global-header .embedded-searchbar { 
+    margin: 5px 0 0;
+    }
 }
 
 
