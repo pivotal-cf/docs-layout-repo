@@ -1,4 +1,4 @@
-@import "font-awesome/variables";
+pa@import "font-awesome/variables";
 @import "font-awesome/core";
 @import "font-awesome/path";
 
@@ -1005,19 +1005,12 @@ body[class*=__index] {
     }
 }
 
+header.partners-global-header .pivotal-logo {
+    background-image: url(https://d1fto35gcfffzn.cloudfront.net/tanzu/vmware-favicon-inproduct.svg);
+    height: 50px;
+    width: 50px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.nav-content .active, .nav-content .active:hover, .nav-content .active:focus, .nav-content a:hover, .nav-content a:focus, .nav-content a:active {
+    color: #1D428A;
+}
