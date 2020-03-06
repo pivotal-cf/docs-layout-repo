@@ -1018,3 +1018,14 @@ header.partners-global-header .global-header-title {
 .nav-content .active, .nav-content .active:hover, .nav-content .active:focus, .nav-content a:hover, .nav-content a:focus, .nav-content a:active {
     color: #1D428A;
 }
+
+a, .link {
+  color: #1D428A;
+  border-bottom: none;
+  font-weight: 600;
+}
+.sidebar .product-info a:hover, a:hover, a:focus, .content a:hover, .content a:focus, .content a:active, .link:hover, .link:focus, .link:active  {
+  color: #0E2B65;
+  background-color: transparent;
+  border-bottom-style: none;
+}
