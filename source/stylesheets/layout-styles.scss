@@ -1019,13 +1019,17 @@ header.partners-global-header .global-header-title {
     color: #1D428A;
 }
 
-a, .link {
+a, .link, .quick-links a {
   color: #1D428A;
   border-bottom: none;
   font-weight: 600;
 }
-.sidebar .product-info a:hover, a:hover, a:focus, .content a:hover, .content a:focus, .content a:active, .link:hover, .link:focus, .link:active  {
+.sidebar .product-info a:hover, a:hover, a:focus, .content a:hover, .content a:focus, .content a:active, .link:hover, .link:focus, .link:active, .quick-links a:hover  {
   color: #0E2B65;
   background-color: transparent;
   border-bottom-style: none;
+}
+
+.quick-links a {
+  font-weight: normal;
 }
