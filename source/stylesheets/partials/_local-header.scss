@@ -8,6 +8,7 @@
   font-size: 28px;
   -webkit-font-smoothing: auto !important;
   .img-container {
+    position: relative;
     background: white;
     border-radius: 50%;
     width: 67px;
@@ -23,9 +24,16 @@
     }
   }
   img {
-    height: 35px;
+    height: auto;
     width: auto;
-    margin: 10px auto;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 52px;
+    max-width: 50px;
+
   }
   @media(max-width: 1053px) {
     font-size: 25px;
