@@ -45,8 +45,7 @@ header.global-header {
   }
 
   #info-search-bar {
-    background-color: $mint2;
-    min-height: 80px;
+    background-color: #243640;
     @media(max-width: $bp-medium) {
       min-height: 45px;
     }
