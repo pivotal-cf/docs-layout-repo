@@ -1,7 +1,6 @@
 <% if product_info['use_local_header'] %>
   <div class="local-header title-container">
     <div class="local-header local-title clearfix">
-      <div class='img-container'><img src="<%= product_info['local_header_img'] %>"></div>
       <span class="local-header-title"><%= product_info['local_header_title'] %></span>
       <span onClick="return true" class="local-header local-version header-dropdown">
         <a class="local-header header-dropdown-link">v<%= product_info['local_product_version'] || product_info['latest_stable_version'] %></a>
