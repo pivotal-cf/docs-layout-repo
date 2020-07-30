@@ -121,7 +121,6 @@ Add <code>.header-layout</code> to header tag to get fixed positioning.
   @media (min-width: $bp-wide) {
     clear: none;
     display: inline-block;
-    padding-top: 0.55em;
   }
 }
 .menu-active .header-item {
