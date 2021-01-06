@@ -66,7 +66,6 @@
           <% end %>
           <% if product_info['use_local_header'] %>
             <div class='product-info'>
-              <a href="<%= product_info['changelog_href'] %>">Release Notes</a><br/>
               <% product_info['local_header_links'].each do |link| %>
                 <%= link %><br/>
               <% end %>
