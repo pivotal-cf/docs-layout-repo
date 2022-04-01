@@ -954,7 +954,6 @@ body[class*=__index] {
     }
     header.global-header #info-search-bar {
       background-color: white;
-      min-height: 0;
     }
     header.global-header .menu-active .mobile-only .header-item#docs-header-item {
       display: none;
@@ -972,19 +971,61 @@ body[class*=__index] {
   }
 }
 
+/* Rebrand 2020 Updates */
 
+@media (min-width: 43.75em) {
+    header.global-header .super-nav .pivotal-logo {
+    height: 38px;
+    max-width: 233px;
+    margin: 8px 17px 10px 0;
+    }
+}
 
+.local-header.local-title .img-container {
+    display:none
+}
 
+.local-header.local-title {
+    padding: 20px 0;
+}
 
+@media (min-width: 993px) {
+    header.global-header .embedded-searchbar { 
+    margin: 5px 0 0;
+    }
+}
 
+header.partners-global-header .pivotal-logo {
+    background-image: url(https://d1fto35gcfffzn.cloudfront.net/tanzu/vmware-favicon-inproduct.svg);
+    height: 50px;
+    width: 50px;
+}
 
+header.partners-global-header .global-header-title {
+    font-weight: 400;
+}
 
+.nav-content .active, .nav-content .active:hover, .nav-content .active:focus, .nav-content a:hover, .nav-content a:focus, .nav-content a:active {
+    color: #1D428A;
+}
 
+a, .link, .quick-links a {
+  color: #1D428A;
+  border-bottom: none;
+  font-weight: 600;
+}
+.sidebar .product-info a:hover, a:hover, a:focus, .content a:hover, .content a:focus, .content a:active, .link:hover, .link:focus, .link:active, .quick-links a:hover  {
+  color: #0E2B65;
+  background-color: transparent;
+  border-bottom-style: none;
+}
 
+.quick-links a {
+  font-weight: normal;
+}
 
+.nav-content a, .nav-content span {
+  font-weight:normal
+}
 
-
-
-
-
-
+.to-top a:before {background: #1D428A;}

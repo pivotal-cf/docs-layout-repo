@@ -1,3 +1,17 @@
+<!-- OneTrust Cookie Consent -->
+<meta content='e93ee0e6-421d-4682-be59-b4c51c8070ce' name='onetrust-data-domain'>
+<meta content='https://tags.tiqcdn.com/utag/vmware/microsites-privacy/prod/utag.js' name='microsites-utag'>
+<script src="/javascripts/vendor/jquery-1.9.1.js"></script>
+<script src='//www.vmware.com/files/templates/inc/utag_data.js'></script>
+<script src='//tags.tiqcdn.com/utag/vmware/microsites-privacy/prod/utag.sync.js'></script>
+<script>function OptanonWrapper() { { window.dataLayer.push({ event: 'OneTrustGroupsUpdated' }); } }</script>
+<script>
+    function setGTM(w,d,s,l,i){ w[l]=w[l]||[]; w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'}); var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:''; j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); }
+    if (document.cookie.indexOf('OptanonConsent') > -1 && document.cookie.indexOf('groups=') > -1) { setGTM(window,document,'script','dataLayer','<%= vars.gtm_account_id %>'); } else{ waitForOnetrustActiveGroups(); } var timer; function waitForOnetrustActiveGroups() { if (document.cookie.indexOf('OptanonConsent') > -1 && document.cookie.indexOf('groups=') > -1) { clearTimeout(timer); setGTM(window,document,'script','dataLayer','<%= vars.gtm_account_id %>'); } else{ timer=setTimeout(waitForOnetrustActiveGroups, 250); } }
+</script>
+<!-- End OneTrust Cookie Consent -->
+
+
 <% if !defined?(elastic_search?) || !elastic_search? %>
 <script>
 //Global Google Search
@@ -14,34 +28,6 @@
 <% end %>
 
 
-<!-- Google Tag Manager -->
-<script>
-  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','<%= vars.gtm_account_id %>');
-</script>
-
-
-<!-- <script type="text/javascript">
-  if (window.location.host === '<%= production_host %>') {
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', '<%= vars.ga_account_id %>']);
-    _gaq.push(['_setDomainName', '<%= vars.domain_name %>']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script');
-      ga.type = 'text/javascript';
-      ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(ga, s);
-    })();
-  }
-</script> -->
-
 <script type="text/javascript">
   var blackList = ['acceptance'];
 
@@ -52,36 +38,4 @@
   });
 </script>
 
-<!-- CrazyEgg Tracking Script -->
-<!--   <script type="text/javascript">
-  setTimeout(function(){var a=document.createElement("script");
-  var b=document.getElementsByTagName("script")[0];
-  a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0055/2990.js?"+Math.floor(new Date().getTime()/3600000);
-  a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
-  </script> -->
 
-<!-- Munchkin Marketo Script -->
-<!-- <script type="text/javascript">
-  (function() {
-    var didInit = false;
-
-    function initMunchkin() {
-      if (didInit === false) {
-        didInit = true;
-        Munchkin.init('625-IUJ-009');
-      }
-    }
-
-    var s = document.createElement('script');
-    s.type = 'text/javascript';
-    s.async = true;
-    s.src = document.location.protocol + '//munchkin.marketo.net/munchkin.js';
-    s.onreadystatechange = function() {
-      if (this.readyState == 'complete' || this.readyState == 'loaded') {
-        initMunchkin();
-      }
-    };
-    s.onload = initMunchkin;
-    document.getElementsByTagName('head')[0].appendChild(s);
-  })();
-</script> -->
