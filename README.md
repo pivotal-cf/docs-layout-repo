@@ -33,10 +33,10 @@ To include this centralized layout repository in your book, add the following li
 
 ```
 layout_repo: pivotal-cf/docs-layout-repo
-layout_repo_ref: master 
+layout_repo_ref: master
 ```
 
-When you run `'bookbinder bind`, the files from docs-layout-repo are used to format and style the
+When you run `bookbinder bind`, the files from docs-layout-repo are used to format and style the
 resulting book unless overwritten by the book's own layout files.
 
 ## Overrides
