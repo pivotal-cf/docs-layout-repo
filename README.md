@@ -14,7 +14,7 @@ Most of the remainder of this README file is targeted at Bookbinder users.
 
 | Branch    | Usage |
 |-----------|-------|
-| master    | "PCF" publications to docs.pivotal.io. Default. |
+| main    | "PCF" publications to docs.pivotal.io. Default. |
 | edge      | Pre-release publications |
 | data-docs | Data Services publications |
 | no-index  | "PCF" publications that should no longer be indexed by search engines. |
@@ -33,7 +33,7 @@ To include this centralized layout repository in your book, add the following li
 
 ```
 layout_repo: pivotal-cf/docs-layout-repo
-layout_repo_ref: master
+layout_repo_ref: main
 ```
 
 When you run `bookbinder bind`, the files from docs-layout-repo are used to format and style the
@@ -57,7 +57,7 @@ Make book-specific overrides by creating and editing copies of the following fil
     $navy: #333333;
     ```
 
-* `stylesheets/partials/_book-vars.scss`: To redefine or add variables that point to the variable-ized base values in `_vars.scss`. These are found under ["BEGIN BASE VALUES"](https://github.com/pivotal-cf/docs-layout-repo/blob/master/source/stylesheets/partials/_vars.scss#L5) in the `_vars.scss` file  or within `_book-base-values.scss`.
+* `stylesheets/partials/_book-vars.scss`: To redefine or add variables that point to the variable-ized base values in `_vars.scss`. These are found under ["BEGIN BASE VALUES"](https://github.com/pivotal-cf/docs-layout-repo/blob/main/source/stylesheets/partials/_vars.scss#L5) in the `_vars.scss` file  or within `_book-base-values.scss`.
 
     Example:
     ```

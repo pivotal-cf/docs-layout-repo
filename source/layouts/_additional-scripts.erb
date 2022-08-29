@@ -29,10 +29,10 @@
 
 
 <script type="text/javascript">
-  var blackList = ['acceptance'];
+  var denylist = ['acceptance'];
 
-  blackList.forEach(function(blackListedEnv) {
-    if (document.URL.indexOf(blackListedEnv) > -1 && blackListedEnv != "") {
+  denylist.forEach(function(denylistedEnv) {
+    if (document.URL.indexOf(denylistedEnv) > -1 && denylistedEnv != "") {
       $('head').append('<meta name="hashtag" content="PivotalMoment">');
     }
   });
