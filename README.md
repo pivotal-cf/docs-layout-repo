@@ -42,7 +42,7 @@ Overrides are held in two files:
 
 * `stylesheets/partials/_book-vars.scss`
 	
-	Redefining or adding variables that point to the variable-ized base values in `_vars.scss` (under ["BEGIN BASE VALUES"](https://github.com/pivotal-cf/docs-layout-repo/blob/master/source/stylesheets/partials/_vars.scss#L5)) or `_book-base-values.scss` (as in the above example).
+	Redefining or adding variables that point to the variable-ized base values in `_vars.scss` (under ["BEGIN BASE VALUES"](https://github.com/pivotal-cf/docs-layout-repo/blob/main/source/stylesheets/partials/_vars.scss#L5)) or `_book-base-values.scss` (as in the above example).
 	
 	E.g.,
 	

@@ -5,7 +5,7 @@
 //! normalize.css v3.0.0 | MIT License | git.io/normalize
 
 // 1. Set default font family to sans-serif.
-// 2. Prevent iOS text size adjust after orientation change, without disabling user zoom.
+// 2. Prevent iOS text size adjust after orientation change, without deactivating user zoom.
 html {
   font-family: sans-serif; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
@@ -108,7 +108,7 @@ samp,
   font-size: 1em;
 }
 
-//1. Correct color not being inherited. Known issue: affects color of disabled elements.
+//1. Correct color not being inherited. Known issue: affects color of deactivated elements.
 // 2. Correct font properties not being inherited.
 // 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
 button,
@@ -143,7 +143,7 @@ input[type="submit"] {
   cursor: pointer; /* 3 */
 }
 
-// Re-set default cursor for disabled elements.
+// Re-set default cursor for deactivated elements.
 button[disabled],
 html input[disabled] {
   cursor: default;
