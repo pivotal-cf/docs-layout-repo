@@ -470,6 +470,20 @@ category: basics
   }
 }
 
+.note.caution {
+  background-color: #fdd;
+  border-color: #fbb;
+  &:before {
+    content: "\F071";
+    font-family: FontAwesome;
+    color: #b9b781;
+    font-size: 1.2em;
+    left: 0.6em;
+    position: absolute;
+    top: 0.75em;
+  }
+}
+
 .note.warning {
   background-color: #fdd;
   border-color: #fbb;
